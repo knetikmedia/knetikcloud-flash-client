@@ -9,7 +9,7 @@ package io.swagger.client.model {
         /* The client_id field of the oauth token request */
         [XmlElement(name="client_key")]
         public var clientKey: String = null;
-        /* The oauth grant type as in: password (username/password auth), client_credentials (server-to-server, private clients), refresh_token (to allow clients to refresh their initial token), facebook, google, etc) See documentation for a complete list. use dedicated endpoint PUT /grant-types to edit this list */
+        /* The oauth grant type as in: password (username/password auth), client_credentials (server-to-server, private clients), refresh_token (to allow clients to refresh their initial token), facebook, google, etc) See documentation for a complete list. Use dedicated endpoint PUT /grant-types to edit this list */
         // This declaration below of _grantTypes_obj_class is to force flash compiler to include this class
         private var _grantTypes_obj_class: Array = null;
         [XmlElementWrapper(name="grant_types")]

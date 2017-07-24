@@ -6,6 +6,7 @@ import io.swagger.exception.ApiError;
 import io.swagger.common.ApiUserCredentials;
 import io.swagger.event.Response;
 import io.swagger.common.SwaggerApi;
+import io.swagger.client.model.Object;
 import io.swagger.client.model.PageResourceMapstringobject;
 import io.swagger.client.model.Result;
 import io.swagger.client.model.SearchReferenceMapping;

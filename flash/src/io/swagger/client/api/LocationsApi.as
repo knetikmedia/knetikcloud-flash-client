@@ -89,7 +89,7 @@ public class LocationsApi extends SwaggerApi {
      */
     public function get_country_states (countryCodeIso3: String): String {
         // create path and map variables
-        var path: String = "/location/countries/{country_code_iso3}/states".replace(/{format}/g,"xml").replace("{" + "countryCodeIso3" + "}", getApiInvoker().escapeString(countryCodeIso3));
+        var path: String = "/location/countries/{country_code_iso3}/states".replace(/{format}/g,"xml").replace("{" + "country_code_iso3" + "}", getApiInvoker().escapeString(countryCodeIso3));
 
         // query params
         var queryParams: Dictionary = new Dictionary();

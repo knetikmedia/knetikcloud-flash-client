@@ -91,7 +91,7 @@ public class CampaignsChallengesApi extends SwaggerApi {
      */
     public function create_challenge_activity (challengeId: Number, challengeActivityResource: ChallengeActivityResource, validateSettings: Boolean): String {
         // create path and map variables
-        var path: String = "/challenges/{challenge_id}/activities".replace(/{format}/g,"xml").replace("{" + "challengeId" + "}", getApiInvoker().escapeString(challengeId));
+        var path: String = "/challenges/{challenge_id}/activities".replace(/{format}/g,"xml").replace("{" + "challenge_id" + "}", getApiInvoker().escapeString(challengeId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -219,9 +219,9 @@ public class CampaignsChallengesApi extends SwaggerApi {
     /*
      * Returns void 
      */
-    public function delete_challenge_activity (activityId: Number, challengeId: Number): String {
+    public function delete_challenge_activity (id: Number, challengeId: Number): String {
         // create path and map variables
-        var path: String = "/challenges/{challenge_id}/activities/{activity_id}".replace(/{format}/g,"xml").replace("{" + "activityId" + "}", getApiInvoker().escapeString(activityId)).replace("{" + "challengeId" + "}", getApiInvoker().escapeString(challengeId));
+        var path: String = "/challenges/{challenge_id}/activities/{id}".replace(/{format}/g,"xml").replace("{" + "id" + "}", getApiInvoker().escapeString(id)).replace("{" + "challenge_id" + "}", getApiInvoker().escapeString(challengeId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -387,7 +387,7 @@ public class CampaignsChallengesApi extends SwaggerApi {
      */
     public function get_challenge_activities (challengeId: Number, size: Number, page: Number, order: String): String {
         // create path and map variables
-        var path: String = "/challenges/{challenge_id}/activities".replace(/{format}/g,"xml").replace("{" + "challengeId" + "}", getApiInvoker().escapeString(challengeId));
+        var path: String = "/challenges/{challenge_id}/activities".replace(/{format}/g,"xml").replace("{" + "challenge_id" + "}", getApiInvoker().escapeString(challengeId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -433,16 +433,20 @@ if("null" != String(order))
     /*
      * Returns ChallengeActivityResource 
      */
-    public function get_challenge_activity (activityId: Number): String {
+    public function get_challenge_activity (id: Number, challengeId: Number): String {
         // create path and map variables
-        var path: String = "/challenges/{challenge_id}/activities/{activity_id}".replace(/{format}/g,"xml").replace("{" + "activityId" + "}", getApiInvoker().escapeString(activityId));
+        var path: String = "/challenges/{challenge_id}/activities/{id}".replace(/{format}/g,"xml").replace("{" + "id" + "}", getApiInvoker().escapeString(id)).replace("{" + "challenge_id" + "}", getApiInvoker().escapeString(challengeId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
         var headerParams: Dictionary = new Dictionary();
 
         // verify required params are set
+        if(        // verify required params are set
         if() {
+            throw new ApiError(400, "missing required params");
+        }
+) {
             throw new ApiError(400, "missing required params");
         }
 
@@ -605,13 +609,13 @@ if("null" != String(order))
         }
 
         if("null" != String(filterStartDate))
-            queryParams["filterStartDate"] = toPathValue(filterStartDate);
+            queryParams["filter_start_date"] = toPathValue(filterStartDate);
 if("null" != String(filterEndDate))
-            queryParams["filterEndDate"] = toPathValue(filterEndDate);
+            queryParams["filter_end_date"] = toPathValue(filterEndDate);
 if("null" != String(filterCampaigns))
-            queryParams["filterCampaigns"] = toPathValue(filterCampaigns);
+            queryParams["filter_campaigns"] = toPathValue(filterCampaigns);
 if("null" != String(filterChallenge))
-            queryParams["filterChallenge"] = toPathValue(filterChallenge);
+            queryParams["filter_challenge"] = toPathValue(filterChallenge);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))
@@ -747,13 +751,13 @@ if("null" != String(order))
         }
 
         if("null" != String(filterTemplate))
-            queryParams["filterTemplate"] = toPathValue(filterTemplate);
+            queryParams["filter_template"] = toPathValue(filterTemplate);
 if("null" != String(filterActiveCampaign))
-            queryParams["filterActiveCampaign"] = toPathValue(filterActiveCampaign);
+            queryParams["filter_active_campaign"] = toPathValue(filterActiveCampaign);
 if("null" != String(filterStartDate))
-            queryParams["filterStartDate"] = toPathValue(filterStartDate);
+            queryParams["filter_start_date"] = toPathValue(filterStartDate);
 if("null" != String(filterEndDate))
-            queryParams["filterEndDate"] = toPathValue(filterEndDate);
+            queryParams["filter_end_date"] = toPathValue(filterEndDate);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))
@@ -811,9 +815,9 @@ if("null" != String(order))
     /*
      * Returns ChallengeActivityResource 
      */
-    public function update_challenge_activity (activityId: Number, challengeId: Number, challengeActivityResource: ChallengeActivityResource): String {
+    public function update_challenge_activity (id: Number, challengeId: Number, challengeActivityResource: ChallengeActivityResource): String {
         // create path and map variables
-        var path: String = "/challenges/{challenge_id}/activities/{activity_id}".replace(/{format}/g,"xml").replace("{" + "activityId" + "}", getApiInvoker().escapeString(activityId)).replace("{" + "challengeId" + "}", getApiInvoker().escapeString(challengeId));
+        var path: String = "/challenges/{challenge_id}/activities/{id}".replace(/{format}/g,"xml").replace("{" + "id" + "}", getApiInvoker().escapeString(id)).replace("{" + "challenge_id" + "}", getApiInvoker().escapeString(challengeId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();

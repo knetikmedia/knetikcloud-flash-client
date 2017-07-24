@@ -1,12 +1,12 @@
 package io.swagger.client.model {
 
 import io.swagger.client.model.ActivityEntitlementResource;
+import io.swagger.client.model.AvailableSettingResource;
 import io.swagger.client.model.Property;
 import io.swagger.client.model.RewardSetResource;
-import io.swagger.client.model.TheDefinitionOfAnActivityParametersExDifficultyLevel;
 
-    [XmlRootNode(name="RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc")]
-    public class RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc {
+    [XmlRootNode(name="ActivityResource")]
+    public class ActivityResource {
         /* A map of additional properties keyed on the property name. Used to further describe an activity. While settings will vary from one activity occurrence (a game) to another, additional properties are shared by all the occurrences of this activity. Ex: Activity Logo, Disclaimer, Greeting, etc. Validated against template if one exists for activities */
         // This declaration below of _additionalProperties_obj_class is to force flash compiler to include this class
         private var _additionalProperties_obj_class: Dictionary = null;
@@ -63,7 +63,7 @@ import io.swagger.client.model.TheDefinitionOfAnActivityParametersExDifficultyLe
         public var updatedDate: Number = 0;
 
     public function toString(): String {
-        var str: String = "RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc: ";
+        var str: String = "ActivityResource: ";
         str += " (additionalProperties: " + additionalProperties + ")";
         str += " (createdDate: " + createdDate + ")";
         str += " (entitlements: " + entitlements + ")";

@@ -270,9 +270,9 @@ public class CampaignsApi extends SwaggerApi {
         }
 
         if("null" != String(filterStartDate))
-            queryParams["filterStartDate"] = toPathValue(filterStartDate);
+            queryParams["filter_start_date"] = toPathValue(filterStartDate);
 if("null" != String(filterEndDate))
-            queryParams["filterEndDate"] = toPathValue(filterEndDate);
+            queryParams["filter_end_date"] = toPathValue(filterEndDate);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))
@@ -396,7 +396,7 @@ if("null" != String(order))
         }
 
         if("null" != String(filterActive))
-            queryParams["filterActive"] = toPathValue(filterActive);
+            queryParams["filter_active"] = toPathValue(filterActive);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))
@@ -422,7 +422,7 @@ if("null" != String(order))
      */
     public function remove_challenge_from_campaign (campaignId: Number, id: Number): String {
         // create path and map variables
-        var path: String = "/campaigns/{campaign_id}/challenges/{id}".replace(/{format}/g,"xml").replace("{" + "campaignId" + "}", getApiInvoker().escapeString(campaignId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
+        var path: String = "/campaigns/{campaign_id}/challenges/{id}".replace(/{format}/g,"xml").replace("{" + "campaign_id" + "}", getApiInvoker().escapeString(campaignId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 
         // query params
         var queryParams: Dictionary = new Dictionary();

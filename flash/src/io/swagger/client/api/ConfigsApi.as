@@ -151,7 +151,7 @@ public class ConfigsApi extends SwaggerApi {
         }
 
         if("null" != String(filterSearch))
-            queryParams["filterSearch"] = toPathValue(filterSearch);
+            queryParams["filter_search"] = toPathValue(filterSearch);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))

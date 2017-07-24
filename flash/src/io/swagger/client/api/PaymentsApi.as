@@ -39,7 +39,7 @@ public class PaymentsApi extends SwaggerApi {
      */
     public function create_payment_method (userId: Number, paymentMethod: PaymentMethodResource): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/payment-methods".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId));
+        var path: String = "/users/{user_id}/payment-methods".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -73,7 +73,7 @@ public class PaymentsApi extends SwaggerApi {
      */
     public function delete_payment_method (userId: Number, id: Number): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/payment-methods/{id}".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
+        var path: String = "/users/{user_id}/payment-methods/{id}".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -107,7 +107,7 @@ public class PaymentsApi extends SwaggerApi {
      */
     public function get_payment_method (userId: Number, id: Number): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/payment-methods/{id}".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
+        var path: String = "/users/{user_id}/payment-methods/{id}".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -139,15 +139,19 @@ public class PaymentsApi extends SwaggerApi {
     /*
      * Returns Array 
      */
-    public function get_payment_methods (userId: Number, size: Number, page: Number, order: String): String {
+    public function get_payment_methods (userId: Number, filterName: String, filterPaymentType: String, filterPaymentMethodTypeId: Number, filterPaymentMethodTypeName: String, size: Number, page: Number, order: String): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/payment-methods".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId));
+        var path: String = "/users/{user_id}/payment-methods".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
         var headerParams: Dictionary = new Dictionary();
 
         // verify required params are set
+        if(        // verify required params are set
+        if(        // verify required params are set
+        if(        // verify required params are set
+        if(        // verify required params are set
         if(        // verify required params are set
         if(        // verify required params are set
         if(        // verify required params are set
@@ -163,8 +167,28 @@ public class PaymentsApi extends SwaggerApi {
 ) {
             throw new ApiError(400, "missing required params");
         }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
 
-        if("null" != String(size))
+        if("null" != String(filterName))
+            queryParams["filter_name"] = toPathValue(filterName);
+if("null" != String(filterPaymentType))
+            queryParams["filter_payment_type"] = toPathValue(filterPaymentType);
+if("null" != String(filterPaymentMethodTypeId))
+            queryParams["filter_payment_method_type_id"] = toPathValue(filterPaymentMethodTypeId);
+if("null" != String(filterPaymentMethodTypeName))
+            queryParams["filter_payment_method_type_name"] = toPathValue(filterPaymentMethodTypeName);
+if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))
             queryParams["page"] = toPathValue(page);
@@ -249,7 +273,7 @@ if("null" != String(order))
      */
     public function update_payment_method (userId: Number, id: Number, paymentMethod: PaymentMethodResource): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/payment-methods/{id}".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
+        var path: String = "/users/{user_id}/payment-methods/{id}".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 
         // query params
         var queryParams: Dictionary = new Dictionary();

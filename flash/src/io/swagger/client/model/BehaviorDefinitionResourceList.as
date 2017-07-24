@@ -2,7 +2,7 @@ package io.swagger.client.model {
 
 import io.swagger.common.ListWrapper;
 import io.swagger.client.model.Behavior;
-import io.swagger.client.model.PropertyDefinitionResource;
+import io.swagger.client.model.PropertyFieldResource;
 
     public class BehaviorDefinitionResourceList implements ListWrapper {
         // This declaration below of _BehaviorDefinitionResource_obj_class is to force flash compiler to include this class

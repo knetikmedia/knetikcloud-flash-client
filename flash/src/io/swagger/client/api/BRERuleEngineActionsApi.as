@@ -56,13 +56,13 @@ public class BRERuleEngineActionsApi extends SwaggerApi {
         }
 
         if("null" != String(filterCategory))
-            queryParams["filterCategory"] = toPathValue(filterCategory);
+            queryParams["filter_category"] = toPathValue(filterCategory);
 if("null" != String(filterName))
-            queryParams["filterName"] = toPathValue(filterName);
+            queryParams["filter_name"] = toPathValue(filterName);
 if("null" != String(filterTags))
-            queryParams["filterTags"] = toPathValue(filterTags);
+            queryParams["filter_tags"] = toPathValue(filterTags);
 if("null" != String(filterSearch))
-            queryParams["filterSearch"] = toPathValue(filterSearch);
+            queryParams["filter_search"] = toPathValue(filterSearch);
 
         
         var token:AsyncToken = getApiInvoker().invokeAPI(path, "GET", queryParams, null, headerParams);

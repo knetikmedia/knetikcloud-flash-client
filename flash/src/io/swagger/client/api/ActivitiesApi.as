@@ -6,13 +6,13 @@ import io.swagger.exception.ApiError;
 import io.swagger.common.ApiUserCredentials;
 import io.swagger.event.Response;
 import io.swagger.common.SwaggerApi;
-import io.swagger.client.model.AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings;
 import io.swagger.client.model.ActivityOccurrenceCreationFailure;
+import io.swagger.client.model.ActivityOccurrenceResource;
 import io.swagger.client.model.ActivityOccurrenceResults;
-import io.swagger.client.model.Object;
+import io.swagger.client.model.ActivityOccurrenceResultsResource;
+import io.swagger.client.model.ActivityResource;
 import io.swagger.client.model.PageResourceBareActivityResource;
 import io.swagger.client.model.PageResourceTemplateResource;
-import io.swagger.client.model.RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc;
 import io.swagger.client.model.Result;
 import io.swagger.client.model.TemplateResource;
 
@@ -47,9 +47,9 @@ public class ActivitiesApi extends SwaggerApi {
 
 
     /*
-     * Returns RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc 
+     * Returns ActivityResource 
      */
-    public function create_activity (activityResource: RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc): String {
+    public function create_activity (activityResource: ActivityResource): String {
         // create path and map variables
         var path: String = "/activities".replace(/{format}/g,"xml");
 
@@ -71,15 +71,15 @@ public class ActivitiesApi extends SwaggerApi {
         token.requestId = requestId;
         token.completionEventType = "create_activity";
 
-        token.returnType = RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc;
+        token.returnType = ActivityResource;
         return requestId;
 
     }
 
     /*
-     * Returns AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings 
+     * Returns ActivityOccurrenceResource 
      */
-    public function create_activity_occurrence (test: Boolean, activityOccurrenceResource: AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings): String {
+    public function create_activity_occurrence (test: Boolean, activityOccurrenceResource: ActivityOccurrenceResource): String {
         // create path and map variables
         var path: String = "/activity-occurrences".replace(/{format}/g,"xml");
 
@@ -107,7 +107,7 @@ public class ActivitiesApi extends SwaggerApi {
         token.requestId = requestId;
         token.completionEventType = "create_activity_occurrence";
 
-        token.returnType = AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings;
+        token.returnType = ActivityOccurrenceResource;
         return requestId;
 
     }
@@ -211,7 +211,7 @@ public class ActivitiesApi extends SwaggerApi {
     /*
      * Returns PageResourceBareActivityResource 
      */
-    public function get_activities (filterTemplate: Boolean, filterName: String, filterId: Object, size: Number, page: Number, order: String): String {
+    public function get_activities (filterTemplate: Boolean, filterName: String, filterId: String, size: Number, page: Number, order: String): String {
         // create path and map variables
         var path: String = "/activities".replace(/{format}/g,"xml");
 
@@ -245,11 +245,11 @@ public class ActivitiesApi extends SwaggerApi {
         }
 
         if("null" != String(filterTemplate))
-            queryParams["filterTemplate"] = toPathValue(filterTemplate);
+            queryParams["filter_template"] = toPathValue(filterTemplate);
 if("null" != String(filterName))
-            queryParams["filterName"] = toPathValue(filterName);
+            queryParams["filter_name"] = toPathValue(filterName);
 if("null" != String(filterId))
-            queryParams["filterId"] = toPathValue(filterId);
+            queryParams["filter_id"] = toPathValue(filterId);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))
@@ -271,7 +271,7 @@ if("null" != String(order))
     }
 
     /*
-     * Returns RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc 
+     * Returns ActivityResource 
      */
     public function get_activity (id: Number): String {
         // create path and map variables
@@ -295,7 +295,7 @@ if("null" != String(order))
         token.requestId = requestId;
         token.completionEventType = "get_activity";
 
-        token.returnType = RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc;
+        token.returnType = ActivityResource;
         return requestId;
 
     }
@@ -377,9 +377,9 @@ if("null" != String(order))
     /*
      * Returns ActivityOccurrenceResults 
      */
-    public function set_activity_occurrence_results (activityOccurrenceId: Number, activityOccurrenceResults: ActivityOccurrenceResults): String {
+    public function set_activity_occurrence_results (activityOccurrenceId: Number, activityOccurrenceResults: ActivityOccurrenceResultsResource): String {
         // create path and map variables
-        var path: String = "/activity-occurrences/{activity_occurrence_id}/results".replace(/{format}/g,"xml").replace("{" + "activityOccurrenceId" + "}", getApiInvoker().escapeString(activityOccurrenceId));
+        var path: String = "/activity-occurrences/{activity_occurrence_id}/results".replace(/{format}/g,"xml").replace("{" + "activity_occurrence_id" + "}", getApiInvoker().escapeString(activityOccurrenceId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -409,9 +409,9 @@ if("null" != String(order))
     }
 
     /*
-     * Returns RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc 
+     * Returns ActivityResource 
      */
-    public function update_activity (id: Number, activityResource: RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc): String {
+    public function update_activity (id: Number, activityResource: ActivityResource): String {
         // create path and map variables
         var path: String = "/activities/{id}".replace(/{format}/g,"xml").replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 
@@ -437,7 +437,7 @@ if("null" != String(order))
         token.requestId = requestId;
         token.completionEventType = "update_activity";
 
-        token.returnType = RepresentsAnActivityThatCanBeParameterizedAndTrackedThroughMetricsScoresEtc;
+        token.returnType = ActivityResource;
         return requestId;
 
     }
@@ -447,7 +447,7 @@ if("null" != String(order))
      */
     public function update_activity_occurrence (activityOccurrenceId: Number, activityCccurrenceStatus: String): String {
         // create path and map variables
-        var path: String = "/activity-occurrences/{activity_occurrence_id}/status".replace(/{format}/g,"xml").replace("{" + "activityOccurrenceId" + "}", getApiInvoker().escapeString(activityOccurrenceId));
+        var path: String = "/activity-occurrences/{activity_occurrence_id}/status".replace(/{format}/g,"xml").replace("{" + "activity_occurrence_id" + "}", getApiInvoker().escapeString(activityOccurrenceId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();

@@ -73,11 +73,11 @@ public class ReportingUsageApi extends SwaggerApi {
         }
 
         if("null" != String(startDate))
-            queryParams["startDate"] = toPathValue(startDate);
+            queryParams["start_date"] = toPathValue(startDate);
 if("null" != String(endDate))
-            queryParams["endDate"] = toPathValue(endDate);
+            queryParams["end_date"] = toPathValue(endDate);
 if("null" != String(combineEndpoints))
-            queryParams["combineEndpoints"] = toPathValue(combineEndpoints);
+            queryParams["combine_endpoints"] = toPathValue(combineEndpoints);
 if("null" != String(method))
             queryParams["method"] = toPathValue(method);
 if("null" != String(url))
@@ -141,11 +141,11 @@ if("null" != String(page))
         }
 
         if("null" != String(startDate))
-            queryParams["startDate"] = toPathValue(startDate);
+            queryParams["start_date"] = toPathValue(startDate);
 if("null" != String(endDate))
-            queryParams["endDate"] = toPathValue(endDate);
+            queryParams["end_date"] = toPathValue(endDate);
 if("null" != String(combineEndpoints))
-            queryParams["combineEndpoints"] = toPathValue(combineEndpoints);
+            queryParams["combine_endpoints"] = toPathValue(combineEndpoints);
 if("null" != String(method))
             queryParams["method"] = toPathValue(method);
 if("null" != String(url))
@@ -209,11 +209,11 @@ if("null" != String(page))
         }
 
         if("null" != String(startDate))
-            queryParams["startDate"] = toPathValue(startDate);
+            queryParams["start_date"] = toPathValue(startDate);
 if("null" != String(endDate))
-            queryParams["endDate"] = toPathValue(endDate);
+            queryParams["end_date"] = toPathValue(endDate);
 if("null" != String(combineEndpoints))
-            queryParams["combineEndpoints"] = toPathValue(combineEndpoints);
+            queryParams["combine_endpoints"] = toPathValue(combineEndpoints);
 if("null" != String(method))
             queryParams["method"] = toPathValue(method);
 if("null" != String(url))
@@ -277,11 +277,11 @@ if("null" != String(page))
         }
 
         if("null" != String(startDate))
-            queryParams["startDate"] = toPathValue(startDate);
+            queryParams["start_date"] = toPathValue(startDate);
 if("null" != String(endDate))
-            queryParams["endDate"] = toPathValue(endDate);
+            queryParams["end_date"] = toPathValue(endDate);
 if("null" != String(combineEndpoints))
-            queryParams["combineEndpoints"] = toPathValue(combineEndpoints);
+            queryParams["combine_endpoints"] = toPathValue(combineEndpoints);
 if("null" != String(method))
             queryParams["method"] = toPathValue(method);
 if("null" != String(url))
@@ -345,11 +345,11 @@ if("null" != String(page))
         }
 
         if("null" != String(startDate))
-            queryParams["startDate"] = toPathValue(startDate);
+            queryParams["start_date"] = toPathValue(startDate);
 if("null" != String(endDate))
-            queryParams["endDate"] = toPathValue(endDate);
+            queryParams["end_date"] = toPathValue(endDate);
 if("null" != String(combineEndpoints))
-            queryParams["combineEndpoints"] = toPathValue(combineEndpoints);
+            queryParams["combine_endpoints"] = toPathValue(combineEndpoints);
 if("null" != String(method))
             queryParams["method"] = toPathValue(method);
 if("null" != String(url))
@@ -393,9 +393,9 @@ if("null" != String(page))
         }
 
         if("null" != String(startDate))
-            queryParams["startDate"] = toPathValue(startDate);
+            queryParams["start_date"] = toPathValue(startDate);
 if("null" != String(endDate))
-            queryParams["endDate"] = toPathValue(endDate);
+            queryParams["end_date"] = toPathValue(endDate);
 
         
         var token:AsyncToken = getApiInvoker().invokeAPI(path, "GET", queryParams, null, headerParams);

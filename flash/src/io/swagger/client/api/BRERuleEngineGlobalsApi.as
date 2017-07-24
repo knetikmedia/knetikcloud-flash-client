@@ -147,7 +147,7 @@ public class BRERuleEngineGlobalsApi extends SwaggerApi {
         }
 
         if("null" != String(filterSystem))
-            queryParams["filterSystem"] = toPathValue(filterSystem);
+            queryParams["filter_system"] = toPathValue(filterSystem);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))

@@ -38,7 +38,7 @@ public class ReportingRevenueApi extends SwaggerApi {
      */
     public function get_item_revenue (currencyCode: String, startDate: Number, endDate: Number): String {
         // create path and map variables
-        var path: String = "/reporting/revenue/item-sales/{currency_code}".replace(/{format}/g,"xml").replace("{" + "currencyCode" + "}", getApiInvoker().escapeString(currencyCode));
+        var path: String = "/reporting/revenue/item-sales/{currency_code}".replace(/{format}/g,"xml").replace("{" + "currency_code" + "}", getApiInvoker().escapeString(currencyCode));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -58,9 +58,9 @@ public class ReportingRevenueApi extends SwaggerApi {
         }
 
         if("null" != String(startDate))
-            queryParams["startDate"] = toPathValue(startDate);
+            queryParams["start_date"] = toPathValue(startDate);
 if("null" != String(endDate))
-            queryParams["endDate"] = toPathValue(endDate);
+            queryParams["end_date"] = toPathValue(endDate);
 
         
         var token:AsyncToken = getApiInvoker().invokeAPI(path, "GET", queryParams, null, headerParams);
@@ -80,7 +80,7 @@ if("null" != String(endDate))
      */
     public function get_refund_revenue (currencyCode: String, startDate: Number, endDate: Number): String {
         // create path and map variables
-        var path: String = "/reporting/revenue/refunds/{currency_code}".replace(/{format}/g,"xml").replace("{" + "currencyCode" + "}", getApiInvoker().escapeString(currencyCode));
+        var path: String = "/reporting/revenue/refunds/{currency_code}".replace(/{format}/g,"xml").replace("{" + "currency_code" + "}", getApiInvoker().escapeString(currencyCode));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -100,9 +100,9 @@ if("null" != String(endDate))
         }
 
         if("null" != String(startDate))
-            queryParams["startDate"] = toPathValue(startDate);
+            queryParams["start_date"] = toPathValue(startDate);
 if("null" != String(endDate))
-            queryParams["endDate"] = toPathValue(endDate);
+            queryParams["end_date"] = toPathValue(endDate);
 
         
         var token:AsyncToken = getApiInvoker().invokeAPI(path, "GET", queryParams, null, headerParams);
@@ -122,7 +122,7 @@ if("null" != String(endDate))
      */
     public function get_revenue_by_country (currencyCode: String, startDate: Number, endDate: Number, size: Number, page: Number): String {
         // create path and map variables
-        var path: String = "/reporting/revenue/countries/{currency_code}".replace(/{format}/g,"xml").replace("{" + "currencyCode" + "}", getApiInvoker().escapeString(currencyCode));
+        var path: String = "/reporting/revenue/countries/{currency_code}".replace(/{format}/g,"xml").replace("{" + "currency_code" + "}", getApiInvoker().escapeString(currencyCode));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -150,9 +150,9 @@ if("null" != String(endDate))
         }
 
         if("null" != String(startDate))
-            queryParams["startDate"] = toPathValue(startDate);
+            queryParams["start_date"] = toPathValue(startDate);
 if("null" != String(endDate))
-            queryParams["endDate"] = toPathValue(endDate);
+            queryParams["end_date"] = toPathValue(endDate);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))
@@ -176,7 +176,7 @@ if("null" != String(page))
      */
     public function get_revenue_by_item (currencyCode: String, startDate: Number, endDate: Number, size: Number, page: Number): String {
         // create path and map variables
-        var path: String = "/reporting/revenue/products/{currency_code}".replace(/{format}/g,"xml").replace("{" + "currencyCode" + "}", getApiInvoker().escapeString(currencyCode));
+        var path: String = "/reporting/revenue/products/{currency_code}".replace(/{format}/g,"xml").replace("{" + "currency_code" + "}", getApiInvoker().escapeString(currencyCode));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -204,9 +204,9 @@ if("null" != String(page))
         }
 
         if("null" != String(startDate))
-            queryParams["startDate"] = toPathValue(startDate);
+            queryParams["start_date"] = toPathValue(startDate);
 if("null" != String(endDate))
-            queryParams["endDate"] = toPathValue(endDate);
+            queryParams["end_date"] = toPathValue(endDate);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))
@@ -230,7 +230,7 @@ if("null" != String(page))
      */
     public function get_subscription_revenue (currencyCode: String, startDate: Number, endDate: Number): String {
         // create path and map variables
-        var path: String = "/reporting/revenue/subscription-sales/{currency_code}".replace(/{format}/g,"xml").replace("{" + "currencyCode" + "}", getApiInvoker().escapeString(currencyCode));
+        var path: String = "/reporting/revenue/subscription-sales/{currency_code}".replace(/{format}/g,"xml").replace("{" + "currency_code" + "}", getApiInvoker().escapeString(currencyCode));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -250,9 +250,9 @@ if("null" != String(page))
         }
 
         if("null" != String(startDate))
-            queryParams["startDate"] = toPathValue(startDate);
+            queryParams["start_date"] = toPathValue(startDate);
 if("null" != String(endDate))
-            queryParams["endDate"] = toPathValue(endDate);
+            queryParams["end_date"] = toPathValue(endDate);
 
         
         var token:AsyncToken = getApiInvoker().invokeAPI(path, "GET", queryParams, null, headerParams);

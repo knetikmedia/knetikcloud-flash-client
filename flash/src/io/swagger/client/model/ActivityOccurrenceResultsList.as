@@ -1,7 +1,7 @@
 package io.swagger.client.model {
 
 import io.swagger.common.ListWrapper;
-import io.swagger.client.model.UserActivityResultsResource;
+import io.swagger.client.model.UserActivityResults;
 
     public class ActivityOccurrenceResultsList implements ListWrapper {
         // This declaration below of _ActivityOccurrenceResults_obj_class is to force flash compiler to include this class

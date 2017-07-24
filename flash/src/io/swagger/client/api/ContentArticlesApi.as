@@ -272,7 +272,7 @@ if("null" != String(order))
     /*
      * Returns PageResourceArticleResource 
      */
-    public function get_articles (filterCategory: String, filterTagset: String, filterTitle: String, size: Number, page: Number, order: String): String {
+    public function get_articles (filterCategory: String, filterTagset: String, filterTagIntersection: String, filterTagExclusion: String, filterTitle: String, size: Number, page: Number, order: String): String {
         // create path and map variables
         var path: String = "/content/articles".replace(/{format}/g,"xml");
 
@@ -281,6 +281,8 @@ if("null" != String(order))
         var headerParams: Dictionary = new Dictionary();
 
         // verify required params are set
+        if(        // verify required params are set
+        if(        // verify required params are set
         if(        // verify required params are set
         if(        // verify required params are set
         if(        // verify required params are set
@@ -304,13 +306,23 @@ if("null" != String(order))
 ) {
             throw new ApiError(400, "missing required params");
         }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
 
         if("null" != String(filterCategory))
-            queryParams["filterCategory"] = toPathValue(filterCategory);
+            queryParams["filter_category"] = toPathValue(filterCategory);
 if("null" != String(filterTagset))
-            queryParams["filterTagset"] = toPathValue(filterTagset);
+            queryParams["filter_tagset"] = toPathValue(filterTagset);
+if("null" != String(filterTagIntersection))
+            queryParams["filter_tag_intersection"] = toPathValue(filterTagIntersection);
+if("null" != String(filterTagExclusion))
+            queryParams["filter_tag_exclusion"] = toPathValue(filterTagExclusion);
 if("null" != String(filterTitle))
-            queryParams["filterTitle"] = toPathValue(filterTitle);
+            queryParams["filter_title"] = toPathValue(filterTitle);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))

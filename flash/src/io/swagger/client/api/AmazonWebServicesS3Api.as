@@ -50,7 +50,7 @@ public class AmazonWebServicesS3Api extends SwaggerApi {
         if("null" != String(filename))
             queryParams["filename"] = toPathValue(filename);
 if("null" != String(contentType))
-            queryParams["contentType"] = toPathValue(contentType);
+            queryParams["content_type"] = toPathValue(contentType);
 
         
         var token:AsyncToken = getApiInvoker().invokeAPI(path, "GET", queryParams, null, headerParams);

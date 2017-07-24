@@ -373,11 +373,11 @@ if("null" != String(order))
         }
 
         if("null" != String(filterCategory))
-            queryParams["filterCategory"] = toPathValue(filterCategory);
+            queryParams["filter_category"] = toPathValue(filterCategory);
 if("null" != String(filterTagset))
-            queryParams["filterTagset"] = toPathValue(filterTagset);
+            queryParams["filter_tagset"] = toPathValue(filterTagset);
 if("null" != String(filterText))
-            queryParams["filterText"] = toPathValue(filterText);
+            queryParams["filter_text"] = toPathValue(filterText);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))

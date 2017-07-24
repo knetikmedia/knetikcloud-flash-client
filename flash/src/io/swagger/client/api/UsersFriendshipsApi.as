@@ -37,7 +37,7 @@ public class UsersFriendshipsApi extends SwaggerApi {
      */
     public function add_friend (userId: String, id: Number): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/friends/{id}".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
+        var path: String = "/users/{user_id}/friends/{id}".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -71,7 +71,7 @@ public class UsersFriendshipsApi extends SwaggerApi {
      */
     public function get_friends (userId: String, size: Number, page: Number): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/friends".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId));
+        var path: String = "/users/{user_id}/friends".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -113,7 +113,7 @@ if("null" != String(page))
      */
     public function get_invite_token (userId: String): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/invite-token".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId));
+        var path: String = "/users/{user_id}/invite-token".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -143,7 +143,7 @@ if("null" != String(page))
      */
     public function get_invites (userId: String, size: Number, page: Number): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/invites".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId));
+        var path: String = "/users/{user_id}/invites".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -185,7 +185,7 @@ if("null" != String(page))
      */
     public function redeem_friendship_token (userId: String, token: String): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/friends/tokens".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId));
+        var path: String = "/users/{user_id}/friends/tokens".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -219,7 +219,7 @@ if("null" != String(page))
      */
     public function remove_or_decline_friend (userId: String, id: Number): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/friends/{id}".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
+        var path: String = "/users/{user_id}/friends/{id}".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 
         // query params
         var queryParams: Dictionary = new Dictionary();

@@ -10,7 +10,6 @@ import io.swagger.client.model.AddressResource;
 import io.swagger.client.model.InvoiceCreateRequest;
 import io.swagger.client.model.InvoicePaymentStatusRequest;
 import io.swagger.client.model.InvoiceResource;
-import io.swagger.client.model.Object;
 import io.swagger.client.model.PageResourceInvoiceLogEntry;
 import io.swagger.client.model.PageResourceInvoiceResource;
 import io.swagger.client.model.PayBySavedMethodRequest;
@@ -38,6 +37,7 @@ public class InvoicesApi extends SwaggerApi {
         public static const event_get_invoices: String = "get_invoices";
         public static const event_get_payment_statuses: String = "get_payment_statuses";
         public static const event_pay_invoice: String = "pay_invoice";
+        public static const event_set_bundled_invoice_item_fulfillment_status: String = "set_bundled_invoice_item_fulfillment_status";
         public static const event_set_external_ref: String = "set_external_ref";
         public static const event_set_invoice_item_fulfillment_status: String = "set_invoice_item_fulfillment_status";
         public static const event_set_order_notes: String = "set_order_notes";
@@ -176,7 +176,7 @@ if("null" != String(page))
     /*
      * Returns PageResourceInvoiceResource 
      */
-    public function get_invoices (filterUser: Number, filterEmail: String, filterFulfillmentStatus: String, filterPaymentStatus: String, filterItemName: String, filterExternalRef: String, filterCreatedDate: String, filterVendorIds: Object, filterCurrency: String, filterShippingStateName: String, filterShippingCountryName: String, filterShipping: String, filterVendorName: String, filterSku: String, size: Number, page: Number, order: String): String {
+    public function get_invoices (filterUser: Number, filterEmail: String, filterFulfillmentStatus: String, filterPaymentStatus: String, filterItemName: String, filterExternalRef: String, filterCreatedDate: String, filterVendorIds: String, filterCurrency: String, filterShippingStateName: String, filterShippingCountryName: String, filterShipping: String, filterVendorName: String, filterSku: String, size: Number, page: Number, order: String): String {
         // create path and map variables
         var path: String = "/invoices".replace(/{format}/g,"xml");
 
@@ -254,33 +254,33 @@ if("null" != String(page))
         }
 
         if("null" != String(filterUser))
-            queryParams["filterUser"] = toPathValue(filterUser);
+            queryParams["filter_user"] = toPathValue(filterUser);
 if("null" != String(filterEmail))
-            queryParams["filterEmail"] = toPathValue(filterEmail);
+            queryParams["filter_email"] = toPathValue(filterEmail);
 if("null" != String(filterFulfillmentStatus))
-            queryParams["filterFulfillmentStatus"] = toPathValue(filterFulfillmentStatus);
+            queryParams["filter_fulfillment_status"] = toPathValue(filterFulfillmentStatus);
 if("null" != String(filterPaymentStatus))
-            queryParams["filterPaymentStatus"] = toPathValue(filterPaymentStatus);
+            queryParams["filter_payment_status"] = toPathValue(filterPaymentStatus);
 if("null" != String(filterItemName))
-            queryParams["filterItemName"] = toPathValue(filterItemName);
+            queryParams["filter_item_name"] = toPathValue(filterItemName);
 if("null" != String(filterExternalRef))
-            queryParams["filterExternalRef"] = toPathValue(filterExternalRef);
+            queryParams["filter_external_ref"] = toPathValue(filterExternalRef);
 if("null" != String(filterCreatedDate))
-            queryParams["filterCreatedDate"] = toPathValue(filterCreatedDate);
+            queryParams["filter_created_date"] = toPathValue(filterCreatedDate);
 if("null" != String(filterVendorIds))
-            queryParams["filterVendorIds"] = toPathValue(filterVendorIds);
+            queryParams["filter_vendor_ids"] = toPathValue(filterVendorIds);
 if("null" != String(filterCurrency))
-            queryParams["filterCurrency"] = toPathValue(filterCurrency);
+            queryParams["filter_currency"] = toPathValue(filterCurrency);
 if("null" != String(filterShippingStateName))
-            queryParams["filterShippingStateName"] = toPathValue(filterShippingStateName);
+            queryParams["filter_shipping_state_name"] = toPathValue(filterShippingStateName);
 if("null" != String(filterShippingCountryName))
-            queryParams["filterShippingCountryName"] = toPathValue(filterShippingCountryName);
+            queryParams["filter_shipping_country_name"] = toPathValue(filterShippingCountryName);
 if("null" != String(filterShipping))
-            queryParams["filterShipping"] = toPathValue(filterShipping);
+            queryParams["filter_shipping"] = toPathValue(filterShipping);
 if("null" != String(filterVendorName))
-            queryParams["filterVendorName"] = toPathValue(filterVendorName);
+            queryParams["filter_vendor_name"] = toPathValue(filterVendorName);
 if("null" != String(filterSku))
-            queryParams["filterSku"] = toPathValue(filterSku);
+            queryParams["filter_sku"] = toPathValue(filterSku);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))
@@ -355,6 +355,48 @@ if("null" != String(order))
 
         token.requestId = requestId;
         token.completionEventType = "pay_invoice";
+
+        token.returnType = null ;
+        return requestId;
+
+    }
+
+    /*
+     * Returns void 
+     */
+    public function set_bundled_invoice_item_fulfillment_status (id: Number, bundleSku: String, sku: String, status: String): String {
+        // create path and map variables
+        var path: String = "/invoices/{id}/items/{bundleSku}/bundled-skus/{sku}/fulfillment-status".replace(/{format}/g,"xml").replace("{" + "id" + "}", getApiInvoker().escapeString(id)).replace("{" + "bundleSku" + "}", getApiInvoker().escapeString(bundleSku)).replace("{" + "sku" + "}", getApiInvoker().escapeString(sku));
+
+        // query params
+        var queryParams: Dictionary = new Dictionary();
+        var headerParams: Dictionary = new Dictionary();
+
+        // verify required params are set
+        if(        // verify required params are set
+        if(        // verify required params are set
+        if(        // verify required params are set
+        if() {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+
+        
+        
+        var token:AsyncToken = getApiInvoker().invokeAPI(path, "PUT", queryParams, status, headerParams);
+
+        var requestId: String = getUniqueId();
+
+        token.requestId = requestId;
+        token.completionEventType = "set_bundled_invoice_item_fulfillment_status";
 
         token.returnType = null ;
         return requestId;

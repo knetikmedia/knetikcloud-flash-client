@@ -84,7 +84,7 @@ public class BRERuleEngineVariablesApi extends SwaggerApi {
         }
 
         if("null" != String(filterName))
-            queryParams["filterName"] = toPathValue(filterName);
+            queryParams["filter_name"] = toPathValue(filterName);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))

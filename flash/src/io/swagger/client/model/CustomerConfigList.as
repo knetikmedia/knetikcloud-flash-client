@@ -2,6 +2,7 @@ package io.swagger.client.model {
 
 import io.swagger.common.ListWrapper;
 import io.swagger.client.model.DatabaseConfig;
+import io.swagger.client.model.IOConfig;
 import io.swagger.client.model.S3Config;
 
     public class CustomerConfigList implements ListWrapper {

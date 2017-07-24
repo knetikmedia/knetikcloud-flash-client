@@ -201,17 +201,17 @@ public class BRERuleEngineRulesApi extends SwaggerApi {
         }
 
         if("null" != String(filterName))
-            queryParams["filterName"] = toPathValue(filterName);
+            queryParams["filter_name"] = toPathValue(filterName);
 if("null" != String(filterEnabled))
-            queryParams["filterEnabled"] = toPathValue(filterEnabled);
+            queryParams["filter_enabled"] = toPathValue(filterEnabled);
 if("null" != String(filterSystem))
-            queryParams["filterSystem"] = toPathValue(filterSystem);
+            queryParams["filter_system"] = toPathValue(filterSystem);
 if("null" != String(filterTrigger))
-            queryParams["filterTrigger"] = toPathValue(filterTrigger);
+            queryParams["filter_trigger"] = toPathValue(filterTrigger);
 if("null" != String(filterAction))
-            queryParams["filterAction"] = toPathValue(filterAction);
+            queryParams["filter_action"] = toPathValue(filterAction);
 if("null" != String(filterCondition))
-            queryParams["filterCondition"] = toPathValue(filterCondition);
+            queryParams["filter_condition"] = toPathValue(filterCondition);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))

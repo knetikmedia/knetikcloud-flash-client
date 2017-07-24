@@ -4,8 +4,8 @@ import io.swagger.client.model.ActivityEntitlementResource;
 import io.swagger.client.model.ActivityUserResource;
 import io.swagger.client.model.SelectedSettingResource;
 
-    [XmlRootNode(name="AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings")]
-    public class AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings {
+    [XmlRootNode(name="ActivityOccurrenceResource")]
+    public class ActivityOccurrenceResource {
         /* The id of the activity */
         [XmlElement(name="activity_id")]
         public var activityId: Number = 0;
@@ -53,7 +53,7 @@ import io.swagger.client.model.SelectedSettingResource;
                 public var users: Array = new Array();
 
     public function toString(): String {
-        var str: String = "AOccurrenceOfAnActivityTheActualGameForExampleUsedToTrackScoresParticipantsAndProvideSettings: ";
+        var str: String = "ActivityOccurrenceResource: ";
         str += " (activityId: " + activityId + ")";
         str += " (challengeActivityId: " + challengeActivityId + ")";
         str += " (createdDate: " + createdDate + ")";

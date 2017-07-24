@@ -185,7 +185,7 @@ public class GamificationLevelingApi extends SwaggerApi {
         }
 
         if("null" != String(filterName))
-            queryParams["filterName"] = toPathValue(filterName);
+            queryParams["filter_name"] = toPathValue(filterName);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))
@@ -211,7 +211,7 @@ if("null" != String(order))
      */
     public function get_user_level (userId: Number, name: String): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/leveling/{name}".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId)).replace("{" + "name" + "}", getApiInvoker().escapeString(name));
+        var path: String = "/users/{user_id}/leveling/{name}".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "name" + "}", getApiInvoker().escapeString(name));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -245,7 +245,7 @@ if("null" != String(order))
      */
     public function get_user_levels (userId: Number, filterName: String, size: Number, page: Number, order: String): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/leveling".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId));
+        var path: String = "/users/{user_id}/leveling".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -273,7 +273,7 @@ if("null" != String(order))
         }
 
         if("null" != String(filterName))
-            queryParams["filterName"] = toPathValue(filterName);
+            queryParams["filter_name"] = toPathValue(filterName);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))
@@ -299,7 +299,7 @@ if("null" != String(order))
      */
     public function increment_progress (userId: Number, name: String, progress: Number): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/leveling/{name}/progress".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId)).replace("{" + "name" + "}", getApiInvoker().escapeString(name));
+        var path: String = "/users/{user_id}/leveling/{name}/progress".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "name" + "}", getApiInvoker().escapeString(name));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -337,7 +337,7 @@ if("null" != String(order))
      */
     public function set_progress (userId: Number, name: String, progress: Number): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/leveling/{name}/progress".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId)).replace("{" + "name" + "}", getApiInvoker().escapeString(name));
+        var path: String = "/users/{user_id}/leveling/{name}/progress".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "name" + "}", getApiInvoker().escapeString(name));
 
         // query params
         var queryParams: Dictionary = new Dictionary();

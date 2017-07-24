@@ -69,7 +69,7 @@ public class GamificationTriviaApi extends SwaggerApi {
      */
     public function add_question_answers (questionId: String, answer: AnswerResource): String {
         // create path and map variables
-        var path: String = "/trivia/questions/{question_id}/answers".replace(/{format}/g,"xml").replace("{" + "questionId" + "}", getApiInvoker().escapeString(questionId));
+        var path: String = "/trivia/questions/{question_id}/answers".replace(/{format}/g,"xml").replace("{" + "question_id" + "}", getApiInvoker().escapeString(questionId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -181,21 +181,21 @@ public class GamificationTriviaApi extends SwaggerApi {
         }
 
         if("null" != String(filterSearch))
-            queryParams["filterSearch"] = toPathValue(filterSearch);
+            queryParams["filter_search"] = toPathValue(filterSearch);
 if("null" != String(filterIdset))
-            queryParams["filterIdset"] = toPathValue(filterIdset);
+            queryParams["filter_idset"] = toPathValue(filterIdset);
 if("null" != String(filterCategory))
-            queryParams["filterCategory"] = toPathValue(filterCategory);
+            queryParams["filter_category"] = toPathValue(filterCategory);
 if("null" != String(filterTag))
-            queryParams["filterTag"] = toPathValue(filterTag);
+            queryParams["filter_tag"] = toPathValue(filterTag);
 if("null" != String(filterTagset))
-            queryParams["filterTagset"] = toPathValue(filterTagset);
+            queryParams["filter_tagset"] = toPathValue(filterTagset);
 if("null" != String(filterType))
-            queryParams["filterType"] = toPathValue(filterType);
+            queryParams["filter_type"] = toPathValue(filterType);
 if("null" != String(filterPublished))
-            queryParams["filterPublished"] = toPathValue(filterPublished);
+            queryParams["filter_published"] = toPathValue(filterPublished);
 if("null" != String(filterImportId))
-            queryParams["filterImportId"] = toPathValue(filterImportId);
+            queryParams["filter_import_id"] = toPathValue(filterImportId);
 
         
         var token:AsyncToken = getApiInvoker().invokeAPI(path, "POST", queryParams, tag, headerParams);
@@ -365,7 +365,7 @@ if("null" != String(filterImportId))
      */
     public function delete_question_answers (questionId: String, id: String): String {
         // create path and map variables
-        var path: String = "/trivia/questions/{question_id}/answers/{id}".replace(/{format}/g,"xml").replace("{" + "questionId" + "}", getApiInvoker().escapeString(questionId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
+        var path: String = "/trivia/questions/{question_id}/answers/{id}".replace(/{format}/g,"xml").replace("{" + "question_id" + "}", getApiInvoker().escapeString(questionId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -501,13 +501,13 @@ if("null" != String(filterImportId))
         }
 
         if("null" != String(filterVendor))
-            queryParams["filterVendor"] = toPathValue(filterVendor);
+            queryParams["filter_vendor"] = toPathValue(filterVendor);
 if("null" != String(filterCategory))
-            queryParams["filterCategory"] = toPathValue(filterCategory);
+            queryParams["filter_category"] = toPathValue(filterCategory);
 if("null" != String(filterName))
-            queryParams["filterName"] = toPathValue(filterName);
+            queryParams["filter_name"] = toPathValue(filterName);
 if("null" != String(filterStatus))
-            queryParams["filterStatus"] = toPathValue(filterStatus);
+            queryParams["filter_status"] = toPathValue(filterStatus);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))
@@ -563,7 +563,7 @@ if("null" != String(order))
      */
     public function get_question_answer (questionId: String, id: String): String {
         // create path and map variables
-        var path: String = "/trivia/questions/{question_id}/answers/{id}".replace(/{format}/g,"xml").replace("{" + "questionId" + "}", getApiInvoker().escapeString(questionId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
+        var path: String = "/trivia/questions/{question_id}/answers/{id}".replace(/{format}/g,"xml").replace("{" + "question_id" + "}", getApiInvoker().escapeString(questionId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -597,7 +597,7 @@ if("null" != String(order))
      */
     public function get_question_answers (questionId: String): String {
         // create path and map variables
-        var path: String = "/trivia/questions/{question_id}/answers".replace(/{format}/g,"xml").replace("{" + "questionId" + "}", getApiInvoker().escapeString(questionId));
+        var path: String = "/trivia/questions/{question_id}/answers".replace(/{format}/g,"xml").replace("{" + "question_id" + "}", getApiInvoker().escapeString(questionId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -821,21 +821,21 @@ if("null" != String(page))
 if("null" != String(order))
             queryParams["order"] = toPathValue(order);
 if("null" != String(filterSearch))
-            queryParams["filterSearch"] = toPathValue(filterSearch);
+            queryParams["filter_search"] = toPathValue(filterSearch);
 if("null" != String(filterIdset))
-            queryParams["filterIdset"] = toPathValue(filterIdset);
+            queryParams["filter_idset"] = toPathValue(filterIdset);
 if("null" != String(filterCategory))
-            queryParams["filterCategory"] = toPathValue(filterCategory);
+            queryParams["filter_category"] = toPathValue(filterCategory);
 if("null" != String(filterTagset))
-            queryParams["filterTagset"] = toPathValue(filterTagset);
+            queryParams["filter_tagset"] = toPathValue(filterTagset);
 if("null" != String(filterTag))
-            queryParams["filterTag"] = toPathValue(filterTag);
+            queryParams["filter_tag"] = toPathValue(filterTag);
 if("null" != String(filterType))
-            queryParams["filterType"] = toPathValue(filterType);
+            queryParams["filter_type"] = toPathValue(filterType);
 if("null" != String(filterPublished))
-            queryParams["filterPublished"] = toPathValue(filterPublished);
+            queryParams["filter_published"] = toPathValue(filterPublished);
 if("null" != String(filterImportId))
-            queryParams["filterImportId"] = toPathValue(filterImportId);
+            queryParams["filter_import_id"] = toPathValue(filterImportId);
 
         
         var token:AsyncToken = getApiInvoker().invokeAPI(path, "GET", queryParams, null, headerParams);
@@ -891,19 +891,19 @@ if("null" != String(filterImportId))
         }
 
         if("null" != String(filterSearch))
-            queryParams["filterSearch"] = toPathValue(filterSearch);
+            queryParams["filter_search"] = toPathValue(filterSearch);
 if("null" != String(filterIdset))
-            queryParams["filterIdset"] = toPathValue(filterIdset);
+            queryParams["filter_idset"] = toPathValue(filterIdset);
 if("null" != String(filterCategory))
-            queryParams["filterCategory"] = toPathValue(filterCategory);
+            queryParams["filter_category"] = toPathValue(filterCategory);
 if("null" != String(filterTag))
-            queryParams["filterTag"] = toPathValue(filterTag);
+            queryParams["filter_tag"] = toPathValue(filterTag);
 if("null" != String(filterTagset))
-            queryParams["filterTagset"] = toPathValue(filterTagset);
+            queryParams["filter_tagset"] = toPathValue(filterTagset);
 if("null" != String(filterType))
-            queryParams["filterType"] = toPathValue(filterType);
+            queryParams["filter_type"] = toPathValue(filterType);
 if("null" != String(filterPublished))
-            queryParams["filterPublished"] = toPathValue(filterPublished);
+            queryParams["filter_published"] = toPathValue(filterPublished);
 
         
         var token:AsyncToken = getApiInvoker().invokeAPI(path, "GET", queryParams, null, headerParams);
@@ -939,7 +939,7 @@ if("null" != String(filterPublished))
         }
 
         if("null" != String(publishNow))
-            queryParams["publishNow"] = toPathValue(publishNow);
+            queryParams["publish_now"] = toPathValue(publishNow);
 
         
         var token:AsyncToken = getApiInvoker().invokeAPI(path, "POST", queryParams, null, headerParams);
@@ -1037,21 +1037,21 @@ if("null" != String(filterPublished))
         }
 
         if("null" != String(filterSearch))
-            queryParams["filterSearch"] = toPathValue(filterSearch);
+            queryParams["filter_search"] = toPathValue(filterSearch);
 if("null" != String(filterIdset))
-            queryParams["filterIdset"] = toPathValue(filterIdset);
+            queryParams["filter_idset"] = toPathValue(filterIdset);
 if("null" != String(filterCategory))
-            queryParams["filterCategory"] = toPathValue(filterCategory);
+            queryParams["filter_category"] = toPathValue(filterCategory);
 if("null" != String(filterTag))
-            queryParams["filterTag"] = toPathValue(filterTag);
+            queryParams["filter_tag"] = toPathValue(filterTag);
 if("null" != String(filterTagset))
-            queryParams["filterTagset"] = toPathValue(filterTagset);
+            queryParams["filter_tagset"] = toPathValue(filterTagset);
 if("null" != String(filterType))
-            queryParams["filterType"] = toPathValue(filterType);
+            queryParams["filter_type"] = toPathValue(filterType);
 if("null" != String(filterPublished))
-            queryParams["filterPublished"] = toPathValue(filterPublished);
+            queryParams["filter_published"] = toPathValue(filterPublished);
 if("null" != String(filterImportId))
-            queryParams["filterImportId"] = toPathValue(filterImportId);
+            queryParams["filter_import_id"] = toPathValue(filterImportId);
 
         
         var token:AsyncToken = getApiInvoker().invokeAPI(path, "DELETE", queryParams, null, headerParams);
@@ -1091,11 +1091,11 @@ if("null" != String(filterImportId))
         }
 
         if("null" != String(filterSearch))
-            queryParams["filterSearch"] = toPathValue(filterSearch);
+            queryParams["filter_search"] = toPathValue(filterSearch);
 if("null" != String(filterCategory))
-            queryParams["filterCategory"] = toPathValue(filterCategory);
+            queryParams["filter_category"] = toPathValue(filterCategory);
 if("null" != String(filterImportId))
-            queryParams["filterImportId"] = toPathValue(filterImportId);
+            queryParams["filter_import_id"] = toPathValue(filterImportId);
 
         
         var token:AsyncToken = getApiInvoker().invokeAPI(path, "GET", queryParams, null, headerParams);
@@ -1183,7 +1183,7 @@ if("null" != String(filterImportId))
      */
     public function update_question_answer (questionId: String, id: String, answer: AnswerResource): String {
         // create path and map variables
-        var path: String = "/trivia/questions/{question_id}/answers/{id}".replace(/{format}/g,"xml").replace("{" + "questionId" + "}", getApiInvoker().escapeString(questionId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
+        var path: String = "/trivia/questions/{question_id}/answers/{id}".replace(/{format}/g,"xml").replace("{" + "question_id" + "}", getApiInvoker().escapeString(questionId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -1295,19 +1295,19 @@ if("null" != String(filterImportId))
         }
 
         if("null" != String(filterSearch))
-            queryParams["filterSearch"] = toPathValue(filterSearch);
+            queryParams["filter_search"] = toPathValue(filterSearch);
 if("null" != String(filterIdset))
-            queryParams["filterIdset"] = toPathValue(filterIdset);
+            queryParams["filter_idset"] = toPathValue(filterIdset);
 if("null" != String(filterCategory))
-            queryParams["filterCategory"] = toPathValue(filterCategory);
+            queryParams["filter_category"] = toPathValue(filterCategory);
 if("null" != String(filterTagset))
-            queryParams["filterTagset"] = toPathValue(filterTagset);
+            queryParams["filter_tagset"] = toPathValue(filterTagset);
 if("null" != String(filterType))
-            queryParams["filterType"] = toPathValue(filterType);
+            queryParams["filter_type"] = toPathValue(filterType);
 if("null" != String(filterPublished))
-            queryParams["filterPublished"] = toPathValue(filterPublished);
+            queryParams["filter_published"] = toPathValue(filterPublished);
 if("null" != String(filterImportId))
-            queryParams["filterImportId"] = toPathValue(filterImportId);
+            queryParams["filter_import_id"] = toPathValue(filterImportId);
 
         
         var token:AsyncToken = getApiInvoker().invokeAPI(path, "PUT", queryParams, question, headerParams);

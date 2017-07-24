@@ -89,9 +89,9 @@ public class MediaModerationApi extends SwaggerApi {
         }
 
         if("null" != String(excludeResolved))
-            queryParams["excludeResolved"] = toPathValue(excludeResolved);
+            queryParams["exclude_resolved"] = toPathValue(excludeResolved);
 if("null" != String(filterContext))
-            queryParams["filterContext"] = toPathValue(filterContext);
+            queryParams["filter_context"] = toPathValue(filterContext);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))

@@ -6,10 +6,10 @@ import io.swagger.exception.ApiError;
 import io.swagger.common.ApiUserCredentials;
 import io.swagger.event.Response;
 import io.swagger.common.SwaggerApi;
-import io.swagger.client.model.ARequestToResetAUsersPasswordByUsingAKnownUserProperty;
 import io.swagger.client.model.NewPasswordRequest;
 import io.swagger.client.model.PageResourceTemplateResource;
 import io.swagger.client.model.PageResourceUserBaseResource;
+import io.swagger.client.model.PasswordResetRequest;
 import io.swagger.client.model.Result;
 import io.swagger.client.model.TemplateResource;
 import io.swagger.client.model.UserResource;
@@ -52,7 +52,7 @@ public class UsersApi extends SwaggerApi {
      */
     public function add_user_tag (userId: Number, tag: String): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/tags".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId));
+        var path: String = "/users/{user_id}/tags".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -182,7 +182,7 @@ public class UsersApi extends SwaggerApi {
      */
     public function get_user_tags (userId: Number): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/tags".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId));
+        var path: String = "/users/{user_id}/tags".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -346,25 +346,25 @@ if("null" != String(order))
         }
 
         if("null" != String(filterDisplayname))
-            queryParams["filterDisplayname"] = toPathValue(filterDisplayname);
+            queryParams["filter_displayname"] = toPathValue(filterDisplayname);
 if("null" != String(filterEmail))
-            queryParams["filterEmail"] = toPathValue(filterEmail);
+            queryParams["filter_email"] = toPathValue(filterEmail);
 if("null" != String(filterFirstname))
-            queryParams["filterFirstname"] = toPathValue(filterFirstname);
+            queryParams["filter_firstname"] = toPathValue(filterFirstname);
 if("null" != String(filterFullname))
-            queryParams["filterFullname"] = toPathValue(filterFullname);
+            queryParams["filter_fullname"] = toPathValue(filterFullname);
 if("null" != String(filterLastname))
-            queryParams["filterLastname"] = toPathValue(filterLastname);
+            queryParams["filter_lastname"] = toPathValue(filterLastname);
 if("null" != String(filterUsername))
-            queryParams["filterUsername"] = toPathValue(filterUsername);
+            queryParams["filter_username"] = toPathValue(filterUsername);
 if("null" != String(filterTag))
-            queryParams["filterTag"] = toPathValue(filterTag);
+            queryParams["filter_tag"] = toPathValue(filterTag);
 if("null" != String(filterGroup))
-            queryParams["filterGroup"] = toPathValue(filterGroup);
+            queryParams["filter_group"] = toPathValue(filterGroup);
 if("null" != String(filterRole))
-            queryParams["filterRole"] = toPathValue(filterRole);
+            queryParams["filter_role"] = toPathValue(filterRole);
 if("null" != String(filterSearch))
-            queryParams["filterSearch"] = toPathValue(filterSearch);
+            queryParams["filter_search"] = toPathValue(filterSearch);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))
@@ -454,7 +454,7 @@ if("null" != String(order))
      */
     public function remove_user_tag (userId: Number, tag: String): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/tags/{tag}".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId)).replace("{" + "tag" + "}", getApiInvoker().escapeString(tag));
+        var path: String = "/users/{user_id}/tags/{tag}".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "tag" + "}", getApiInvoker().escapeString(tag));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -550,7 +550,7 @@ if("null" != String(order))
     /*
      * Returns void 
      */
-    public function submit_password_reset (passwordReset: ARequestToResetAUsersPasswordByUsingAKnownUserProperty): String {
+    public function submit_password_reset (passwordReset: PasswordResetRequest): String {
         // create path and map variables
         var path: String = "/users/password-reset".replace(/{format}/g,"xml");
 

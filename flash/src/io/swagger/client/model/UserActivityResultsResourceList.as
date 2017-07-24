@@ -1,9 +1,6 @@
 package io.swagger.client.model {
 
 import io.swagger.common.ListWrapper;
-import io.swagger.client.model.RewardCurrencyResource;
-import io.swagger.client.model.RewardItemResource;
-import io.swagger.client.model.SimpleUserResource;
 
     public class UserActivityResultsResourceList implements ListWrapper {
         // This declaration below of _UserActivityResultsResource_obj_class is to force flash compiler to include this class

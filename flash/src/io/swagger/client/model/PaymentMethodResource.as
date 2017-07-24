@@ -21,16 +21,13 @@ import io.swagger.client.model.PaymentMethodTypeResource;
         /* The expiration year for the payment method. Typically used for credit card payment methods */
         [XmlElement(name="expiration_year")]
         public var expirationYear: Number = 0;
-        /* The unique ID for that resource */
+        /* The unique ID of the resource */
         [XmlElement(name="id")]
         public var id: Number = 0;
         /* The last 4 digits of the account number for the payment method. Typically used for credit card payment methods */
         [XmlElement(name="last4")]
         public var last4: String = null;
-        /* The user friendly name of that resource. Defaults to blank string */
-        [XmlElement(name="long_description")]
-        public var longDescription: String = null;
-        /* The user friendly name of that resource */
+        /* The user friendly name of the resource */
         [XmlElement(name="name")]
         public var name: String = null;
         /* The type of payment method. Must be a pre-existing value */
@@ -39,9 +36,6 @@ import io.swagger.client.model.PaymentMethodTypeResource;
         /* The generic payment type. Default is card */
         [XmlElement(name="payment_type")]
         public var paymentType: String = null;
-        /* The user friendly name of that resource. Defaults to blank string */
-        [XmlElement(name="short_description")]
-        public var shortDescription: String = null;
         /* The sort value for the payment method */
         [XmlElement(name="sort")]
         public var sort: Number = 0;
@@ -70,11 +64,9 @@ import io.swagger.client.model.PaymentMethodTypeResource;
         str += " (expirationYear: " + expirationYear + ")";
         str += " (id: " + id + ")";
         str += " (last4: " + last4 + ")";
-        str += " (longDescription: " + longDescription + ")";
         str += " (name: " + name + ")";
         str += " (paymentMethodType: " + paymentMethodType + ")";
         str += " (paymentType: " + paymentType + ")";
-        str += " (shortDescription: " + shortDescription + ")";
         str += " (sort: " + sort + ")";
         str += " (token: " + token + ")";
         str += " (uniqueKey: " + uniqueKey + ")";

@@ -125,9 +125,9 @@ public class CurrenciesApi extends SwaggerApi {
         }
 
         if("null" != String(filterEnabledCurrencies))
-            queryParams["filterEnabledCurrencies"] = toPathValue(filterEnabledCurrencies);
+            queryParams["filter_enabled_currencies"] = toPathValue(filterEnabledCurrencies);
 if("null" != String(filterType))
-            queryParams["filterType"] = toPathValue(filterType);
+            queryParams["filter_type"] = toPathValue(filterType);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))

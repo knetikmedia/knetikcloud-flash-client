@@ -75,7 +75,7 @@ public class TaxesApi extends SwaggerApi {
      */
     public function create_state_tax (countryCodeIso3: String, taxResource: StateTaxResource): String {
         // create path and map variables
-        var path: String = "/tax/countries/{country_code_iso3}/states".replace(/{format}/g,"xml").replace("{" + "countryCodeIso3" + "}", getApiInvoker().escapeString(countryCodeIso3));
+        var path: String = "/tax/countries/{country_code_iso3}/states".replace(/{format}/g,"xml").replace("{" + "country_code_iso3" + "}", getApiInvoker().escapeString(countryCodeIso3));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -109,7 +109,7 @@ public class TaxesApi extends SwaggerApi {
      */
     public function delete_country_tax (countryCodeIso3: String): String {
         // create path and map variables
-        var path: String = "/tax/countries/{country_code_iso3}".replace(/{format}/g,"xml").replace("{" + "countryCodeIso3" + "}", getApiInvoker().escapeString(countryCodeIso3));
+        var path: String = "/tax/countries/{country_code_iso3}".replace(/{format}/g,"xml").replace("{" + "country_code_iso3" + "}", getApiInvoker().escapeString(countryCodeIso3));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -139,7 +139,7 @@ public class TaxesApi extends SwaggerApi {
      */
     public function delete_state_tax (countryCodeIso3: String, stateCode: String): String {
         // create path and map variables
-        var path: String = "/tax/countries/{country_code_iso3}/states/{state_code}".replace(/{format}/g,"xml").replace("{" + "countryCodeIso3" + "}", getApiInvoker().escapeString(countryCodeIso3)).replace("{" + "stateCode" + "}", getApiInvoker().escapeString(stateCode));
+        var path: String = "/tax/countries/{country_code_iso3}/states/{state_code}".replace(/{format}/g,"xml").replace("{" + "country_code_iso3" + "}", getApiInvoker().escapeString(countryCodeIso3)).replace("{" + "state_code" + "}", getApiInvoker().escapeString(stateCode));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -173,7 +173,7 @@ public class TaxesApi extends SwaggerApi {
      */
     public function get_country_tax (countryCodeIso3: String): String {
         // create path and map variables
-        var path: String = "/tax/countries/{country_code_iso3}".replace(/{format}/g,"xml").replace("{" + "countryCodeIso3" + "}", getApiInvoker().escapeString(countryCodeIso3));
+        var path: String = "/tax/countries/{country_code_iso3}".replace(/{format}/g,"xml").replace("{" + "country_code_iso3" + "}", getApiInvoker().escapeString(countryCodeIso3));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -247,7 +247,7 @@ if("null" != String(order))
      */
     public function get_state_tax (countryCodeIso3: String, stateCode: String): String {
         // create path and map variables
-        var path: String = "/tax/countries/{country_code_iso3}/states/{state_code}".replace(/{format}/g,"xml").replace("{" + "countryCodeIso3" + "}", getApiInvoker().escapeString(countryCodeIso3)).replace("{" + "stateCode" + "}", getApiInvoker().escapeString(stateCode));
+        var path: String = "/tax/countries/{country_code_iso3}/states/{state_code}".replace(/{format}/g,"xml").replace("{" + "country_code_iso3" + "}", getApiInvoker().escapeString(countryCodeIso3)).replace("{" + "state_code" + "}", getApiInvoker().escapeString(stateCode));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -325,7 +325,7 @@ if("null" != String(order))
      */
     public function get_state_taxes_for_country (countryCodeIso3: String, size: Number, page: Number, order: String): String {
         // create path and map variables
-        var path: String = "/tax/countries/{country_code_iso3}/states".replace(/{format}/g,"xml").replace("{" + "countryCodeIso3" + "}", getApiInvoker().escapeString(countryCodeIso3));
+        var path: String = "/tax/countries/{country_code_iso3}/states".replace(/{format}/g,"xml").replace("{" + "country_code_iso3" + "}", getApiInvoker().escapeString(countryCodeIso3));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -373,7 +373,7 @@ if("null" != String(order))
      */
     public function update_country_tax (countryCodeIso3: String, taxResource: CountryTaxResource): String {
         // create path and map variables
-        var path: String = "/tax/countries/{country_code_iso3}".replace(/{format}/g,"xml").replace("{" + "countryCodeIso3" + "}", getApiInvoker().escapeString(countryCodeIso3));
+        var path: String = "/tax/countries/{country_code_iso3}".replace(/{format}/g,"xml").replace("{" + "country_code_iso3" + "}", getApiInvoker().escapeString(countryCodeIso3));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -407,7 +407,7 @@ if("null" != String(order))
      */
     public function update_state_tax (countryCodeIso3: String, stateCode: String, taxResource: StateTaxResource): String {
         // create path and map variables
-        var path: String = "/tax/countries/{country_code_iso3}/states/{state_code}".replace(/{format}/g,"xml").replace("{" + "countryCodeIso3" + "}", getApiInvoker().escapeString(countryCodeIso3)).replace("{" + "stateCode" + "}", getApiInvoker().escapeString(stateCode));
+        var path: String = "/tax/countries/{country_code_iso3}/states/{state_code}".replace(/{format}/g,"xml").replace("{" + "country_code_iso3" + "}", getApiInvoker().escapeString(countryCodeIso3)).replace("{" + "state_code" + "}", getApiInvoker().escapeString(stateCode));
 
         // query params
         var queryParams: Dictionary = new Dictionary();

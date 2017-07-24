@@ -1,7 +1,7 @@
 package io.swagger.client.model {
 
 import io.swagger.client.model.Behavior;
-import io.swagger.client.model.PropertyDefinitionResource;
+import io.swagger.client.model.PropertyFieldResource;
 
     [XmlRootNode(name="BehaviorDefinitionResource")]
     public class BehaviorDefinitionResource {

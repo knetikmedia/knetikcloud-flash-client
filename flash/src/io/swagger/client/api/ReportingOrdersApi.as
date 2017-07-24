@@ -32,7 +32,7 @@ public class ReportingOrdersApi extends SwaggerApi {
      */
     public function get_invoice_reports (currencyCode: String, granularity: String, filterPaymentStatus: String, filterFulfillmentStatus: String, startDate: Number, endDate: Number, size: Number, page: Number): String {
         // create path and map variables
-        var path: String = "/reporting/orders/count/{currency_code}".replace(/{format}/g,"xml").replace("{" + "currencyCode" + "}", getApiInvoker().escapeString(currencyCode));
+        var path: String = "/reporting/orders/count/{currency_code}".replace(/{format}/g,"xml").replace("{" + "currency_code" + "}", getApiInvoker().escapeString(currencyCode));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -74,13 +74,13 @@ public class ReportingOrdersApi extends SwaggerApi {
         if("null" != String(granularity))
             queryParams["granularity"] = toPathValue(granularity);
 if("null" != String(filterPaymentStatus))
-            queryParams["filterPaymentStatus"] = toPathValue(filterPaymentStatus);
+            queryParams["filter_payment_status"] = toPathValue(filterPaymentStatus);
 if("null" != String(filterFulfillmentStatus))
-            queryParams["filterFulfillmentStatus"] = toPathValue(filterFulfillmentStatus);
+            queryParams["filter_fulfillment_status"] = toPathValue(filterFulfillmentStatus);
 if("null" != String(startDate))
-            queryParams["startDate"] = toPathValue(startDate);
+            queryParams["start_date"] = toPathValue(startDate);
 if("null" != String(endDate))
-            queryParams["endDate"] = toPathValue(endDate);
+            queryParams["end_date"] = toPathValue(endDate);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))

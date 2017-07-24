@@ -200,9 +200,9 @@ public class CategoriesApi extends SwaggerApi {
         }
 
         if("null" != String(filterSearch))
-            queryParams["filterSearch"] = toPathValue(filterSearch);
+            queryParams["filter_search"] = toPathValue(filterSearch);
 if("null" != String(filterActive))
-            queryParams["filterActive"] = toPathValue(filterActive);
+            queryParams["filter_active"] = toPathValue(filterActive);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))

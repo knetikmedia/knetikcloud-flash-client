@@ -10,7 +10,6 @@ import io.swagger.client.model.CommentResource;
 import io.swagger.client.model.ContributionResource;
 import io.swagger.client.model.DispositionResource;
 import io.swagger.client.model.FlagResource;
-import io.swagger.client.model.Object;
 import io.swagger.client.model.PageResourceCommentResource;
 import io.swagger.client.model.PageResourceDispositionResource;
 import io.swagger.client.model.PageResourceVideoRelationshipResource;
@@ -129,7 +128,7 @@ public class MediaVideosApi extends SwaggerApi {
      */
     public function add_video_comment (videoId: Number, commentResource: CommentResource): String {
         // create path and map variables
-        var path: String = "/media/videos/{video_id}/comments".replace(/{format}/g,"xml").replace("{" + "videoId" + "}", getApiInvoker().escapeString(videoId));
+        var path: String = "/media/videos/{video_id}/comments".replace(/{format}/g,"xml").replace("{" + "video_id" + "}", getApiInvoker().escapeString(videoId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -163,7 +162,7 @@ public class MediaVideosApi extends SwaggerApi {
      */
     public function add_video_contributor (videoId: Number, contributionResource: ContributionResource): String {
         // create path and map variables
-        var path: String = "/media/videos/{video_id}/contributors".replace(/{format}/g,"xml").replace("{" + "videoId" + "}", getApiInvoker().escapeString(videoId));
+        var path: String = "/media/videos/{video_id}/contributors".replace(/{format}/g,"xml").replace("{" + "video_id" + "}", getApiInvoker().escapeString(videoId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -197,7 +196,7 @@ public class MediaVideosApi extends SwaggerApi {
      */
     public function add_video_flag (videoId: Number, reason: String): String {
         // create path and map variables
-        var path: String = "/media/videos/{video_id}/moderation".replace(/{format}/g,"xml").replace("{" + "videoId" + "}", getApiInvoker().escapeString(videoId));
+        var path: String = "/media/videos/{video_id}/moderation".replace(/{format}/g,"xml").replace("{" + "video_id" + "}", getApiInvoker().escapeString(videoId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -231,7 +230,7 @@ public class MediaVideosApi extends SwaggerApi {
      */
     public function add_video_relationships (videoId: Number, videoRelationshipResource: VideoRelationshipResource): String {
         // create path and map variables
-        var path: String = "/media/videos/{video_id}/related".replace(/{format}/g,"xml").replace("{" + "videoId" + "}", getApiInvoker().escapeString(videoId));
+        var path: String = "/media/videos/{video_id}/related".replace(/{format}/g,"xml").replace("{" + "video_id" + "}", getApiInvoker().escapeString(videoId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -265,7 +264,7 @@ public class MediaVideosApi extends SwaggerApi {
      */
     public function create_video_disposition (videoId: Number, dispositionResource: DispositionResource): String {
         // create path and map variables
-        var path: String = "/media/videos/{video_id}/dispositions".replace(/{format}/g,"xml").replace("{" + "videoId" + "}", getApiInvoker().escapeString(videoId));
+        var path: String = "/media/videos/{video_id}/dispositions".replace(/{format}/g,"xml").replace("{" + "video_id" + "}", getApiInvoker().escapeString(videoId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -329,7 +328,7 @@ public class MediaVideosApi extends SwaggerApi {
      */
     public function delete_video_comment (videoId: Number, id: Number): String {
         // create path and map variables
-        var path: String = "/media/videos/{video_id}/comments/{id}".replace(/{format}/g,"xml").replace("{" + "videoId" + "}", getApiInvoker().escapeString(videoId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
+        var path: String = "/media/videos/{video_id}/comments/{id}".replace(/{format}/g,"xml").replace("{" + "video_id" + "}", getApiInvoker().escapeString(videoId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -363,7 +362,7 @@ public class MediaVideosApi extends SwaggerApi {
      */
     public function delete_video_disposition (dispositionId: Number): String {
         // create path and map variables
-        var path: String = "/media/videos/{video_id}/dispositions/{disposition_id}".replace(/{format}/g,"xml").replace("{" + "dispositionId" + "}", getApiInvoker().escapeString(dispositionId));
+        var path: String = "/media/videos/{video_id}/dispositions/{disposition_id}".replace(/{format}/g,"xml").replace("{" + "disposition_id" + "}", getApiInvoker().escapeString(dispositionId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -393,7 +392,7 @@ public class MediaVideosApi extends SwaggerApi {
      */
     public function delete_video_flag (videoId: Number): String {
         // create path and map variables
-        var path: String = "/media/videos/{video_id}/moderation".replace(/{format}/g,"xml").replace("{" + "videoId" + "}", getApiInvoker().escapeString(videoId));
+        var path: String = "/media/videos/{video_id}/moderation".replace(/{format}/g,"xml").replace("{" + "video_id" + "}", getApiInvoker().escapeString(videoId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -423,7 +422,7 @@ public class MediaVideosApi extends SwaggerApi {
      */
     public function delete_video_relationship (videoId: Number, id: Number): String {
         // create path and map variables
-        var path: String = "/media/videos/{video_id}/related/{id}".replace(/{format}/g,"xml").replace("{" + "videoId" + "}", getApiInvoker().escapeString(videoId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
+        var path: String = "/media/videos/{video_id}/related/{id}".replace(/{format}/g,"xml").replace("{" + "video_id" + "}", getApiInvoker().escapeString(videoId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -457,7 +456,7 @@ public class MediaVideosApi extends SwaggerApi {
      */
     public function get_user_videos (userId: Number, excludeFlagged: Boolean, size: Number, page: Number): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/videos".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId));
+        var path: String = "/users/{user_id}/videos".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -481,7 +480,7 @@ public class MediaVideosApi extends SwaggerApi {
         }
 
         if("null" != String(excludeFlagged))
-            queryParams["excludeFlagged"] = toPathValue(excludeFlagged);
+            queryParams["exclude_flagged"] = toPathValue(excludeFlagged);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))
@@ -535,7 +534,7 @@ if("null" != String(page))
      */
     public function get_video_comments (videoId: Number, size: Number, page: Number): String {
         // create path and map variables
-        var path: String = "/media/videos/{video_id}/comments".replace(/{format}/g,"xml").replace("{" + "videoId" + "}", getApiInvoker().escapeString(videoId));
+        var path: String = "/media/videos/{video_id}/comments".replace(/{format}/g,"xml").replace("{" + "video_id" + "}", getApiInvoker().escapeString(videoId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -577,7 +576,7 @@ if("null" != String(page))
      */
     public function get_video_dispositions (videoId: Number, size: Number, page: Number): String {
         // create path and map variables
-        var path: String = "/media/videos/{video_id}/dispositions".replace(/{format}/g,"xml").replace("{" + "videoId" + "}", getApiInvoker().escapeString(videoId));
+        var path: String = "/media/videos/{video_id}/dispositions".replace(/{format}/g,"xml").replace("{" + "video_id" + "}", getApiInvoker().escapeString(videoId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -619,7 +618,7 @@ if("null" != String(page))
      */
     public function get_video_relationships (videoId: Number, size: Number, page: Number): String {
         // create path and map variables
-        var path: String = "/media/videos/{video_id}/related".replace(/{format}/g,"xml").replace("{" + "videoId" + "}", getApiInvoker().escapeString(videoId));
+        var path: String = "/media/videos/{video_id}/related".replace(/{format}/g,"xml").replace("{" + "video_id" + "}", getApiInvoker().escapeString(videoId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -659,7 +658,7 @@ if("null" != String(page))
     /*
      * Returns PageResourceVideoResource 
      */
-    public function get_videos (excludeFlagged: Boolean, filterVideosByUploader: Object, filterCategory: String, filterTagset: String, filterVideosByName: String, filterVideosByContributor: Object, filterVideosByAuthor: Object, filterHasAuthor: Boolean, filterHasUploader: Boolean, filterRelatedTo: String, filterFriends: Boolean, filterDisposition: String, size: Number, page: Number, order: String): String {
+    public function get_videos (excludeFlagged: Boolean, filterVideosByUploader: Number, filterCategory: String, filterTagset: String, filterVideosByName: String, filterVideosByContributor: Number, filterVideosByAuthor: Number, filterHasAuthor: Boolean, filterHasUploader: Boolean, filterRelatedTo: String, filterFriends: Boolean, filterDisposition: String, size: Number, page: Number, order: String): String {
         // create path and map variables
         var path: String = "/media/videos".replace(/{format}/g,"xml");
 
@@ -729,29 +728,29 @@ if("null" != String(page))
         }
 
         if("null" != String(excludeFlagged))
-            queryParams["excludeFlagged"] = toPathValue(excludeFlagged);
+            queryParams["exclude_flagged"] = toPathValue(excludeFlagged);
 if("null" != String(filterVideosByUploader))
-            queryParams["filterVideosByUploader"] = toPathValue(filterVideosByUploader);
+            queryParams["filter_videos_by_uploader"] = toPathValue(filterVideosByUploader);
 if("null" != String(filterCategory))
-            queryParams["filterCategory"] = toPathValue(filterCategory);
+            queryParams["filter_category"] = toPathValue(filterCategory);
 if("null" != String(filterTagset))
-            queryParams["filterTagset"] = toPathValue(filterTagset);
+            queryParams["filter_tagset"] = toPathValue(filterTagset);
 if("null" != String(filterVideosByName))
-            queryParams["filterVideosByName"] = toPathValue(filterVideosByName);
+            queryParams["filter_videos_by_name"] = toPathValue(filterVideosByName);
 if("null" != String(filterVideosByContributor))
-            queryParams["filterVideosByContributor"] = toPathValue(filterVideosByContributor);
+            queryParams["filter_videos_by_contributor"] = toPathValue(filterVideosByContributor);
 if("null" != String(filterVideosByAuthor))
-            queryParams["filterVideosByAuthor"] = toPathValue(filterVideosByAuthor);
+            queryParams["filter_videos_by_author"] = toPathValue(filterVideosByAuthor);
 if("null" != String(filterHasAuthor))
-            queryParams["filterHasAuthor"] = toPathValue(filterHasAuthor);
+            queryParams["filter_has_author"] = toPathValue(filterHasAuthor);
 if("null" != String(filterHasUploader))
-            queryParams["filterHasUploader"] = toPathValue(filterHasUploader);
+            queryParams["filter_has_uploader"] = toPathValue(filterHasUploader);
 if("null" != String(filterRelatedTo))
-            queryParams["filterRelatedTo"] = toPathValue(filterRelatedTo);
+            queryParams["filter_related_to"] = toPathValue(filterRelatedTo);
 if("null" != String(filterFriends))
-            queryParams["filterFriends"] = toPathValue(filterFriends);
+            queryParams["filter_friends"] = toPathValue(filterFriends);
 if("null" != String(filterDisposition))
-            queryParams["filterDisposition"] = toPathValue(filterDisposition);
+            queryParams["filter_disposition"] = toPathValue(filterDisposition);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))
@@ -777,7 +776,7 @@ if("null" != String(order))
      */
     public function remove_user_from_video_whitelist (videoId: Number, id: Number): String {
         // create path and map variables
-        var path: String = "/media/videos/{video_id}/whitelist/{id}".replace(/{format}/g,"xml").replace("{" + "videoId" + "}", getApiInvoker().escapeString(videoId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
+        var path: String = "/media/videos/{video_id}/whitelist/{id}".replace(/{format}/g,"xml").replace("{" + "video_id" + "}", getApiInvoker().escapeString(videoId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -811,7 +810,7 @@ if("null" != String(order))
      */
     public function remove_video_contributor (videoId: Number, id: Number): String {
         // create path and map variables
-        var path: String = "/media/videos/{video_id}/contributors/{id}".replace(/{format}/g,"xml").replace("{" + "videoId" + "}", getApiInvoker().escapeString(videoId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
+        var path: String = "/media/videos/{video_id}/contributors/{id}".replace(/{format}/g,"xml").replace("{" + "video_id" + "}", getApiInvoker().escapeString(videoId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -879,7 +878,7 @@ if("null" != String(order))
      */
     public function update_video_comment (videoId: Number, id: Number, content: String): String {
         // create path and map variables
-        var path: String = "/media/videos/{video_id}/comments/{id}/content".replace(/{format}/g,"xml").replace("{" + "videoId" + "}", getApiInvoker().escapeString(videoId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
+        var path: String = "/media/videos/{video_id}/comments/{id}/content".replace(/{format}/g,"xml").replace("{" + "video_id" + "}", getApiInvoker().escapeString(videoId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -917,7 +916,7 @@ if("null" != String(order))
      */
     public function update_video_relationship (videoId: Number, relationshipId: Number, details: String): String {
         // create path and map variables
-        var path: String = "/media/videos/{video_id}/related/{id}/relationship_details".replace(/{format}/g,"xml").replace("{" + "videoId" + "}", getApiInvoker().escapeString(videoId)).replace("{" + "relationshipId" + "}", getApiInvoker().escapeString(relationshipId));
+        var path: String = "/media/videos/{video_id}/related/{id}/relationship_details".replace(/{format}/g,"xml").replace("{" + "video_id" + "}", getApiInvoker().escapeString(videoId)).replace("{" + "relationship_id" + "}", getApiInvoker().escapeString(relationshipId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();

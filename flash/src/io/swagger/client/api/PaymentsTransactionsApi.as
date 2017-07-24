@@ -91,7 +91,7 @@ public class PaymentsTransactionsApi extends SwaggerApi {
         }
 
         if("null" != String(filterInvoice))
-            queryParams["filterInvoice"] = toPathValue(filterInvoice);
+            queryParams["filter_invoice"] = toPathValue(filterInvoice);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))

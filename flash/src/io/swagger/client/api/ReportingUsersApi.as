@@ -62,9 +62,9 @@ public class ReportingUsersApi extends SwaggerApi {
         if("null" != String(granularity))
             queryParams["granularity"] = toPathValue(granularity);
 if("null" != String(startDate))
-            queryParams["startDate"] = toPathValue(startDate);
+            queryParams["start_date"] = toPathValue(startDate);
 if("null" != String(endDate))
-            queryParams["endDate"] = toPathValue(endDate);
+            queryParams["end_date"] = toPathValue(endDate);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))

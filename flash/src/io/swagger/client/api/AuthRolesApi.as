@@ -110,7 +110,7 @@ public class AuthRolesApi extends SwaggerApi {
      */
     public function get_client_roles (clientKey: String): String {
         // create path and map variables
-        var path: String = "/auth/clients/{client_key}/roles".replace(/{format}/g,"xml").replace("{" + "clientKey" + "}", getApiInvoker().escapeString(clientKey));
+        var path: String = "/auth/clients/{client_key}/roles".replace(/{format}/g,"xml").replace("{" + "client_key" + "}", getApiInvoker().escapeString(clientKey));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -214,7 +214,7 @@ if("null" != String(order))
      */
     public function get_user_roles (userId: Number): String {
         // create path and map variables
-        var path: String = "/auth/users/{user_id}/roles".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId));
+        var path: String = "/auth/users/{user_id}/roles".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -244,7 +244,7 @@ if("null" != String(order))
      */
     public function set_client_roles (clientKey: String, rolesList: Array): String {
         // create path and map variables
-        var path: String = "/auth/clients/{client_key}/roles".replace(/{format}/g,"xml").replace("{" + "clientKey" + "}", getApiInvoker().escapeString(clientKey));
+        var path: String = "/auth/clients/{client_key}/roles".replace(/{format}/g,"xml").replace("{" + "client_key" + "}", getApiInvoker().escapeString(clientKey));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -312,7 +312,7 @@ if("null" != String(order))
      */
     public function set_user_roles (userId: Number, rolesList: Array): String {
         // create path and map variables
-        var path: String = "/auth/users/{user_id}/roles".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId));
+        var path: String = "/auth/users/{user_id}/roles".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();

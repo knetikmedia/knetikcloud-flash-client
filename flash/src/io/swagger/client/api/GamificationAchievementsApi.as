@@ -347,11 +347,11 @@ if("null" != String(order))
         }
 
         if("null" != String(filterTagset))
-            queryParams["filterTagset"] = toPathValue(filterTagset);
+            queryParams["filter_tagset"] = toPathValue(filterTagset);
 if("null" != String(filterName))
-            queryParams["filterName"] = toPathValue(filterName);
+            queryParams["filter_name"] = toPathValue(filterName);
 if("null" != String(filterHidden))
-            queryParams["filterHidden"] = toPathValue(filterHidden);
+            queryParams["filter_hidden"] = toPathValue(filterHidden);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))
@@ -359,7 +359,7 @@ if("null" != String(page))
 if("null" != String(order))
             queryParams["order"] = toPathValue(order);
 if("null" != String(filterDerived))
-            queryParams["filterDerived"] = toPathValue(filterDerived);
+            queryParams["filter_derived"] = toPathValue(filterDerived);
 
         
         var token:AsyncToken = getApiInvoker().invokeAPI(path, "GET", queryParams, null, headerParams);
@@ -409,7 +409,7 @@ if("null" != String(filterDerived))
      */
     public function get_user_achievement_progress (userId: Number, achievementName: String): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/achievements/{achievement_name}".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId)).replace("{" + "achievementName" + "}", getApiInvoker().escapeString(achievementName));
+        var path: String = "/users/{user_id}/achievements/{achievement_name}".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "achievement_name" + "}", getApiInvoker().escapeString(achievementName));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -443,7 +443,7 @@ if("null" != String(filterDerived))
      */
     public function get_user_achievements_progress (userId: Number, filterAchievementDerived: Boolean, filterAchievementTagset: String, filterAchievementName: String, size: Number, page: Number): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/achievements".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId));
+        var path: String = "/users/{user_id}/achievements".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -475,11 +475,11 @@ if("null" != String(filterDerived))
         }
 
         if("null" != String(filterAchievementDerived))
-            queryParams["filterAchievementDerived"] = toPathValue(filterAchievementDerived);
+            queryParams["filter_achievement_derived"] = toPathValue(filterAchievementDerived);
 if("null" != String(filterAchievementTagset))
-            queryParams["filterAchievementTagset"] = toPathValue(filterAchievementTagset);
+            queryParams["filter_achievement_tagset"] = toPathValue(filterAchievementTagset);
 if("null" != String(filterAchievementName))
-            queryParams["filterAchievementName"] = toPathValue(filterAchievementName);
+            queryParams["filter_achievement_name"] = toPathValue(filterAchievementName);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))
@@ -503,7 +503,7 @@ if("null" != String(page))
      */
     public function get_users_achievement_progress (achievementName: String, filterAchievementDerived: Boolean, filterAchievementTagset: String, filterAchievementName: String, size: Number, page: Number): String {
         // create path and map variables
-        var path: String = "/users/achievements/{achievement_name}".replace(/{format}/g,"xml").replace("{" + "achievementName" + "}", getApiInvoker().escapeString(achievementName));
+        var path: String = "/users/achievements/{achievement_name}".replace(/{format}/g,"xml").replace("{" + "achievement_name" + "}", getApiInvoker().escapeString(achievementName));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -535,11 +535,11 @@ if("null" != String(page))
         }
 
         if("null" != String(filterAchievementDerived))
-            queryParams["filterAchievementDerived"] = toPathValue(filterAchievementDerived);
+            queryParams["filter_achievement_derived"] = toPathValue(filterAchievementDerived);
 if("null" != String(filterAchievementTagset))
-            queryParams["filterAchievementTagset"] = toPathValue(filterAchievementTagset);
+            queryParams["filter_achievement_tagset"] = toPathValue(filterAchievementTagset);
 if("null" != String(filterAchievementName))
-            queryParams["filterAchievementName"] = toPathValue(filterAchievementName);
+            queryParams["filter_achievement_name"] = toPathValue(filterAchievementName);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))
@@ -591,11 +591,11 @@ if("null" != String(page))
         }
 
         if("null" != String(filterAchievementDerived))
-            queryParams["filterAchievementDerived"] = toPathValue(filterAchievementDerived);
+            queryParams["filter_achievement_derived"] = toPathValue(filterAchievementDerived);
 if("null" != String(filterAchievementTagset))
-            queryParams["filterAchievementTagset"] = toPathValue(filterAchievementTagset);
+            queryParams["filter_achievement_tagset"] = toPathValue(filterAchievementTagset);
 if("null" != String(filterAchievementName))
-            queryParams["filterAchievementName"] = toPathValue(filterAchievementName);
+            queryParams["filter_achievement_name"] = toPathValue(filterAchievementName);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))
@@ -619,7 +619,7 @@ if("null" != String(page))
      */
     public function increment_achievement_progress (userId: Number, achievementName: String, progress: Number): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/achievements/{achievement_name}/progress".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId)).replace("{" + "achievementName" + "}", getApiInvoker().escapeString(achievementName));
+        var path: String = "/users/{user_id}/achievements/{achievement_name}/progress".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "achievement_name" + "}", getApiInvoker().escapeString(achievementName));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -657,7 +657,7 @@ if("null" != String(page))
      */
     public function set_achievement_progress (userId: Number, achievementName: String, progress: Number): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/achievements/{achievement_name}/progress".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId)).replace("{" + "achievementName" + "}", getApiInvoker().escapeString(achievementName));
+        var path: String = "/users/{user_id}/achievements/{achievement_name}/progress".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "achievement_name" + "}", getApiInvoker().escapeString(achievementName));
 
         // query params
         var queryParams: Dictionary = new Dictionary();

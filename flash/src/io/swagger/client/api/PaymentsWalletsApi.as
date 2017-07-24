@@ -43,7 +43,7 @@ public class PaymentsWalletsApi extends SwaggerApi {
      */
     public function get_user_wallet (userId: Number, currencyCode: String): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/wallets/{currency_code}".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId)).replace("{" + "currencyCode" + "}", getApiInvoker().escapeString(currencyCode));
+        var path: String = "/users/{user_id}/wallets/{currency_code}".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "currency_code" + "}", getApiInvoker().escapeString(currencyCode));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -77,7 +77,7 @@ public class PaymentsWalletsApi extends SwaggerApi {
      */
     public function get_user_wallet_transactions (userId: Number, currencyCode: String, filterType: String, filterMaxDate: Number, filterMinDate: Number, filterSign: String, size: Number, page: Number, order: String): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/wallets/{currency_code}/transactions".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId)).replace("{" + "currencyCode" + "}", getApiInvoker().escapeString(currencyCode));
+        var path: String = "/users/{user_id}/wallets/{currency_code}/transactions".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "currency_code" + "}", getApiInvoker().escapeString(currencyCode));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -121,13 +121,13 @@ public class PaymentsWalletsApi extends SwaggerApi {
         }
 
         if("null" != String(filterType))
-            queryParams["filterType"] = toPathValue(filterType);
+            queryParams["filter_type"] = toPathValue(filterType);
 if("null" != String(filterMaxDate))
-            queryParams["filterMaxDate"] = toPathValue(filterMaxDate);
+            queryParams["filter_max_date"] = toPathValue(filterMaxDate);
 if("null" != String(filterMinDate))
-            queryParams["filterMinDate"] = toPathValue(filterMinDate);
+            queryParams["filter_min_date"] = toPathValue(filterMinDate);
 if("null" != String(filterSign))
-            queryParams["filterSign"] = toPathValue(filterSign);
+            queryParams["filter_sign"] = toPathValue(filterSign);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))
@@ -153,7 +153,7 @@ if("null" != String(order))
      */
     public function get_user_wallets (userId: Number): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/wallets".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId));
+        var path: String = "/users/{user_id}/wallets".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -261,21 +261,21 @@ if("null" != String(order))
         }
 
         if("null" != String(filterInvoice))
-            queryParams["filterInvoice"] = toPathValue(filterInvoice);
+            queryParams["filter_invoice"] = toPathValue(filterInvoice);
 if("null" != String(filterType))
-            queryParams["filterType"] = toPathValue(filterType);
+            queryParams["filter_type"] = toPathValue(filterType);
 if("null" != String(filterDate))
-            queryParams["filterDate"] = toPathValue(filterDate);
+            queryParams["filter_date"] = toPathValue(filterDate);
 if("null" != String(filterSign))
-            queryParams["filterSign"] = toPathValue(filterSign);
+            queryParams["filter_sign"] = toPathValue(filterSign);
 if("null" != String(filterUserId))
-            queryParams["filterUserId"] = toPathValue(filterUserId);
+            queryParams["filter_user_id"] = toPathValue(filterUserId);
 if("null" != String(filterUsername))
-            queryParams["filterUsername"] = toPathValue(filterUsername);
+            queryParams["filter_username"] = toPathValue(filterUsername);
 if("null" != String(filterDetails))
-            queryParams["filterDetails"] = toPathValue(filterDetails);
+            queryParams["filter_details"] = toPathValue(filterDetails);
 if("null" != String(filterCurrencyCode))
-            queryParams["filterCurrencyCode"] = toPathValue(filterCurrencyCode);
+            queryParams["filter_currency_code"] = toPathValue(filterCurrencyCode);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))
@@ -345,7 +345,7 @@ if("null" != String(order))
      */
     public function update_wallet_balance (userId: Number, currencyCode: String, request: WalletAlterRequest): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/wallets/{currency_code}/balance".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId)).replace("{" + "currencyCode" + "}", getApiInvoker().escapeString(currencyCode));
+        var path: String = "/users/{user_id}/wallets/{currency_code}/balance".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "currency_code" + "}", getApiInvoker().escapeString(currencyCode));
 
         // query params
         var queryParams: Dictionary = new Dictionary();

@@ -186,7 +186,7 @@ public class MediaArtistsApi extends SwaggerApi {
         }
 
         if("null" != String(showContributions))
-            queryParams["showContributions"] = toPathValue(showContributions);
+            queryParams["show_contributions"] = toPathValue(showContributions);
 
         
         var token:AsyncToken = getApiInvoker().invokeAPI(path, "GET", queryParams, null, headerParams);
@@ -304,7 +304,7 @@ if("null" != String(order))
         }
 
         if("null" != String(filterArtistsByName))
-            queryParams["filterArtistsByName"] = toPathValue(filterArtistsByName);
+            queryParams["filter_artists_by_name"] = toPathValue(filterArtistsByName);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))

@@ -58,7 +58,7 @@ public class UtilSecurityApi extends SwaggerApi {
         }
 
         if("null" != String(userId))
-            queryParams["userId"] = toPathValue(userId);
+            queryParams["user_id"] = toPathValue(userId);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))

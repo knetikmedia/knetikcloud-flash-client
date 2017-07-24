@@ -135,11 +135,11 @@ public class LogsApi extends SwaggerApi {
         }
 
         if("null" != String(filterStartDate))
-            queryParams["filterStartDate"] = toPathValue(filterStartDate);
+            queryParams["filter_start_date"] = toPathValue(filterStartDate);
 if("null" != String(filterEventName))
-            queryParams["filterEventName"] = toPathValue(filterEventName);
+            queryParams["filter_event_name"] = toPathValue(filterEventName);
 if("null" != String(filterEventId))
-            queryParams["filterEventId"] = toPathValue(filterEventId);
+            queryParams["filter_event_id"] = toPathValue(filterEventId);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))
@@ -227,11 +227,11 @@ if("null" != String(order))
         }
 
         if("null" != String(filterStartDate))
-            queryParams["filterStartDate"] = toPathValue(filterStartDate);
+            queryParams["filter_start_date"] = toPathValue(filterStartDate);
 if("null" != String(filterEndDate))
-            queryParams["filterEndDate"] = toPathValue(filterEndDate);
+            queryParams["filter_end_date"] = toPathValue(filterEndDate);
 if("null" != String(filterStatusCode))
-            queryParams["filterStatusCode"] = toPathValue(filterStatusCode);
+            queryParams["filter_status_code"] = toPathValue(filterStatusCode);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))
@@ -315,9 +315,9 @@ if("null" != String(order))
         }
 
         if("null" != String(filterUser))
-            queryParams["filterUser"] = toPathValue(filterUser);
+            queryParams["filter_user"] = toPathValue(filterUser);
 if("null" != String(filterActionName))
-            queryParams["filterActionName"] = toPathValue(filterActionName);
+            queryParams["filter_action_name"] = toPathValue(filterActionName);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))

@@ -37,7 +37,7 @@ public class UsersAddressesApi extends SwaggerApi {
      */
     public function create_address (userId: String, savedAddressResource: SavedAddressResource): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/addresses".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId));
+        var path: String = "/users/{user_id}/addresses".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -71,7 +71,7 @@ public class UsersAddressesApi extends SwaggerApi {
      */
     public function delete_address (userId: String, id: Number): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/addresses/{id}".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
+        var path: String = "/users/{user_id}/addresses/{id}".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -105,7 +105,7 @@ public class UsersAddressesApi extends SwaggerApi {
      */
     public function get_address (userId: String, id: Number): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/addresses/{id}".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
+        var path: String = "/users/{user_id}/addresses/{id}".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -139,7 +139,7 @@ public class UsersAddressesApi extends SwaggerApi {
      */
     public function get_addresses (userId: String, size: Number, page: Number, order: String): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/addresses".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId));
+        var path: String = "/users/{user_id}/addresses".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -187,7 +187,7 @@ if("null" != String(order))
      */
     public function update_address (userId: String, id: Number, savedAddressResource: SavedAddressResource): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/addresses/{id}".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
+        var path: String = "/users/{user_id}/addresses/{id}".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 
         // query params
         var queryParams: Dictionary = new Dictionary();

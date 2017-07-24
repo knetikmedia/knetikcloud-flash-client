@@ -33,10 +33,16 @@ import io.swagger.client.model.SubscriptionCreditResource;
         /* The payment method object */
         [XmlElement(name="payment_method")]
         public var paymentMethod: PaymentMethodResource = NaN;
-        /* The recurring price */
+        /* The recurring price that has been set to override the base price. Null if not overriding */
+        [XmlElement(name="price_override")]
+        public var priceOverride: Number = 0.0;
+        /* An explanation for the reason the price is being overridden */
+        [XmlElement(name="price_override_reason")]
+        public var priceOverrideReason: String = null;
+        /* The default recurring price */
         [XmlElement(name="recurring_price")]
         public var recurringPrice: Number = 0.0;
-        /* The sku of the subscription */
+        /* The recurring sku of the subscription */
         [XmlElement(name="sku")]
         public var sku: String = null;
         /* The date the subscription will start */
@@ -59,6 +65,8 @@ import io.swagger.client.model.SubscriptionCreditResource;
         str += " (inventoryStatus: " + inventoryStatus + ")";
         str += " (itemId: " + itemId + ")";
         str += " (paymentMethod: " + paymentMethod + ")";
+        str += " (priceOverride: " + priceOverride + ")";
+        str += " (priceOverrideReason: " + priceOverrideReason + ")";
         str += " (recurringPrice: " + recurringPrice + ")";
         str += " (sku: " + sku + ")";
         str += " (startDate: " + startDate + ")";

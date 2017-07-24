@@ -8,6 +8,7 @@ import io.swagger.event.Response;
 import io.swagger.common.SwaggerApi;
 import io.swagger.client.model.CommentResource;
 import io.swagger.client.model.CommentSearch;
+import io.swagger.client.model.Object;
 import io.swagger.client.model.PageResourceCommentResource;
 import io.swagger.client.model.Result;
 
@@ -155,7 +156,7 @@ public class ContentCommentsApi extends SwaggerApi {
         if("null" != String(context))
             queryParams["context"] = toPathValue(context);
 if("null" != String(contextId))
-            queryParams["contextId"] = toPathValue(contextId);
+            queryParams["context_id"] = toPathValue(contextId);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))

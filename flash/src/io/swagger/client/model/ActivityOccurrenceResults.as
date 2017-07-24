@@ -1,6 +1,6 @@
 package io.swagger.client.model {
 
-import io.swagger.client.model.UserActivityResultsResource;
+import io.swagger.client.model.UserActivityResults;
 
     [XmlRootNode(name="ActivityOccurrenceResults")]
     public class ActivityOccurrenceResults {

@@ -105,7 +105,7 @@ public class StoreSubscriptionsApi extends SwaggerApi {
      */
     public function delete_subscription (id: Number, planId: String): String {
         // create path and map variables
-        var path: String = "/subscriptions/{id}/plans/{plan_id}".replace(/{format}/g,"xml").replace("{" + "id" + "}", getApiInvoker().escapeString(id)).replace("{" + "planId" + "}", getApiInvoker().escapeString(planId));
+        var path: String = "/subscriptions/{id}/plans/{plan_id}".replace(/{format}/g,"xml").replace("{" + "id" + "}", getApiInvoker().escapeString(id)).replace("{" + "plan_id" + "}", getApiInvoker().escapeString(planId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();

@@ -53,7 +53,7 @@ public class AuthTokensApi extends SwaggerApi {
         if("null" != String(username))
             queryParams["username"] = toPathValue(username);
 if("null" != String(clientId))
-            queryParams["clientId"] = toPathValue(clientId);
+            queryParams["client_id"] = toPathValue(clientId);
 
         
         var token:AsyncToken = getApiInvoker().invokeAPI(path, "DELETE", queryParams, null, headerParams);
@@ -73,7 +73,7 @@ if("null" != String(clientId))
      */
     public function get_token (username: String, clientId: String): String {
         // create path and map variables
-        var path: String = "/auth/tokens/{username}/{client_id}".replace(/{format}/g,"xml").replace("{" + "username" + "}", getApiInvoker().escapeString(username)).replace("{" + "clientId" + "}", getApiInvoker().escapeString(clientId));
+        var path: String = "/auth/tokens/{username}/{client_id}".replace(/{format}/g,"xml").replace("{" + "username" + "}", getApiInvoker().escapeString(username)).replace("{" + "client_id" + "}", getApiInvoker().escapeString(clientId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -135,9 +135,9 @@ if("null" != String(clientId))
         }
 
         if("null" != String(filterClientId))
-            queryParams["filterClientId"] = toPathValue(filterClientId);
+            queryParams["filter_client_id"] = toPathValue(filterClientId);
 if("null" != String(filterUsername))
-            queryParams["filterUsername"] = toPathValue(filterUsername);
+            queryParams["filter_username"] = toPathValue(filterUsername);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))

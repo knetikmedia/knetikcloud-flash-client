@@ -18,6 +18,9 @@ package io.swagger.client.model {
         /* The id of the user */
         [XmlElement(name="id")]
         public var id: Number = 0;
+        /* The date the user last interacted with the API (private) */
+        [XmlElement(name="last_activity")]
+        public var lastActivity: Number = 0;
         /* The date the user&#39;s info was last updated as a unix timestamp */
         [XmlElement(name="last_updated")]
         public var lastUpdated: Number = 0;
@@ -35,6 +38,7 @@ package io.swagger.client.model {
         str += " (email: " + email + ")";
         str += " (fullname: " + fullname + ")";
         str += " (id: " + id + ")";
+        str += " (lastActivity: " + lastActivity + ")";
         str += " (lastUpdated: " + lastUpdated + ")";
         str += " (memberSince: " + memberSince + ")";
         str += " (username: " + username + ")";

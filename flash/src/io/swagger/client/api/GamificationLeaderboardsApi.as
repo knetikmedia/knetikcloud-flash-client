@@ -35,7 +35,7 @@ public class GamificationLeaderboardsApi extends SwaggerApi {
      */
     public function get_leaderboard (contextType: String, contextId: String, size: Number, page: Number, order: String): String {
         // create path and map variables
-        var path: String = "/leaderboards/{context_type}/{context_id}".replace(/{format}/g,"xml").replace("{" + "contextType" + "}", getApiInvoker().escapeString(contextType)).replace("{" + "contextId" + "}", getApiInvoker().escapeString(contextId));
+        var path: String = "/leaderboards/{context_type}/{context_id}".replace(/{format}/g,"xml").replace("{" + "context_type" + "}", getApiInvoker().escapeString(contextType)).replace("{" + "context_id" + "}", getApiInvoker().escapeString(contextId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -87,7 +87,7 @@ if("null" != String(order))
      */
     public function get_leaderboard_rank (contextType: String, contextId: String, id: String): String {
         // create path and map variables
-        var path: String = "/leaderboards/{context_type}/{context_id}/users/{id}/rank".replace(/{format}/g,"xml").replace("{" + "contextType" + "}", getApiInvoker().escapeString(contextType)).replace("{" + "contextId" + "}", getApiInvoker().escapeString(contextId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
+        var path: String = "/leaderboards/{context_type}/{context_id}/users/{id}/rank".replace(/{format}/g,"xml").replace("{" + "context_type" + "}", getApiInvoker().escapeString(contextType)).replace("{" + "context_id" + "}", getApiInvoker().escapeString(contextId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 
         // query params
         var queryParams: Dictionary = new Dictionary();

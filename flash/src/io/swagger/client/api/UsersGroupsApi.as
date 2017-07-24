@@ -53,7 +53,7 @@ public class UsersGroupsApi extends SwaggerApi {
      */
     public function add_member_to_group (uniqueName: String, user: GroupMemberResource): String {
         // create path and map variables
-        var path: String = "/users/groups/{unique_name}/members".replace(/{format}/g,"xml").replace("{" + "uniqueName" + "}", getApiInvoker().escapeString(uniqueName));
+        var path: String = "/users/groups/{unique_name}/members".replace(/{format}/g,"xml").replace("{" + "unique_name" + "}", getApiInvoker().escapeString(uniqueName));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -87,7 +87,7 @@ public class UsersGroupsApi extends SwaggerApi {
      */
     public function add_members_to_group (uniqueName: String, users: Array): String {
         // create path and map variables
-        var path: String = "/users/groups/{unique_name}/members/batch-add".replace(/{format}/g,"xml").replace("{" + "uniqueName" + "}", getApiInvoker().escapeString(uniqueName));
+        var path: String = "/users/groups/{unique_name}/members/batch-add".replace(/{format}/g,"xml").replace("{" + "unique_name" + "}", getApiInvoker().escapeString(uniqueName));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -181,7 +181,7 @@ public class UsersGroupsApi extends SwaggerApi {
      */
     public function delete_group (uniqueName: String): String {
         // create path and map variables
-        var path: String = "/users/groups/{unique_name}".replace(/{format}/g,"xml").replace("{" + "uniqueName" + "}", getApiInvoker().escapeString(uniqueName));
+        var path: String = "/users/groups/{unique_name}".replace(/{format}/g,"xml").replace("{" + "unique_name" + "}", getApiInvoker().escapeString(uniqueName));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -247,7 +247,7 @@ public class UsersGroupsApi extends SwaggerApi {
      */
     public function get_group (uniqueName: String): String {
         // create path and map variables
-        var path: String = "/users/groups/{unique_name}".replace(/{format}/g,"xml").replace("{" + "uniqueName" + "}", getApiInvoker().escapeString(uniqueName));
+        var path: String = "/users/groups/{unique_name}".replace(/{format}/g,"xml").replace("{" + "unique_name" + "}", getApiInvoker().escapeString(uniqueName));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -277,7 +277,7 @@ public class UsersGroupsApi extends SwaggerApi {
      */
     public function get_group_member (uniqueName: String, userId: Number): String {
         // create path and map variables
-        var path: String = "/users/groups/{unique_name}/members/{user_id}".replace(/{format}/g,"xml").replace("{" + "uniqueName" + "}", getApiInvoker().escapeString(uniqueName)).replace("{" + "userId" + "}", getApiInvoker().escapeString(userId));
+        var path: String = "/users/groups/{unique_name}/members/{user_id}".replace(/{format}/g,"xml").replace("{" + "unique_name" + "}", getApiInvoker().escapeString(uniqueName)).replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -311,7 +311,7 @@ public class UsersGroupsApi extends SwaggerApi {
      */
     public function get_group_members (uniqueName: String, size: Number, page: Number, order: String): String {
         // create path and map variables
-        var path: String = "/users/groups/{unique_name}/members".replace(/{format}/g,"xml").replace("{" + "uniqueName" + "}", getApiInvoker().escapeString(uniqueName));
+        var path: String = "/users/groups/{unique_name}/members".replace(/{format}/g,"xml").replace("{" + "unique_name" + "}", getApiInvoker().escapeString(uniqueName));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -433,7 +433,7 @@ if("null" != String(order))
      */
     public function get_groups_for_user (userId: Number): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/groups".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId));
+        var path: String = "/users/{user_id}/groups".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -463,7 +463,7 @@ if("null" != String(order))
      */
     public function remove_group_member (uniqueName: String, userId: Number): String {
         // create path and map variables
-        var path: String = "/users/groups/{unique_name}/members/{user_id}".replace(/{format}/g,"xml").replace("{" + "uniqueName" + "}", getApiInvoker().escapeString(uniqueName)).replace("{" + "userId" + "}", getApiInvoker().escapeString(userId));
+        var path: String = "/users/groups/{unique_name}/members/{user_id}".replace(/{format}/g,"xml").replace("{" + "unique_name" + "}", getApiInvoker().escapeString(uniqueName)).replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -497,7 +497,7 @@ if("null" != String(order))
      */
     public function update_group (uniqueName: String, groupResource: GroupResource): String {
         // create path and map variables
-        var path: String = "/users/groups/{unique_name}".replace(/{format}/g,"xml").replace("{" + "uniqueName" + "}", getApiInvoker().escapeString(uniqueName));
+        var path: String = "/users/groups/{unique_name}".replace(/{format}/g,"xml").replace("{" + "unique_name" + "}", getApiInvoker().escapeString(uniqueName));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -531,7 +531,7 @@ if("null" != String(order))
      */
     public function update_group_member_status (uniqueName: String, userId: Number, status: String): String {
         // create path and map variables
-        var path: String = "/users/groups/{unique_name}/members/{user_id}/status".replace(/{format}/g,"xml").replace("{" + "uniqueName" + "}", getApiInvoker().escapeString(uniqueName)).replace("{" + "userId" + "}", getApiInvoker().escapeString(userId));
+        var path: String = "/users/groups/{unique_name}/members/{user_id}/status".replace(/{format}/g,"xml").replace("{" + "unique_name" + "}", getApiInvoker().escapeString(uniqueName)).replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -647,17 +647,17 @@ if("null" != String(order))
         }
 
         if("null" != String(filterTemplate))
-            queryParams["filterTemplate"] = toPathValue(filterTemplate);
+            queryParams["filter_template"] = toPathValue(filterTemplate);
 if("null" != String(filterMemberCount))
-            queryParams["filterMemberCount"] = toPathValue(filterMemberCount);
+            queryParams["filter_member_count"] = toPathValue(filterMemberCount);
 if("null" != String(filterName))
-            queryParams["filterName"] = toPathValue(filterName);
+            queryParams["filter_name"] = toPathValue(filterName);
 if("null" != String(filterUniqueName))
-            queryParams["filterUniqueName"] = toPathValue(filterUniqueName);
+            queryParams["filter_unique_name"] = toPathValue(filterUniqueName);
 if("null" != String(filterParent))
-            queryParams["filterParent"] = toPathValue(filterParent);
+            queryParams["filter_parent"] = toPathValue(filterParent);
 if("null" != String(filterStatus))
-            queryParams["filterStatus"] = toPathValue(filterStatus);
+            queryParams["filter_status"] = toPathValue(filterStatus);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))

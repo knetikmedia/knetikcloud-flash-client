@@ -67,7 +67,7 @@ public class BRERuleEngineTriggersApi extends SwaggerApi {
      */
     public function delete_bre_trigger (eventName: String): String {
         // create path and map variables
-        var path: String = "/bre/triggers/{event_name}".replace(/{format}/g,"xml").replace("{" + "eventName" + "}", getApiInvoker().escapeString(eventName));
+        var path: String = "/bre/triggers/{event_name}".replace(/{format}/g,"xml").replace("{" + "event_name" + "}", getApiInvoker().escapeString(eventName));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -97,7 +97,7 @@ public class BRERuleEngineTriggersApi extends SwaggerApi {
      */
     public function get_bre_trigger (eventName: String): String {
         // create path and map variables
-        var path: String = "/bre/triggers/{event_name}".replace(/{format}/g,"xml").replace("{" + "eventName" + "}", getApiInvoker().escapeString(eventName));
+        var path: String = "/bre/triggers/{event_name}".replace(/{format}/g,"xml").replace("{" + "event_name" + "}", getApiInvoker().escapeString(eventName));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -163,15 +163,15 @@ public class BRERuleEngineTriggersApi extends SwaggerApi {
         }
 
         if("null" != String(filterSystem))
-            queryParams["filterSystem"] = toPathValue(filterSystem);
+            queryParams["filter_system"] = toPathValue(filterSystem);
 if("null" != String(filterCategory))
-            queryParams["filterCategory"] = toPathValue(filterCategory);
+            queryParams["filter_category"] = toPathValue(filterCategory);
 if("null" != String(filterTags))
-            queryParams["filterTags"] = toPathValue(filterTags);
+            queryParams["filter_tags"] = toPathValue(filterTags);
 if("null" != String(filterName))
-            queryParams["filterName"] = toPathValue(filterName);
+            queryParams["filter_name"] = toPathValue(filterName);
 if("null" != String(filterSearch))
-            queryParams["filterSearch"] = toPathValue(filterSearch);
+            queryParams["filter_search"] = toPathValue(filterSearch);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))
@@ -195,7 +195,7 @@ if("null" != String(page))
      */
     public function update_bre_trigger (eventName: String, breTriggerResource: BreTriggerResource): String {
         // create path and map variables
-        var path: String = "/bre/triggers/{event_name}".replace(/{format}/g,"xml").replace("{" + "eventName" + "}", getApiInvoker().escapeString(eventName));
+        var path: String = "/bre/triggers/{event_name}".replace(/{format}/g,"xml").replace("{" + "event_name" + "}", getApiInvoker().escapeString(eventName));
 
         // query params
         var queryParams: Dictionary = new Dictionary();

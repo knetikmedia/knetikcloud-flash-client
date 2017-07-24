@@ -144,9 +144,9 @@ public class DispositionsApi extends SwaggerApi {
         }
 
         if("null" != String(filterContext))
-            queryParams["filterContext"] = toPathValue(filterContext);
+            queryParams["filter_context"] = toPathValue(filterContext);
 if("null" != String(filterOwner))
-            queryParams["filterOwner"] = toPathValue(filterOwner);
+            queryParams["filter_owner"] = toPathValue(filterOwner);
 
         
         var token:AsyncToken = getApiInvoker().invokeAPI(path, "GET", queryParams, null, headerParams);
@@ -194,9 +194,9 @@ if("null" != String(filterOwner))
         }
 
         if("null" != String(filterContext))
-            queryParams["filterContext"] = toPathValue(filterContext);
+            queryParams["filter_context"] = toPathValue(filterContext);
 if("null" != String(filterOwner))
-            queryParams["filterOwner"] = toPathValue(filterOwner);
+            queryParams["filter_owner"] = toPathValue(filterOwner);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))

@@ -71,7 +71,7 @@ public class AuthClientsApi extends SwaggerApi {
      */
     public function delete_client (clientKey: String): String {
         // create path and map variables
-        var path: String = "/auth/clients/{client_key}".replace(/{format}/g,"xml").replace("{" + "clientKey" + "}", getApiInvoker().escapeString(clientKey));
+        var path: String = "/auth/clients/{client_key}".replace(/{format}/g,"xml").replace("{" + "client_key" + "}", getApiInvoker().escapeString(clientKey));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -101,7 +101,7 @@ public class AuthClientsApi extends SwaggerApi {
      */
     public function get_client (clientKey: String): String {
         // create path and map variables
-        var path: String = "/auth/clients/{client_key}".replace(/{format}/g,"xml").replace("{" + "clientKey" + "}", getApiInvoker().escapeString(clientKey));
+        var path: String = "/auth/clients/{client_key}".replace(/{format}/g,"xml").replace("{" + "client_key" + "}", getApiInvoker().escapeString(clientKey));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -201,7 +201,7 @@ if("null" != String(order))
      */
     public function set_client_grant_types (clientKey: String, grantList: Array): String {
         // create path and map variables
-        var path: String = "/auth/clients/{client_key}/grant-types".replace(/{format}/g,"xml").replace("{" + "clientKey" + "}", getApiInvoker().escapeString(clientKey));
+        var path: String = "/auth/clients/{client_key}/grant-types".replace(/{format}/g,"xml").replace("{" + "client_key" + "}", getApiInvoker().escapeString(clientKey));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -235,7 +235,7 @@ if("null" != String(order))
      */
     public function set_client_redirect_uris (clientKey: String, redirectList: Array): String {
         // create path and map variables
-        var path: String = "/auth/clients/{client_key}/redirect-uris".replace(/{format}/g,"xml").replace("{" + "clientKey" + "}", getApiInvoker().escapeString(clientKey));
+        var path: String = "/auth/clients/{client_key}/redirect-uris".replace(/{format}/g,"xml").replace("{" + "client_key" + "}", getApiInvoker().escapeString(clientKey));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -269,7 +269,7 @@ if("null" != String(order))
      */
     public function update_client (clientKey: String, clientResource: ClientResource): String {
         // create path and map variables
-        var path: String = "/auth/clients/{client_key}".replace(/{format}/g,"xml").replace("{" + "clientKey" + "}", getApiInvoker().escapeString(clientKey));
+        var path: String = "/auth/clients/{client_key}".replace(/{format}/g,"xml").replace("{" + "client_key" + "}", getApiInvoker().escapeString(clientKey));
 
         // query params
         var queryParams: Dictionary = new Dictionary();

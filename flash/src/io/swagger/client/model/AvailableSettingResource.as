@@ -2,8 +2,8 @@ package io.swagger.client.model {
 
 import io.swagger.client.model.SettingOption;
 
-    [XmlRootNode(name="TheDefinitionOfAnActivityParametersExDifficultyLevel")]
-    public class TheDefinitionOfAnActivityParametersExDifficultyLevel {
+    [XmlRootNode(name="AvailableSettingResource")]
+    public class AvailableSettingResource {
         /* Whether the setting is advanced. Default: false */
         [XmlElement(name="advanced_option")]
         public var advancedOption: Boolean = false;
@@ -27,7 +27,7 @@ import io.swagger.client.model.SettingOption;
                 public var options: Array = new Array();
 
     public function toString(): String {
-        var str: String = "TheDefinitionOfAnActivityParametersExDifficultyLevel: ";
+        var str: String = "AvailableSettingResource: ";
         str += " (advancedOption: " + advancedOption + ")";
         str += " (defaultValue: " + defaultValue + ")";
         str += " (description: " + description + ")";

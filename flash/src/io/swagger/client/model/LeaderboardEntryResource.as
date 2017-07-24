@@ -10,6 +10,9 @@ import io.swagger.client.model.SimpleUserResource;
         /* The raw score in this leaderboard. Null means non-compete or disqualification */
         [XmlElement(name="score")]
         public var score: Number = 0;
+        /* The date this score was recorded or updated. Unix timestamp in seconds */
+        [XmlElement(name="updated_date")]
+        public var updatedDate: Number = 0;
         /* The player for this entry */
         [XmlElement(name="user")]
         public var user: SimpleUserResource = NaN;
@@ -18,6 +21,7 @@ import io.swagger.client.model.SimpleUserResource;
         var str: String = "LeaderboardEntryResource: ";
         str += " (rank: " + rank + ")";
         str += " (score: " + score + ")";
+        str += " (updatedDate: " + updatedDate + ")";
         str += " (user: " + user + ")";
         return str;
     }

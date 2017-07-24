@@ -135,7 +135,7 @@ public class DevicesApi extends SwaggerApi {
      */
     public function delete_device_user (id: Number, userId: Number): String {
         // create path and map variables
-        var path: String = "/devices/{id}/users/{user_id}".replace(/{format}/g,"xml").replace("{" + "id" + "}", getApiInvoker().escapeString(id)).replace("{" + "userId" + "}", getApiInvoker().escapeString(userId));
+        var path: String = "/devices/{id}/users/{user_id}".replace(/{format}/g,"xml").replace("{" + "id" + "}", getApiInvoker().escapeString(id)).replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -185,7 +185,7 @@ public class DevicesApi extends SwaggerApi {
         }
 
         if("null" != String(filterId))
-            queryParams["filterId"] = toPathValue(filterId);
+            queryParams["filter_id"] = toPathValue(filterId);
 
         
         var token:AsyncToken = getApiInvoker().invokeAPI(path, "DELETE", queryParams, null, headerParams);
@@ -263,9 +263,9 @@ public class DevicesApi extends SwaggerApi {
         }
 
         if("null" != String(filterMake))
-            queryParams["filterMake"] = toPathValue(filterMake);
+            queryParams["filter_make"] = toPathValue(filterMake);
 if("null" != String(filterModel))
-            queryParams["filterModel"] = toPathValue(filterModel);
+            queryParams["filter_model"] = toPathValue(filterModel);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))

@@ -171,7 +171,7 @@ public class StoreShoppingCartsApi extends SwaggerApi {
         if("null" != String(owner))
             queryParams["owner"] = toPathValue(owner);
 if("null" != String(currencyCode))
-            queryParams["currencyCode"] = toPathValue(currencyCode);
+            queryParams["currency_code"] = toPathValue(currencyCode);
 
         
         var token:AsyncToken = getApiInvoker().invokeAPI(path, "POST", queryParams, null, headerParams);
@@ -245,7 +245,7 @@ if("null" != String(currencyCode))
         }
 
         if("null" != String(filterOwnerId))
-            queryParams["filterOwnerId"] = toPathValue(filterOwnerId);
+            queryParams["filter_owner_id"] = toPathValue(filterOwnerId);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))

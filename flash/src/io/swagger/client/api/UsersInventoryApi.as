@@ -10,6 +10,7 @@ import io.swagger.client.model.EntitlementGrantRequest;
 import io.swagger.client.model.EntitlementItem;
 import io.swagger.client.model.InvoiceResource;
 import io.swagger.client.model.ItemTemplateResource;
+import io.swagger.client.model.Object;
 import io.swagger.client.model.PageResourceEntitlementItem;
 import io.swagger.client.model.PageResourceItemTemplateResource;
 import io.swagger.client.model.PageResourceUserInventoryResource;
@@ -95,7 +96,7 @@ public class UsersInventoryApi extends SwaggerApi {
      */
     public function check_user_entitlement_item (userId: String, itemId: Number, sku: String): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/entitlements/{item_id}/check".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId)).replace("{" + "itemId" + "}", getApiInvoker().escapeString(itemId));
+        var path: String = "/users/{user_id}/entitlements/{item_id}/check".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "item_id" + "}", getApiInvoker().escapeString(itemId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -201,7 +202,7 @@ public class UsersInventoryApi extends SwaggerApi {
      */
     public function delete_entitlement_item (entitlementId: Number): String {
         // create path and map variables
-        var path: String = "/entitlements/{entitlement_id}".replace(/{format}/g,"xml").replace("{" + "entitlementId" + "}", getApiInvoker().escapeString(entitlementId));
+        var path: String = "/entitlements/{entitlement_id}".replace(/{format}/g,"xml").replace("{" + "entitlement_id" + "}", getApiInvoker().escapeString(entitlementId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -267,7 +268,7 @@ public class UsersInventoryApi extends SwaggerApi {
      */
     public function get_entitlement_item (entitlementId: Number): String {
         // create path and map variables
-        var path: String = "/entitlements/{entitlement_id}".replace(/{format}/g,"xml").replace("{" + "entitlementId" + "}", getApiInvoker().escapeString(entitlementId));
+        var path: String = "/entitlements/{entitlement_id}".replace(/{format}/g,"xml").replace("{" + "entitlement_id" + "}", getApiInvoker().escapeString(entitlementId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -465,15 +466,15 @@ if("null" != String(size))
 if("null" != String(page))
             queryParams["page"] = toPathValue(page);
 if("null" != String(filterItemName))
-            queryParams["filterItemName"] = toPathValue(filterItemName);
+            queryParams["filter_item_name"] = toPathValue(filterItemName);
 if("null" != String(filterItemId))
-            queryParams["filterItemId"] = toPathValue(filterItemId);
+            queryParams["filter_item_id"] = toPathValue(filterItemId);
 if("null" != String(filterUsername))
-            queryParams["filterUsername"] = toPathValue(filterUsername);
+            queryParams["filter_username"] = toPathValue(filterUsername);
 if("null" != String(filterGroup))
-            queryParams["filterGroup"] = toPathValue(filterGroup);
+            queryParams["filter_group"] = toPathValue(filterGroup);
 if("null" != String(filterDate))
-            queryParams["filterDate"] = toPathValue(filterDate);
+            queryParams["filter_date"] = toPathValue(filterDate);
 
         
         var token:AsyncToken = getApiInvoker().invokeAPI(path, "GET", queryParams, null, headerParams);
@@ -493,7 +494,7 @@ if("null" != String(filterDate))
      */
     public function get_user_inventory (userId: Number, id: Number): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/inventory/{id}".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
+        var path: String = "/users/{user_id}/inventory/{id}".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -527,7 +528,7 @@ if("null" != String(filterDate))
      */
     public function get_user_inventory_log (userId: String, id: Number, size: Number, page: Number): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/inventory/{id}/log".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
+        var path: String = "/users/{user_id}/inventory/{id}/log".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -619,15 +620,15 @@ if("null" != String(size))
 if("null" != String(page))
             queryParams["page"] = toPathValue(page);
 if("null" != String(filterItemName))
-            queryParams["filterItemName"] = toPathValue(filterItemName);
+            queryParams["filter_item_name"] = toPathValue(filterItemName);
 if("null" != String(filterItemId))
-            queryParams["filterItemId"] = toPathValue(filterItemId);
+            queryParams["filter_item_id"] = toPathValue(filterItemId);
 if("null" != String(filterUsername))
-            queryParams["filterUsername"] = toPathValue(filterUsername);
+            queryParams["filter_username"] = toPathValue(filterUsername);
 if("null" != String(filterGroup))
-            queryParams["filterGroup"] = toPathValue(filterGroup);
+            queryParams["filter_group"] = toPathValue(filterGroup);
 if("null" != String(filterDate))
-            queryParams["filterDate"] = toPathValue(filterDate);
+            queryParams["filter_date"] = toPathValue(filterDate);
 
         
         var token:AsyncToken = getApiInvoker().invokeAPI(path, "GET", queryParams, null, headerParams);
@@ -647,7 +648,7 @@ if("null" != String(filterDate))
      */
     public function grant_user_entitlement (userId: Number, grantRequest: EntitlementGrantRequest): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/entitlements".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId));
+        var path: String = "/users/{user_id}/entitlements".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -681,7 +682,7 @@ if("null" != String(filterDate))
      */
     public function update_entitlement_item (entitlementId: Number, cascade: Boolean, entitlementItem: EntitlementItem): String {
         // create path and map variables
-        var path: String = "/entitlements/{entitlement_id}".replace(/{format}/g,"xml").replace("{" + "entitlementId" + "}", getApiInvoker().escapeString(entitlementId));
+        var path: String = "/entitlements/{entitlement_id}".replace(/{format}/g,"xml").replace("{" + "entitlement_id" + "}", getApiInvoker().escapeString(entitlementId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -755,7 +756,7 @@ if("null" != String(filterDate))
      */
     public function update_user_inventory_behavior_data (userId: Number, id: Number, data: Object): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/inventory/{id}/behavior-data".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
+        var path: String = "/users/{user_id}/inventory/{id}/behavior-data".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -793,7 +794,7 @@ if("null" != String(filterDate))
      */
     public function update_user_inventory_expires (userId: Number, id: Number, timestamp: Number): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/inventory/{id}/expires".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
+        var path: String = "/users/{user_id}/inventory/{id}/expires".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -831,7 +832,7 @@ if("null" != String(filterDate))
      */
     public function update_user_inventory_status (userId: Number, id: Number, inventoryStatus: String): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/inventory/{id}/status".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
+        var path: String = "/users/{user_id}/inventory/{id}/status".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -869,7 +870,7 @@ if("null" != String(filterDate))
      */
     public function use_user_entitlement_item (userId: String, itemId: Number, sku: String, info: String): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/entitlements/{item_id}/use".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId)).replace("{" + "itemId" + "}", getApiInvoker().escapeString(itemId));
+        var path: String = "/users/{user_id}/entitlements/{item_id}/use".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "item_id" + "}", getApiInvoker().escapeString(itemId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();

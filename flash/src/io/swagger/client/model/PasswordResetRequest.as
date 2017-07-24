@@ -1,8 +1,8 @@
 package io.swagger.client.model {
 
 
-    [XmlRootNode(name="ARequestToResetAUsersPasswordByUsingAKnownUserProperty")]
-    public class ARequestToResetAUsersPasswordByUsingAKnownUserProperty {
+    [XmlRootNode(name="PasswordResetRequest")]
+    public class PasswordResetRequest {
         /* The user&#39;s email address */
         [XmlElement(name="email")]
         public var email: String = null;
@@ -14,7 +14,7 @@ package io.swagger.client.model {
         public var username: String = null;
 
     public function toString(): String {
-        var str: String = "ARequestToResetAUsersPasswordByUsingAKnownUserProperty: ";
+        var str: String = "PasswordResetRequest: ";
         str += " (email: " + email + ")";
         str += " (mobileNumber: " + mobileNumber + ")";
         str += " (username: " + username + ")";

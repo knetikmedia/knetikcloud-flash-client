@@ -3,8 +3,6 @@ package io.swagger.client.model {
 
     [XmlRootNode(name="InvoiceItemResource")]
     public class InvoiceItemResource {
-                [XmlElement(name="affiliate_id")]
-        public var affiliateId: Number = 0;
                 [XmlElement(name="bundle_sku")]
         public var bundleSku: String = null;
                 [XmlElement(name="current_fulfillment_status")]
@@ -40,7 +38,6 @@ package io.swagger.client.model {
 
     public function toString(): String {
         var str: String = "InvoiceItemResource: ";
-        str += " (affiliateId: " + affiliateId + ")";
         str += " (bundleSku: " + bundleSku + ")";
         str += " (currentFulfillmentStatus: " + currentFulfillmentStatus + ")";
         str += " (id: " + id + ")";

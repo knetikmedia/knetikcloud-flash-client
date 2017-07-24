@@ -30,7 +30,7 @@ public class SocialGoogleApi extends SwaggerApi {
     /*
      * Returns void 
      */
-    public function link_accounts1 (facebookToken: GoogleToken): String {
+    public function link_accounts1 (googleToken: GoogleToken): String {
         // create path and map variables
         var path: String = "/social/google/users".replace(/{format}/g,"xml");
 
@@ -45,7 +45,7 @@ public class SocialGoogleApi extends SwaggerApi {
 
         
         
-        var token:AsyncToken = getApiInvoker().invokeAPI(path, "POST", queryParams, facebookToken, headerParams);
+        var token:AsyncToken = getApiInvoker().invokeAPI(path, "POST", queryParams, googleToken, headerParams);
 
         var requestId: String = getUniqueId();
 

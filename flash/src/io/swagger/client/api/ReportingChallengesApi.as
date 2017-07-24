@@ -57,7 +57,7 @@ public class ReportingChallengesApi extends SwaggerApi {
         }
 
         if("null" != String(filterEvent))
-            queryParams["filterEvent"] = toPathValue(filterEvent);
+            queryParams["filter_event"] = toPathValue(filterEvent);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))
@@ -107,7 +107,7 @@ if("null" != String(order))
         }
 
         if("null" != String(filterEvent))
-            queryParams["filterEvent"] = toPathValue(filterEvent);
+            queryParams["filter_event"] = toPathValue(filterEvent);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))

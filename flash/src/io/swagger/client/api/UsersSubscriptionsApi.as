@@ -10,6 +10,7 @@ import io.swagger.client.model.InventorySubscriptionResource;
 import io.swagger.client.model.InvoiceResource;
 import io.swagger.client.model.ReactivateSubscriptionRequest;
 import io.swagger.client.model.Result;
+import io.swagger.client.model.SubscriptionPriceOverrideRequest;
 
 import mx.rpc.AsyncToken;
 import mx.utils.UIDUtil;
@@ -33,6 +34,7 @@ public class UsersSubscriptionsApi extends SwaggerApi {
         public static const event_set_subscription_payment_method: String = "set_subscription_payment_method";
         public static const event_set_subscription_status: String = "set_subscription_status";
         public static const event_set_user_subscription_plan: String = "set_user_subscription_plan";
+        public static const event_set_user_subscription_price: String = "set_user_subscription_price";
 
 
     /*
@@ -40,7 +42,7 @@ public class UsersSubscriptionsApi extends SwaggerApi {
      */
     public function get_user_subscription_details (userId: Number, inventoryId: Number): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/subscriptions/{inventory_id}".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId)).replace("{" + "inventoryId" + "}", getApiInvoker().escapeString(inventoryId));
+        var path: String = "/users/{user_id}/subscriptions/{inventory_id}".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "inventory_id" + "}", getApiInvoker().escapeString(inventoryId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -74,7 +76,7 @@ public class UsersSubscriptionsApi extends SwaggerApi {
      */
     public function get_users_subscription_details (userId: Number): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/subscriptions".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId));
+        var path: String = "/users/{user_id}/subscriptions".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -104,7 +106,7 @@ public class UsersSubscriptionsApi extends SwaggerApi {
      */
     public function reactivate_user_subscription (userId: Number, inventoryId: Number, reactivateSubscriptionRequest: ReactivateSubscriptionRequest): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/subscriptions/{inventory_id}/reactivate".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId)).replace("{" + "inventoryId" + "}", getApiInvoker().escapeString(inventoryId));
+        var path: String = "/users/{user_id}/subscriptions/{inventory_id}/reactivate".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "inventory_id" + "}", getApiInvoker().escapeString(inventoryId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -142,7 +144,7 @@ public class UsersSubscriptionsApi extends SwaggerApi {
      */
     public function set_subscription_bill_date (userId: Number, inventoryId: Number, billDate: Number): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/subscriptions/{inventory_id}/bill-date".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId)).replace("{" + "inventoryId" + "}", getApiInvoker().escapeString(inventoryId));
+        var path: String = "/users/{user_id}/subscriptions/{inventory_id}/bill-date".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "inventory_id" + "}", getApiInvoker().escapeString(inventoryId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -180,7 +182,7 @@ public class UsersSubscriptionsApi extends SwaggerApi {
      */
     public function set_subscription_payment_method (userId: Number, inventoryId: Number, paymentMethodId: Number): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/subscriptions/{inventory_id}/payment-method".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId)).replace("{" + "inventoryId" + "}", getApiInvoker().escapeString(inventoryId));
+        var path: String = "/users/{user_id}/subscriptions/{inventory_id}/payment-method".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "inventory_id" + "}", getApiInvoker().escapeString(inventoryId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -218,7 +220,7 @@ public class UsersSubscriptionsApi extends SwaggerApi {
      */
     public function set_subscription_status (userId: Number, inventoryId: Number, status: String): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/subscriptions/{inventory_id}/status".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId)).replace("{" + "inventoryId" + "}", getApiInvoker().escapeString(inventoryId));
+        var path: String = "/users/{user_id}/subscriptions/{inventory_id}/status".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "inventory_id" + "}", getApiInvoker().escapeString(inventoryId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -256,7 +258,7 @@ public class UsersSubscriptionsApi extends SwaggerApi {
      */
     public function set_user_subscription_plan (userId: Number, inventoryId: Number, planId: String): String {
         // create path and map variables
-        var path: String = "/users/{user_id}/subscriptions/{inventory_id}/plan".replace(/{format}/g,"xml").replace("{" + "userId" + "}", getApiInvoker().escapeString(userId)).replace("{" + "inventoryId" + "}", getApiInvoker().escapeString(inventoryId));
+        var path: String = "/users/{user_id}/subscriptions/{inventory_id}/plan".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "inventory_id" + "}", getApiInvoker().escapeString(inventoryId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -283,6 +285,44 @@ public class UsersSubscriptionsApi extends SwaggerApi {
 
         token.requestId = requestId;
         token.completionEventType = "set_user_subscription_plan";
+
+        token.returnType = null ;
+        return requestId;
+
+    }
+
+    /*
+     * Returns void 
+     */
+    public function set_user_subscription_price (userId: Number, inventoryId: Number, the override details: SubscriptionPriceOverrideRequest): String {
+        // create path and map variables
+        var path: String = "/users/{user_id}/subscriptions/{inventory_id}/price-override".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "inventory_id" + "}", getApiInvoker().escapeString(inventoryId));
+
+        // query params
+        var queryParams: Dictionary = new Dictionary();
+        var headerParams: Dictionary = new Dictionary();
+
+        // verify required params are set
+        if(        // verify required params are set
+        if(        // verify required params are set
+        if() {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+
+        
+        
+        var token:AsyncToken = getApiInvoker().invokeAPI(path, "PUT", queryParams, the override details, headerParams);
+
+        var requestId: String = getUniqueId();
+
+        token.requestId = requestId;
+        token.completionEventType = "set_user_subscription_price";
 
         token.returnType = null ;
         return requestId;

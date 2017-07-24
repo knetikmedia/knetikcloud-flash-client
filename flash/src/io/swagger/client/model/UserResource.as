@@ -62,6 +62,9 @@ import io.swagger.client.model.UserRelationshipReferenceResource;
         /* The ISO3 code for the user&#39;s currency (private) */
         [XmlElement(name="language_code")]
         public var languageCode: String = null;
+        /* The date the user last interacted with the API (private) */
+        [XmlElement(name="last_activity")]
+        public var lastActivity: Number = 0;
         /* The user&#39;s last name (private) */
         [XmlElement(name="last_name")]
         public var lastName: String = null;
@@ -124,6 +127,7 @@ import io.swagger.client.model.UserRelationshipReferenceResource;
         str += " (gender: " + gender + ")";
         str += " (id: " + id + ")";
         str += " (languageCode: " + languageCode + ")";
+        str += " (lastActivity: " + lastActivity + ")";
         str += " (lastName: " + lastName + ")";
         str += " (lastUpdated: " + lastUpdated + ")";
         str += " (memberSince: " + memberSince + ")";
