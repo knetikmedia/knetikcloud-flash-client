@@ -7,6 +7,7 @@ import io.swagger.common.ApiUserCredentials;
 import io.swagger.event.Response;
 import io.swagger.common.SwaggerApi;
 import io.swagger.client.model.BreTriggerResource;
+import io.swagger.client.model.IntWrapper;
 import io.swagger.client.model.LevelingResource;
 import io.swagger.client.model.PageResourceLevelingResource;
 import io.swagger.client.model.PageResourceUserLevelingResource;
@@ -297,7 +298,7 @@ if("null" != String(order))
     /*
      * Returns void 
      */
-    public function increment_progress (userId: Number, name: String, progress: Number): String {
+    public function increment_progress (userId: Number, name: String, progress: IntWrapper): String {
         // create path and map variables
         var path: String = "/users/{user_id}/leveling/{name}/progress".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "name" + "}", getApiInvoker().escapeString(name));
 
@@ -335,7 +336,7 @@ if("null" != String(order))
     /*
      * Returns void 
      */
-    public function set_progress (userId: Number, name: String, progress: Number): String {
+    public function set_progress (userId: Number, name: String, progress: IntWrapper): String {
         // create path and map variables
         var path: String = "/users/{user_id}/leveling/{name}/progress".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "name" + "}", getApiInvoker().escapeString(name));
 

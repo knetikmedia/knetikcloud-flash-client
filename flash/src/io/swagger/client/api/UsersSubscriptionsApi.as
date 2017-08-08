@@ -6,10 +6,12 @@ import io.swagger.exception.ApiError;
 import io.swagger.common.ApiUserCredentials;
 import io.swagger.event.Response;
 import io.swagger.common.SwaggerApi;
+import io.swagger.client.model.IntWrapper;
 import io.swagger.client.model.InventorySubscriptionResource;
 import io.swagger.client.model.InvoiceResource;
 import io.swagger.client.model.ReactivateSubscriptionRequest;
 import io.swagger.client.model.Result;
+import io.swagger.client.model.StringWrapper;
 import io.swagger.client.model.SubscriptionPriceOverrideRequest;
 
 import mx.rpc.AsyncToken;
@@ -180,7 +182,7 @@ public class UsersSubscriptionsApi extends SwaggerApi {
     /*
      * Returns void 
      */
-    public function set_subscription_payment_method (userId: Number, inventoryId: Number, paymentMethodId: Number): String {
+    public function set_subscription_payment_method (userId: Number, inventoryId: Number, paymentMethodId: IntWrapper): String {
         // create path and map variables
         var path: String = "/users/{user_id}/subscriptions/{inventory_id}/payment-method".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "inventory_id" + "}", getApiInvoker().escapeString(inventoryId));
 
@@ -218,7 +220,7 @@ public class UsersSubscriptionsApi extends SwaggerApi {
     /*
      * Returns void 
      */
-    public function set_subscription_status (userId: Number, inventoryId: Number, status: String): String {
+    public function set_subscription_status (userId: Number, inventoryId: Number, status: StringWrapper): String {
         // create path and map variables
         var path: String = "/users/{user_id}/subscriptions/{inventory_id}/status".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "inventory_id" + "}", getApiInvoker().escapeString(inventoryId));
 
@@ -256,7 +258,7 @@ public class UsersSubscriptionsApi extends SwaggerApi {
     /*
      * Returns void 
      */
-    public function set_user_subscription_plan (userId: Number, inventoryId: Number, planId: String): String {
+    public function set_user_subscription_plan (userId: Number, inventoryId: Number, planId: StringWrapper): String {
         // create path and map variables
         var path: String = "/users/{user_id}/subscriptions/{inventory_id}/plan".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "inventory_id" + "}", getApiInvoker().escapeString(inventoryId));
 

@@ -6,6 +6,9 @@ package io.swagger.client.model {
         /* S3 action (i.e., &#39;PUT&#39;) associated with the activity */
         [XmlElement(name="action")]
         public var action: String = null;
+        /* URL for accessing the resource via CDN if configured (will default to the main url if not) */
+        [XmlElement(name="cdn_url")]
+        public var cdnUrl: String = null;
         /* Date the resource was created in S3 */
         [XmlElement(name="created_date")]
         public var createdDate: Number = 0;
@@ -18,7 +21,7 @@ package io.swagger.client.model {
         /* S3 object key for the resource */
         [XmlElement(name="object_key")]
         public var objectKey: String = null;
-        /* URL for accessing the S3 resource */
+        /* URL for posting and later accessing the S3 resource */
         [XmlElement(name="url")]
         public var url: String = null;
         /* The id of the user that created this S3 activity */
@@ -28,6 +31,7 @@ package io.swagger.client.model {
     public function toString(): String {
         var str: String = "AmazonS3Activity: ";
         str += " (action: " + action + ")";
+        str += " (cdnUrl: " + cdnUrl + ")";
         str += " (createdDate: " + createdDate + ")";
         str += " (filename: " + filename + ")";
         str += " (id: " + id + ")";

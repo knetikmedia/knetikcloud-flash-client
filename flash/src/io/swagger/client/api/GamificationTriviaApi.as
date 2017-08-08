@@ -16,6 +16,7 @@ import io.swagger.client.model.PageResourceQuestionTemplateResource;
 import io.swagger.client.model.QuestionResource;
 import io.swagger.client.model.QuestionTemplateResource;
 import io.swagger.client.model.Result;
+import io.swagger.client.model.StringWrapper;
 
 import mx.rpc.AsyncToken;
 import mx.utils.UIDUtil;
@@ -101,7 +102,7 @@ public class GamificationTriviaApi extends SwaggerApi {
     /*
      * Returns void 
      */
-    public function add_question_tag (id: String, tag: String): String {
+    public function add_question_tag (id: String, tag: StringWrapper): String {
         // create path and map variables
         var path: String = "/trivia/questions/{id}/tags".replace(/{format}/g,"xml").replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 
@@ -135,7 +136,7 @@ public class GamificationTriviaApi extends SwaggerApi {
     /*
      * Returns Number 
      */
-    public function add_tag_to_questions_batch (tag: String, filterSearch: String, filterIdset: String, filterCategory: String, filterTag: String, filterTagset: String, filterType: String, filterPublished: Boolean, filterImportId: Number): String {
+    public function add_tag_to_questions_batch (tag: StringWrapper, filterSearch: String, filterIdset: String, filterCategory: String, filterTag: String, filterTagset: String, filterType: String, filterPublished: Boolean, filterImportId: Number): String {
         // create path and map variables
         var path: String = "/trivia/questions/tags".replace(/{format}/g,"xml");
 

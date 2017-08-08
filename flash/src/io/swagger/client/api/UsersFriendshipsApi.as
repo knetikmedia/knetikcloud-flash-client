@@ -8,6 +8,7 @@ import io.swagger.event.Response;
 import io.swagger.common.SwaggerApi;
 import io.swagger.client.model.PageResourceSimpleUserResource;
 import io.swagger.client.model.Result;
+import io.swagger.client.model.StringWrapper;
 
 import mx.rpc.AsyncToken;
 import mx.utils.UIDUtil;
@@ -183,7 +184,7 @@ if("null" != String(page))
     /*
      * Returns void 
      */
-    public function redeem_friendship_token (userId: String, token: String): String {
+    public function redeem_friendship_token (userId: String, token: StringWrapper): String {
         // create path and map variables
         var path: String = "/users/{user_id}/friends/tokens".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId));
 

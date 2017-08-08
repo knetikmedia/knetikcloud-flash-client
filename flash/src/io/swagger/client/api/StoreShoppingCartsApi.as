@@ -11,10 +11,12 @@ import io.swagger.client.model.CartItemRequest;
 import io.swagger.client.model.CartShippableResponse;
 import io.swagger.client.model.CartShippingAddressRequest;
 import io.swagger.client.model.CouponDefinition;
+import io.swagger.client.model.IntWrapper;
 import io.swagger.client.model.PageResourceCartSummary;
 import io.swagger.client.model.Result;
 import io.swagger.client.model.SampleCountriesResponse;
 import io.swagger.client.model.SkuRequest;
+import io.swagger.client.model.StringWrapper;
 
 import mx.rpc.AsyncToken;
 import mx.utils.UIDUtil;
@@ -363,7 +365,7 @@ if("null" != String(order))
     /*
      * Returns void 
      */
-    public function set_cart_currency (id: String, currencyCode: String): String {
+    public function set_cart_currency (id: String, currencyCode: StringWrapper): String {
         // create path and map variables
         var path: String = "/carts/{id}/currency".replace(/{format}/g,"xml").replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 
@@ -397,7 +399,7 @@ if("null" != String(order))
     /*
      * Returns void 
      */
-    public function set_cart_owner (id: String, userId: Number): String {
+    public function set_cart_owner (id: String, userId: IntWrapper): String {
         // create path and map variables
         var path: String = "/carts/{id}/owner".replace(/{format}/g,"xml").replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 

@@ -5,6 +5,8 @@ package io.swagger.client.model {
     public class Order {
                 [XmlElement(name="ascending")]
         public var ascending: Boolean = false;
+                [XmlElement(name="descending")]
+        public var descending: Boolean = false;
                 [XmlElement(name="direction")]
         public var direction: String = null;
                 [XmlElement(name="ignore_case")]
@@ -17,6 +19,7 @@ package io.swagger.client.model {
     public function toString(): String {
         var str: String = "Order: ";
         str += " (ascending: " + ascending + ")";
+        str += " (descending: " + descending + ")";
         str += " (direction: " + direction + ")";
         str += " (ignoreCase: " + ignoreCase + ")";
         str += " (nullHandling: " + nullHandling + ")";

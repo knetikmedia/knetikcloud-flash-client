@@ -11,6 +11,7 @@ import io.swagger.client.model.PageResourceTemplateResource;
 import io.swagger.client.model.PageResourceUserBaseResource;
 import io.swagger.client.model.PasswordResetRequest;
 import io.swagger.client.model.Result;
+import io.swagger.client.model.StringWrapper;
 import io.swagger.client.model.TemplateResource;
 import io.swagger.client.model.UserResource;
 
@@ -50,7 +51,7 @@ public class UsersApi extends SwaggerApi {
     /*
      * Returns void 
      */
-    public function add_user_tag (userId: Number, tag: String): String {
+    public function add_user_tag (userId: Number, tag: StringWrapper): String {
         // create path and map variables
         var path: String = "/users/{user_id}/tags".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId));
 
@@ -486,7 +487,7 @@ if("null" != String(order))
     /*
      * Returns void 
      */
-    public function set_password (id: Number, password: String): String {
+    public function set_password (id: Number, password: StringWrapper): String {
         // create path and map variables
         var path: String = "/users/{id}/password".replace(/{format}/g,"xml").replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 

@@ -168,7 +168,7 @@ public class AuthRolesApi extends SwaggerApi {
     /*
      * Returns PageResourceRoleResource 
      */
-    public function get_roles (size: Number, page: Number, order: String): String {
+    public function get_roles (filterName: String, filterRole: String, size: Number, page: Number, order: String): String {
         // create path and map variables
         var path: String = "/auth/roles".replace(/{format}/g,"xml");
 
@@ -177,6 +177,8 @@ public class AuthRolesApi extends SwaggerApi {
         var headerParams: Dictionary = new Dictionary();
 
         // verify required params are set
+        if(        // verify required params are set
+        if(        // verify required params are set
         if(        // verify required params are set
         if(        // verify required params are set
         if() {
@@ -188,8 +190,18 @@ public class AuthRolesApi extends SwaggerApi {
 ) {
             throw new ApiError(400, "missing required params");
         }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
 
-        if("null" != String(size))
+        if("null" != String(filterName))
+            queryParams["filter_name"] = toPathValue(filterName);
+if("null" != String(filterRole))
+            queryParams["filter_role"] = toPathValue(filterRole);
+if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))
             queryParams["page"] = toPathValue(page);

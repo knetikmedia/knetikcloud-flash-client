@@ -10,11 +10,13 @@ import io.swagger.client.model.CommentResource;
 import io.swagger.client.model.ContributionResource;
 import io.swagger.client.model.DispositionResource;
 import io.swagger.client.model.FlagResource;
+import io.swagger.client.model.IntWrapper;
 import io.swagger.client.model.PageResourceCommentResource;
 import io.swagger.client.model.PageResourceDispositionResource;
 import io.swagger.client.model.PageResourceVideoRelationshipResource;
 import io.swagger.client.model.PageResourceVideoResource;
 import io.swagger.client.model.Result;
+import io.swagger.client.model.StringWrapper;
 import io.swagger.client.model.VideoRelationshipResource;
 import io.swagger.client.model.VideoResource;
 
@@ -62,7 +64,7 @@ public class MediaVideosApi extends SwaggerApi {
     /*
      * Returns void 
      */
-    public function add_user_to_video_whitelist (id: Number, userId: Number): String {
+    public function add_user_to_video_whitelist (id: Number, userId: IntWrapper): String {
         // create path and map variables
         var path: String = "/media/videos/{id}/whitelist".replace(/{format}/g,"xml").replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 
@@ -194,7 +196,7 @@ public class MediaVideosApi extends SwaggerApi {
     /*
      * Returns FlagResource 
      */
-    public function add_video_flag (videoId: Number, reason: String): String {
+    public function add_video_flag (videoId: Number, reason: StringWrapper): String {
         // create path and map variables
         var path: String = "/media/videos/{video_id}/moderation".replace(/{format}/g,"xml").replace("{" + "video_id" + "}", getApiInvoker().escapeString(videoId));
 
@@ -876,7 +878,7 @@ if("null" != String(order))
     /*
      * Returns void 
      */
-    public function update_video_comment (videoId: Number, id: Number, content: String): String {
+    public function update_video_comment (videoId: Number, id: Number, content: StringWrapper): String {
         // create path and map variables
         var path: String = "/media/videos/{video_id}/comments/{id}/content".replace(/{format}/g,"xml").replace("{" + "video_id" + "}", getApiInvoker().escapeString(videoId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 
@@ -914,7 +916,7 @@ if("null" != String(order))
     /*
      * Returns void 
      */
-    public function update_video_relationship (videoId: Number, relationshipId: Number, details: String): String {
+    public function update_video_relationship (videoId: Number, relationshipId: Number, details: StringWrapper): String {
         // create path and map variables
         var path: String = "/media/videos/{video_id}/related/{id}/relationship_details".replace(/{format}/g,"xml").replace("{" + "video_id" + "}", getApiInvoker().escapeString(videoId)).replace("{" + "relationship_id" + "}", getApiInvoker().escapeString(relationshipId));
 

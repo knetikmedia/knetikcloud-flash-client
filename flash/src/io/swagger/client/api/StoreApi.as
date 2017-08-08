@@ -7,8 +7,10 @@ import io.swagger.common.ApiUserCredentials;
 import io.swagger.event.Response;
 import io.swagger.common.SwaggerApi;
 import io.swagger.client.model.BehaviorDefinitionResource;
+import io.swagger.client.model.InvoiceResource;
 import io.swagger.client.model.PageResourceStoreItem;
 import io.swagger.client.model.PageResourceStoreItemTemplateResource;
+import io.swagger.client.model.QuickBuyRequest;
 import io.swagger.client.model.Result;
 import io.swagger.client.model.StoreItem;
 import io.swagger.client.model.StoreItemTemplateResource;
@@ -38,6 +40,7 @@ public class StoreApi extends SwaggerApi {
         public static const event_get_store: String = "get_store";
         public static const event_get_store_item: String = "get_store_item";
         public static const event_get_store_items: String = "get_store_items";
+        public static const event_quick_buy: String = "quick_buy";
         public static const event_update_item_template: String = "update_item_template";
         public static const event_update_store_item: String = "update_store_item";
 
@@ -484,6 +487,36 @@ if("null" != String(order))
         token.completionEventType = "get_store_items";
 
         token.returnType = PageResourceStoreItem;
+        return requestId;
+
+    }
+
+    /*
+     * Returns InvoiceResource 
+     */
+    public function quick_buy (quickBuyRequest: QuickBuyRequest): String {
+        // create path and map variables
+        var path: String = "/store/quick-buy".replace(/{format}/g,"xml");
+
+        // query params
+        var queryParams: Dictionary = new Dictionary();
+        var headerParams: Dictionary = new Dictionary();
+
+        // verify required params are set
+        if() {
+            throw new ApiError(400, "missing required params");
+        }
+
+        
+        
+        var token:AsyncToken = getApiInvoker().invokeAPI(path, "POST", queryParams, quickBuyRequest, headerParams);
+
+        var requestId: String = getUniqueId();
+
+        token.requestId = requestId;
+        token.completionEventType = "quick_buy";
+
+        token.returnType = InvoiceResource;
         return requestId;
 
     }

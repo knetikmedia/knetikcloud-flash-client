@@ -11,6 +11,7 @@ import io.swagger.client.model.PageResourceTemplateResource;
 import io.swagger.client.model.PollResource;
 import io.swagger.client.model.PollResponseResource;
 import io.swagger.client.model.Result;
+import io.swagger.client.model.StringWrapper;
 import io.swagger.client.model.TemplateResource;
 
 import mx.rpc.AsyncToken;
@@ -45,7 +46,7 @@ public class ContentPollsApi extends SwaggerApi {
     /*
      * Returns PollResponseResource 
      */
-    public function answer_poll (id: String, answerKey: String): String {
+    public function answer_poll (id: String, answerKey: StringWrapper): String {
         // create path and map variables
         var path: String = "/media/polls/{id}/response".replace(/{format}/g,"xml").replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 

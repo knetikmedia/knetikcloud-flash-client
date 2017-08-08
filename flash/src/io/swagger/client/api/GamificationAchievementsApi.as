@@ -8,6 +8,7 @@ import io.swagger.event.Response;
 import io.swagger.common.SwaggerApi;
 import io.swagger.client.model.AchievementDefinitionResource;
 import io.swagger.client.model.BreTriggerResource;
+import io.swagger.client.model.IntWrapper;
 import io.swagger.client.model.PageResourceAchievementDefinitionResource;
 import io.swagger.client.model.PageResourceTemplateResource;
 import io.swagger.client.model.PageResourceUserAchievementGroupResource;
@@ -617,7 +618,7 @@ if("null" != String(page))
     /*
      * Returns UserAchievementGroupResource 
      */
-    public function increment_achievement_progress (userId: Number, achievementName: String, progress: Number): String {
+    public function increment_achievement_progress (userId: Number, achievementName: String, progress: IntWrapper): String {
         // create path and map variables
         var path: String = "/users/{user_id}/achievements/{achievement_name}/progress".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "achievement_name" + "}", getApiInvoker().escapeString(achievementName));
 
@@ -655,7 +656,7 @@ if("null" != String(page))
     /*
      * Returns UserAchievementGroupResource 
      */
-    public function set_achievement_progress (userId: Number, achievementName: String, progress: Number): String {
+    public function set_achievement_progress (userId: Number, achievementName: String, progress: IntWrapper): String {
         // create path and map variables
         var path: String = "/users/{user_id}/achievements/{achievement_name}/progress".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "achievement_name" + "}", getApiInvoker().escapeString(achievementName));
 

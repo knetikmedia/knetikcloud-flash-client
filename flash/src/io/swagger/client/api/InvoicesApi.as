@@ -14,6 +14,7 @@ import io.swagger.client.model.PageResourceInvoiceLogEntry;
 import io.swagger.client.model.PageResourceInvoiceResource;
 import io.swagger.client.model.PayBySavedMethodRequest;
 import io.swagger.client.model.Result;
+import io.swagger.client.model.StringWrapper;
 
 import mx.rpc.AsyncToken;
 import mx.utils.UIDUtil;
@@ -364,7 +365,7 @@ if("null" != String(order))
     /*
      * Returns void 
      */
-    public function set_bundled_invoice_item_fulfillment_status (id: Number, bundleSku: String, sku: String, status: String): String {
+    public function set_bundled_invoice_item_fulfillment_status (id: Number, bundleSku: String, sku: String, status: StringWrapper): String {
         // create path and map variables
         var path: String = "/invoices/{id}/items/{bundleSku}/bundled-skus/{sku}/fulfillment-status".replace(/{format}/g,"xml").replace("{" + "id" + "}", getApiInvoker().escapeString(id)).replace("{" + "bundleSku" + "}", getApiInvoker().escapeString(bundleSku)).replace("{" + "sku" + "}", getApiInvoker().escapeString(sku));
 
@@ -406,7 +407,7 @@ if("null" != String(order))
     /*
      * Returns void 
      */
-    public function set_external_ref (id: Number, externalRef: String): String {
+    public function set_external_ref (id: Number, externalRef: StringWrapper): String {
         // create path and map variables
         var path: String = "/invoices/{id}/external-ref".replace(/{format}/g,"xml").replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 
@@ -440,7 +441,7 @@ if("null" != String(order))
     /*
      * Returns void 
      */
-    public function set_invoice_item_fulfillment_status (id: Number, sku: String, status: String): String {
+    public function set_invoice_item_fulfillment_status (id: Number, sku: String, status: StringWrapper): String {
         // create path and map variables
         var path: String = "/invoices/{id}/items/{sku}/fulfillment-status".replace(/{format}/g,"xml").replace("{" + "id" + "}", getApiInvoker().escapeString(id)).replace("{" + "sku" + "}", getApiInvoker().escapeString(sku));
 
@@ -478,7 +479,7 @@ if("null" != String(order))
     /*
      * Returns void 
      */
-    public function set_order_notes (id: Number, orderNotes: String): String {
+    public function set_order_notes (id: Number, orderNotes: StringWrapper): String {
         // create path and map variables
         var path: String = "/invoices/{id}/order-notes".replace(/{format}/g,"xml").replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 

@@ -11,6 +11,7 @@ import io.swagger.client.model.CommentSearch;
 import io.swagger.client.model.Object;
 import io.swagger.client.model.PageResourceCommentResource;
 import io.swagger.client.model.Result;
+import io.swagger.client.model.StringWrapper;
 
 import mx.rpc.AsyncToken;
 import mx.utils.UIDUtil;
@@ -220,7 +221,7 @@ if("null" != String(page))
     /*
      * Returns void 
      */
-    public function update_comment (id: Number, content: String): String {
+    public function update_comment (id: Number, content: StringWrapper): String {
         // create path and map variables
         var path: String = "/comments/{id}/content".replace(/{format}/g,"xml").replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 
