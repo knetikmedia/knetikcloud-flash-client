@@ -29,7 +29,7 @@ public class AccessTokenApi extends SwaggerApi {
     /*
      * Returns OAuth2Resource 
      */
-    public function get_o_auth_token (grantType: String, clientId: String, clientSecret: String, username: String, password: String): String {
+    public function get_o_auth_token (grantType: String, clientId: String, clientSecret: String, username: String, password: String, token: String, refreshToken: String): String {
         // create path and map variables
         var path: String = "/oauth/token".replace(/{format}/g,"xml");
 
@@ -42,7 +42,15 @@ public class AccessTokenApi extends SwaggerApi {
         if(        // verify required params are set
         if(        // verify required params are set
         if(        // verify required params are set
+        if(        // verify required params are set
+        if(        // verify required params are set
         if() {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+) {
             throw new ApiError(400, "missing required params");
         }
 ) {
