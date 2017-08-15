@@ -24,8 +24,53 @@ public class AmazonWebServicesS3Api extends SwaggerApi {
         super(apiCredentials, eventDispatcher);
     }
 
+        public static const event_get_download_url: String = "get_download_url";
         public static const event_get_signed_s3_url: String = "get_signed_s3_url";
 
+
+    /*
+     * Returns String 
+     */
+    public function get_download_url (bucket: String, path: String, expiration: Number): String {
+        // create path and map variables
+        var path: String = "/amazon/s3/downloadurl".replace(/{format}/g,"xml");
+
+        // query params
+        var queryParams: Dictionary = new Dictionary();
+        var headerParams: Dictionary = new Dictionary();
+
+        // verify required params are set
+        if(        // verify required params are set
+        if(        // verify required params are set
+        if() {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+
+        if("null" != String(bucket))
+            queryParams["bucket"] = toPathValue(bucket);
+if("null" != String(path))
+            queryParams["path"] = toPathValue(path);
+if("null" != String(expiration))
+            queryParams["expiration"] = toPathValue(expiration);
+
+        
+        var token:AsyncToken = getApiInvoker().invokeAPI(path, "GET", queryParams, null, headerParams);
+
+        var requestId: String = getUniqueId();
+
+        token.requestId = requestId;
+        token.completionEventType = "get_download_url";
+
+        token.returnType = String;
+        return requestId;
+
+    }
 
     /*
      * Returns AmazonS3Activity 

@@ -1,6 +1,7 @@
 package io.swagger.client.model {
 
 import io.swagger.common.ListWrapper;
+import io.swagger.client.model.Behavior;
 import io.swagger.client.model.Property;
 import io.swagger.client.model.SubscriptionPlanResource;
 

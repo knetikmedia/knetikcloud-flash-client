@@ -1,5 +1,6 @@
 package io.swagger.client.model {
 
+import io.swagger.client.model.Behavior;
 import io.swagger.client.model.Property;
 import io.swagger.client.model.SubscriptionPlanResource;
 
@@ -14,6 +15,12 @@ import io.swagger.client.model.SubscriptionPlanResource;
         /* Who can purchase this subscription */
         [XmlElement(name="availability")]
         public var availability: String = null;
+        /* The behaviors linked to the item, describing various options and interactions. May not be included in item lists */
+        // This declaration below of _behaviors_obj_class is to force flash compiler to include this class
+        private var _behaviors_obj_class: Array = null;
+        [XmlElementWrapper(name="behaviors")]
+        [XmlElements(name="behaviors", type="Array")]
+                public var behaviors: Array = new Array();
         /* A category for filtering items */
         [XmlElement(name="category")]
         public var category: String = null;
@@ -82,6 +89,7 @@ import io.swagger.client.model.SubscriptionPlanResource;
         var str: String = "SubscriptionResource: ";
         str += " (additionalProperties: " + additionalProperties + ")";
         str += " (availability: " + availability + ")";
+        str += " (behaviors: " + behaviors + ")";
         str += " (category: " + category + ")";
         str += " (consolidationDayOfMonth: " + consolidationDayOfMonth + ")";
         str += " (createdDate: " + createdDate + ")";
