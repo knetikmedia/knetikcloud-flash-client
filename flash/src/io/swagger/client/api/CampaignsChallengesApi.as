@@ -111,7 +111,7 @@ public class CampaignsChallengesApi extends SwaggerApi {
         }
 
         if("null" != String(validateSettings))
-            queryParams["validateSettings"] = toPathValue(validateSettings);
+            queryParams["validate_settings"] = toPathValue(validateSettings);
 
         
         var token:AsyncToken = getApiInvoker().invokeAPI(path, "POST", queryParams, challengeActivityResource, headerParams);
@@ -809,7 +809,7 @@ if("null" != String(order))
     /*
      * Returns ChallengeActivityResource 
      */
-    public function update_challenge_activity (id: Number, challengeId: Number, challengeActivityResource: ChallengeActivityResource): String {
+    public function update_challenge_activity (id: Number, challengeId: Number, challengeActivityResource: ChallengeActivityResource, validateSettings: Boolean): String {
         // create path and map variables
         var path: String = "/challenges/{challenge_id}/activities/{id}".replace(/{format}/g,"xml").replace("{" + "id" + "}", getApiInvoker().escapeString(id)).replace("{" + "challenge_id" + "}", getApiInvoker().escapeString(challengeId));
 
@@ -818,6 +818,7 @@ if("null" != String(order))
         var headerParams: Dictionary = new Dictionary();
 
         // verify required params are set
+        if(        // verify required params are set
         if(        // verify required params are set
         if(        // verify required params are set
         if() {
@@ -829,8 +830,13 @@ if("null" != String(order))
 ) {
             throw new ApiError(400, "missing required params");
         }
+) {
+            throw new ApiError(400, "missing required params");
+        }
 
-        
+        if("null" != String(validateSettings))
+            queryParams["validateSettings"] = toPathValue(validateSettings);
+
         
         var token:AsyncToken = getApiInvoker().invokeAPI(path, "PUT", queryParams, challengeActivityResource, headerParams);
 
