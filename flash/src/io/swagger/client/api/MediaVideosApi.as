@@ -13,10 +13,12 @@ import io.swagger.client.model.FlagResource;
 import io.swagger.client.model.IntWrapper;
 import io.swagger.client.model.PageResourceCommentResource;
 import io.swagger.client.model.PageResourceDispositionResource;
+import io.swagger.client.model.PageResourceTemplateResource;
 import io.swagger.client.model.PageResourceVideoRelationshipResource;
 import io.swagger.client.model.PageResourceVideoResource;
 import io.swagger.client.model.Result;
 import io.swagger.client.model.StringWrapper;
+import io.swagger.client.model.TemplateResource;
 import io.swagger.client.model.VideoRelationshipResource;
 import io.swagger.client.model.VideoResource;
 
@@ -42,22 +44,27 @@ public class MediaVideosApi extends SwaggerApi {
         public static const event_add_video_flag: String = "add_video_flag";
         public static const event_add_video_relationships: String = "add_video_relationships";
         public static const event_create_video_disposition: String = "create_video_disposition";
+        public static const event_create_video_template: String = "create_video_template";
         public static const event_delete_video: String = "delete_video";
         public static const event_delete_video_comment: String = "delete_video_comment";
         public static const event_delete_video_disposition: String = "delete_video_disposition";
         public static const event_delete_video_flag: String = "delete_video_flag";
         public static const event_delete_video_relationship: String = "delete_video_relationship";
+        public static const event_delete_video_template: String = "delete_video_template";
         public static const event_get_user_videos: String = "get_user_videos";
         public static const event_get_video: String = "get_video";
         public static const event_get_video_comments: String = "get_video_comments";
         public static const event_get_video_dispositions: String = "get_video_dispositions";
         public static const event_get_video_relationships: String = "get_video_relationships";
+        public static const event_get_video_template: String = "get_video_template";
+        public static const event_get_video_templates: String = "get_video_templates";
         public static const event_get_videos: String = "get_videos";
         public static const event_remove_user_from_video_whitelist: String = "remove_user_from_video_whitelist";
         public static const event_remove_video_contributor: String = "remove_video_contributor";
         public static const event_update_video: String = "update_video";
         public static const event_update_video_comment: String = "update_video_comment";
         public static const event_update_video_relationship: String = "update_video_relationship";
+        public static const event_update_video_template: String = "update_video_template";
         public static const event_view_video: String = "view_video";
 
 
@@ -296,6 +303,36 @@ public class MediaVideosApi extends SwaggerApi {
     }
 
     /*
+     * Returns TemplateResource 
+     */
+    public function create_video_template (videoTemplateResource: TemplateResource): String {
+        // create path and map variables
+        var path: String = "/media/videos/templates".replace(/{format}/g,"xml");
+
+        // query params
+        var queryParams: Dictionary = new Dictionary();
+        var headerParams: Dictionary = new Dictionary();
+
+        // verify required params are set
+        if() {
+            throw new ApiError(400, "missing required params");
+        }
+
+        
+        
+        var token:AsyncToken = getApiInvoker().invokeAPI(path, "POST", queryParams, videoTemplateResource, headerParams);
+
+        var requestId: String = getUniqueId();
+
+        token.requestId = requestId;
+        token.completionEventType = "create_video_template";
+
+        token.returnType = TemplateResource;
+        return requestId;
+
+    }
+
+    /*
      * Returns void 
      */
     public function delete_video (id: Number): String {
@@ -447,6 +484,42 @@ public class MediaVideosApi extends SwaggerApi {
 
         token.requestId = requestId;
         token.completionEventType = "delete_video_relationship";
+
+        token.returnType = null ;
+        return requestId;
+
+    }
+
+    /*
+     * Returns void 
+     */
+    public function delete_video_template (id: String, cascade: String): String {
+        // create path and map variables
+        var path: String = "/media/videos/templates/{id}".replace(/{format}/g,"xml").replace("{" + "id" + "}", getApiInvoker().escapeString(id));
+
+        // query params
+        var queryParams: Dictionary = new Dictionary();
+        var headerParams: Dictionary = new Dictionary();
+
+        // verify required params are set
+        if(        // verify required params are set
+        if() {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+
+        if("null" != String(cascade))
+            queryParams["cascade"] = toPathValue(cascade);
+
+        
+        var token:AsyncToken = getApiInvoker().invokeAPI(path, "DELETE", queryParams, null, headerParams);
+
+        var requestId: String = getUniqueId();
+
+        token.requestId = requestId;
+        token.completionEventType = "delete_video_template";
 
         token.returnType = null ;
         return requestId;
@@ -653,6 +726,80 @@ if("null" != String(page))
         token.completionEventType = "get_video_relationships";
 
         token.returnType = PageResourceVideoRelationshipResource;
+        return requestId;
+
+    }
+
+    /*
+     * Returns TemplateResource 
+     */
+    public function get_video_template (id: String): String {
+        // create path and map variables
+        var path: String = "/media/videos/templates/{id}".replace(/{format}/g,"xml").replace("{" + "id" + "}", getApiInvoker().escapeString(id));
+
+        // query params
+        var queryParams: Dictionary = new Dictionary();
+        var headerParams: Dictionary = new Dictionary();
+
+        // verify required params are set
+        if() {
+            throw new ApiError(400, "missing required params");
+        }
+
+        
+        
+        var token:AsyncToken = getApiInvoker().invokeAPI(path, "GET", queryParams, null, headerParams);
+
+        var requestId: String = getUniqueId();
+
+        token.requestId = requestId;
+        token.completionEventType = "get_video_template";
+
+        token.returnType = TemplateResource;
+        return requestId;
+
+    }
+
+    /*
+     * Returns PageResourceTemplateResource 
+     */
+    public function get_video_templates (size: Number, page: Number, order: String): String {
+        // create path and map variables
+        var path: String = "/media/videos/templates".replace(/{format}/g,"xml");
+
+        // query params
+        var queryParams: Dictionary = new Dictionary();
+        var headerParams: Dictionary = new Dictionary();
+
+        // verify required params are set
+        if(        // verify required params are set
+        if(        // verify required params are set
+        if() {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+
+        if("null" != String(size))
+            queryParams["size"] = toPathValue(size);
+if("null" != String(page))
+            queryParams["page"] = toPathValue(page);
+if("null" != String(order))
+            queryParams["order"] = toPathValue(order);
+
+        
+        var token:AsyncToken = getApiInvoker().invokeAPI(path, "GET", queryParams, null, headerParams);
+
+        var requestId: String = getUniqueId();
+
+        token.requestId = requestId;
+        token.completionEventType = "get_video_templates";
+
+        token.returnType = PageResourceTemplateResource;
         return requestId;
 
     }
@@ -947,6 +1094,40 @@ if("null" != String(order))
         token.completionEventType = "update_video_relationship";
 
         token.returnType = null ;
+        return requestId;
+
+    }
+
+    /*
+     * Returns TemplateResource 
+     */
+    public function update_video_template (id: String, videoTemplateResource: TemplateResource): String {
+        // create path and map variables
+        var path: String = "/media/videos/templates/{id}".replace(/{format}/g,"xml").replace("{" + "id" + "}", getApiInvoker().escapeString(id));
+
+        // query params
+        var queryParams: Dictionary = new Dictionary();
+        var headerParams: Dictionary = new Dictionary();
+
+        // verify required params are set
+        if(        // verify required params are set
+        if() {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+
+        
+        
+        var token:AsyncToken = getApiInvoker().invokeAPI(path, "PUT", queryParams, videoTemplateResource, headerParams);
+
+        var requestId: String = getUniqueId();
+
+        token.requestId = requestId;
+        token.completionEventType = "update_video_template";
+
+        token.returnType = TemplateResource;
         return requestId;
 
     }

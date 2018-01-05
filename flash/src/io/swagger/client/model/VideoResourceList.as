@@ -3,6 +3,7 @@ package io.swagger.client.model {
 import io.swagger.common.ListWrapper;
 import io.swagger.client.model.CommentResource;
 import io.swagger.client.model.ContributionResource;
+import io.swagger.client.model.Property;
 import io.swagger.client.model.SimpleReferenceResourcelong;
 import io.swagger.client.model.SimpleReferenceResourcestring;
 import io.swagger.client.model.SimpleUserResource;

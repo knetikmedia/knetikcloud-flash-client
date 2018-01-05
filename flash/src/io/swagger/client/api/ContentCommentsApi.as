@@ -7,7 +7,6 @@ import io.swagger.common.ApiUserCredentials;
 import io.swagger.event.Response;
 import io.swagger.common.SwaggerApi;
 import io.swagger.client.model.CommentResource;
-import io.swagger.client.model.Object;
 import io.swagger.client.model.PageResourceCommentResource;
 import io.swagger.client.model.Result;
 import io.swagger.client.model.StringWrapper;
@@ -31,7 +30,6 @@ public class ContentCommentsApi extends SwaggerApi {
         public static const event_delete_comment: String = "delete_comment";
         public static const event_get_comment: String = "get_comment";
         public static const event_get_comments: String = "get_comments";
-        public static const event_search_comments: String = "search_comments";
         public static const event_update_comment: String = "update_comment";
 
 
@@ -169,48 +167,6 @@ if("null" != String(page))
 
         token.requestId = requestId;
         token.completionEventType = "get_comments";
-
-        token.returnType = PageResourceCommentResource;
-        return requestId;
-
-    }
-
-    /*
-     * Returns PageResourceCommentResource 
-     */
-    public function search_comments (query: Object, size: Number, page: Number): String {
-        // create path and map variables
-        var path: String = "/comments/search".replace(/{format}/g,"xml");
-
-        // query params
-        var queryParams: Dictionary = new Dictionary();
-        var headerParams: Dictionary = new Dictionary();
-
-        // verify required params are set
-        if(        // verify required params are set
-        if(        // verify required params are set
-        if() {
-            throw new ApiError(400, "missing required params");
-        }
-) {
-            throw new ApiError(400, "missing required params");
-        }
-) {
-            throw new ApiError(400, "missing required params");
-        }
-
-        if("null" != String(size))
-            queryParams["size"] = toPathValue(size);
-if("null" != String(page))
-            queryParams["page"] = toPathValue(page);
-
-        
-        var token:AsyncToken = getApiInvoker().invokeAPI(path, "POST", queryParams, query, headerParams);
-
-        var requestId: String = getUniqueId();
-
-        token.requestId = requestId;
-        token.completionEventType = "search_comments";
 
         token.returnType = PageResourceCommentResource;
         return requestId;

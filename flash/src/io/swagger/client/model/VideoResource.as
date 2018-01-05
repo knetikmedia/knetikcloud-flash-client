@@ -2,6 +2,7 @@ package io.swagger.client.model {
 
 import io.swagger.client.model.CommentResource;
 import io.swagger.client.model.ContributionResource;
+import io.swagger.client.model.Property;
 import io.swagger.client.model.SimpleReferenceResourcelong;
 import io.swagger.client.model.SimpleReferenceResourcestring;
 import io.swagger.client.model.SimpleUserResource;
@@ -11,6 +12,12 @@ import io.swagger.client.model.SimpleUserResource;
         /* Whether the video is available, based on various factors */
         [XmlElement(name="active")]
         public var active: Boolean = false;
+        /* A map of additional properties, keyed on the property name.  Must match the names and types defined in the template for this item type */
+        // This declaration below of _additionalProperties_obj_class is to force flash compiler to include this class
+        private var _additionalProperties_obj_class: Dictionary = null;
+        [XmlElementWrapper(name="additional_properties")]
+        [XmlElements(name="additionalProperties", type="Dictionary")]
+                public var additionalProperties: Dictionary = new Dictionary();
         /* The original artist of the media */
         [XmlElement(name="author")]
         public var author: SimpleReferenceResourcelong = NaN;
@@ -86,6 +93,9 @@ import io.swagger.client.model.SimpleUserResource;
         [XmlElementWrapper(name="tags")]
         [XmlElements(name="tags", type="Array")]
                 public var tags: Array = new Array();
+        /* A video template this video is validated against (private). May be null and no validation of additional_properties will be done */
+        [XmlElement(name="template")]
+        public var template: String = null;
         /* The country of a thumbnail version. Typically a url */
         [XmlElement(name="thumbnail")]
         public var thumbnail: String = null;
@@ -105,6 +115,7 @@ import io.swagger.client.model.SimpleUserResource;
     public function toString(): String {
         var str: String = "VideoResource: ";
         str += " (active: " + active + ")";
+        str += " (additionalProperties: " + additionalProperties + ")";
         str += " (author: " + author + ")";
         str += " (authored: " + authored + ")";
         str += " (banned: " + banned + ")";
@@ -127,6 +138,7 @@ import io.swagger.client.model.SimpleUserResource;
         str += " (shortDescription: " + shortDescription + ")";
         str += " (size: " + size + ")";
         str += " (tags: " + tags + ")";
+        str += " (template: " + template + ")";
         str += " (thumbnail: " + thumbnail + ")";
         str += " (updatedDate: " + updatedDate + ")";
         str += " (uploader: " + uploader + ")";
