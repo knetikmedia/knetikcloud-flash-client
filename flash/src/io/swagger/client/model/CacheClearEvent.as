@@ -24,10 +24,8 @@ import io.swagger.client.model.Object;
         /* The type of the event. Used for polymorphic type recognition and thus must match an expected type */
         [XmlElement(name="type")]
         public var type: String = null;
-                [XmlElement(name="customer_setup")]
-        public var customerSetup: Boolean = false;
-                [XmlElement(name="customer_teardown")]
-        public var customerTeardown: Boolean = false;
+                [XmlElement(name="teardown")]
+        public var teardown: Boolean = false;
 
     public function toString(): String {
         var str: String = "CacheClearEvent: ";
@@ -40,8 +38,7 @@ import io.swagger.client.model.Object;
         str += " (synchronous: " + synchronous + ")";
         str += " (timestamp: " + timestamp + ")";
         str += " (type: " + type + ")";
-        str += " (customerSetup: " + customerSetup + ")";
-        str += " (customerTeardown: " + customerTeardown + ")";
+        str += " (teardown: " + teardown + ")";
         return str;
     }
 

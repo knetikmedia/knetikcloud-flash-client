@@ -12,7 +12,10 @@ package io.swagger.client.model {
         /* The unix timestamp in seconds the currency was added to the system */
         [XmlElement(name="created_date")]
         public var createdDate: Number = 0;
-        /* The decimal to multiply the system base currency (from config &#39;currency&#39;) to localize to this one. Should be 1 for the base currency itself. */
+        /* Whether this is the default currency. All real money wallets will be in this currency, and the &#39;factor&#39; on each currency is in relation to the default. There must be one default currency and the current will be changed if you set another as the default. Cannot be combined with virtual currency. Take extreme caution when changing */
+        [XmlElement(name="default_currency")]
+        public var defaultCurrency: Boolean = false;
+        /* The decimal to multiply the default currency to localize to this one. Should be 1 for the default currency itself. */
         [XmlElement(name="factor")]
         public var factor: Number = NaN;
         /* The url for an icon of the currency */
@@ -33,6 +36,7 @@ package io.swagger.client.model {
         str += " (active: " + active + ")";
         str += " (code: " + code + ")";
         str += " (createdDate: " + createdDate + ")";
+        str += " (defaultCurrency: " + defaultCurrency + ")";
         str += " (factor: " + factor + ")";
         str += " (icon: " + icon + ")";
         str += " (name: " + name + ")";

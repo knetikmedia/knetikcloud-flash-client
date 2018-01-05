@@ -95,7 +95,7 @@ public class CurrenciesApi extends SwaggerApi {
     /*
      * Returns PageResourceCurrencyResource 
      */
-    public function get_currencies (filterEnabledCurrencies: Boolean, filterType: String, size: Number, page: Number, order: String): String {
+    public function get_currencies (filterDefault: Boolean, filterEnabledCurrencies: Boolean, filterType: String, size: Number, page: Number, order: String): String {
         // create path and map variables
         var path: String = "/currencies".replace(/{format}/g,"xml");
 
@@ -104,6 +104,7 @@ public class CurrenciesApi extends SwaggerApi {
         var headerParams: Dictionary = new Dictionary();
 
         // verify required params are set
+        if(        // verify required params are set
         if(        // verify required params are set
         if(        // verify required params are set
         if(        // verify required params are set
@@ -123,8 +124,13 @@ public class CurrenciesApi extends SwaggerApi {
 ) {
             throw new ApiError(400, "missing required params");
         }
+) {
+            throw new ApiError(400, "missing required params");
+        }
 
-        if("null" != String(filterEnabledCurrencies))
+        if("null" != String(filterDefault))
+            queryParams["filter_default"] = toPathValue(filterDefault);
+if("null" != String(filterEnabledCurrencies))
             queryParams["filter_enabled_currencies"] = toPathValue(filterEnabledCurrencies);
 if("null" != String(filterType))
             queryParams["filter_type"] = toPathValue(filterType);

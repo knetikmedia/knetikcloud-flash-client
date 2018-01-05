@@ -31,10 +31,16 @@ import io.swagger.client.model.Property;
         /* The number of users in child groups */
         [XmlElement(name="sub_member_count")]
         public var subMemberCount: Number = 0;
+        /* Tags for search */
+        // This declaration below of _tags_obj_class is to force flash compiler to include this class
+        private var _tags_obj_class: Array = null;
+        [XmlElementWrapper(name="tags")]
+        [XmlElements(name="tags", type="Array")]
+                public var tags: Array = new Array();
         /* A group template this group is validated against. May be null and no validation of additional_properties will be done */
         [XmlElement(name="template")]
         public var template: String = null;
-        /* Unique name used in url and references. Uppercase, lowercase, numbers and hyphens only. Max 50 characters. Cannot be altered once created */
+        /* Unique name used in url and references. Uppercase, lowercase, numbers and hyphens only. Max 50 characters. Cannot be altered once created. Default: random UUID */
         [XmlElement(name="unique_name")]
         public var uniqueName: String = null;
 
@@ -48,6 +54,7 @@ import io.swagger.client.model.Property;
         str += " (parent: " + parent + ")";
         str += " (status: " + status + ")";
         str += " (subMemberCount: " + subMemberCount + ")";
+        str += " (tags: " + tags + ")";
         str += " (template: " + template + ")";
         str += " (uniqueName: " + uniqueName + ")";
         return str;

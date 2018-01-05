@@ -26,6 +26,7 @@ public class SearchApi extends SwaggerApi {
     }
 
         public static const event_search_index: String = "search_index";
+        public static const event_search_index_with_template: String = "search_index_with_template";
 
 
     /*
@@ -68,6 +69,56 @@ if("null" != String(page))
 
         token.requestId = requestId;
         token.completionEventType = "search_index";
+
+        token.returnType = PageResourceMapstringobject;
+        return requestId;
+
+    }
+
+    /*
+     * Returns PageResourceMapstringobject 
+     */
+    public function search_index_with_template (type: String, template: String, query: Object, size: Number, page: Number): String {
+        // create path and map variables
+        var path: String = "/search/index/{type}/{template}".replace(/{format}/g,"xml").replace("{" + "type" + "}", getApiInvoker().escapeString(type)).replace("{" + "template" + "}", getApiInvoker().escapeString(template));
+
+        // query params
+        var queryParams: Dictionary = new Dictionary();
+        var headerParams: Dictionary = new Dictionary();
+
+        // verify required params are set
+        if(        // verify required params are set
+        if(        // verify required params are set
+        if(        // verify required params are set
+        if(        // verify required params are set
+        if() {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+
+        if("null" != String(size))
+            queryParams["size"] = toPathValue(size);
+if("null" != String(page))
+            queryParams["page"] = toPathValue(page);
+
+        
+        var token:AsyncToken = getApiInvoker().invokeAPI(path, "POST", queryParams, query, headerParams);
+
+        var requestId: String = getUniqueId();
+
+        token.requestId = requestId;
+        token.completionEventType = "search_index_with_template";
 
         token.returnType = PageResourceMapstringobject;
         return requestId;

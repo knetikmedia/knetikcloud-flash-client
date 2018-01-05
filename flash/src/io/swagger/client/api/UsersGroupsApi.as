@@ -40,6 +40,7 @@ public class UsersGroupsApi extends SwaggerApi {
         public static const event_delete_group_member_template: String = "delete_group_member_template";
         public static const event_delete_group_template: String = "delete_group_template";
         public static const event_get_group: String = "get_group";
+        public static const event_get_group_ancestors: String = "get_group_ancestors";
         public static const event_get_group_member: String = "get_group_member";
         public static const event_get_group_member_template: String = "get_group_member_template";
         public static const event_get_group_member_templates: String = "get_group_member_templates";
@@ -343,6 +344,36 @@ public class UsersGroupsApi extends SwaggerApi {
         token.completionEventType = "get_group";
 
         token.returnType = GroupResource;
+        return requestId;
+
+    }
+
+    /*
+     * Returns Array 
+     */
+    public function get_group_ancestors (uniqueName: String): String {
+        // create path and map variables
+        var path: String = "/users/groups/{unique_name}/ancestors".replace(/{format}/g,"xml").replace("{" + "unique_name" + "}", getApiInvoker().escapeString(uniqueName));
+
+        // query params
+        var queryParams: Dictionary = new Dictionary();
+        var headerParams: Dictionary = new Dictionary();
+
+        // verify required params are set
+        if() {
+            throw new ApiError(400, "missing required params");
+        }
+
+        
+        
+        var token:AsyncToken = getApiInvoker().invokeAPI(path, "GET", queryParams, null, headerParams);
+
+        var requestId: String = getUniqueId();
+
+        token.requestId = requestId;
+        token.completionEventType = "get_group_ancestors";
+
+        token.returnType = Array;
         return requestId;
 
     }

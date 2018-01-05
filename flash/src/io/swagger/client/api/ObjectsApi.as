@@ -6,7 +6,6 @@ import io.swagger.exception.ApiError;
 import io.swagger.common.ApiUserCredentials;
 import io.swagger.event.Response;
 import io.swagger.common.SwaggerApi;
-import io.swagger.client.model.EntitlementItem;
 import io.swagger.client.model.ItemTemplateResource;
 import io.swagger.client.model.ObjectResource;
 import io.swagger.client.model.PageResourceItemTemplateResource;
@@ -339,9 +338,9 @@ if("null" != String(order))
     /*
      * Returns void 
      */
-    public function update_object_item (templateId: String, entitlementId: Number, cascade: Boolean, objectItem: EntitlementItem): String {
+    public function update_object_item (templateId: String, objectId: Number, cascade: Boolean, objectItem: ObjectResource): String {
         // create path and map variables
-        var path: String = "/objects/{template_id}/{object_id}".replace(/{format}/g,"xml").replace("{" + "template_id" + "}", getApiInvoker().escapeString(templateId)).replace("{" + "entitlement_id" + "}", getApiInvoker().escapeString(entitlementId));
+        var path: String = "/objects/{template_id}/{object_id}".replace(/{format}/g,"xml").replace("{" + "template_id" + "}", getApiInvoker().escapeString(templateId)).replace("{" + "object_id" + "}", getApiInvoker().escapeString(objectId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();

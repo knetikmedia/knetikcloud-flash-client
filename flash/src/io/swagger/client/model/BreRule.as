@@ -26,6 +26,9 @@ import io.swagger.client.model.PredicateResource;
         /* The date the rule ceases to take effect, or null if never. Unix timestamp in seconds */
         [XmlElement(name="end_date")]
         public var endDate: Number = 0;
+        /* How many times the rule has been evaluated (it&#39;s conditions checked, whether it then runs or not) */
+        [XmlElement(name="evaluation_count")]
+        public var evaluationCount: Number = 0;
         /* The event name of the trigger this rule runs for. Affects which parameters are available */
         [XmlElement(name="event_name")]
         public var eventName: String = null;
@@ -35,6 +38,9 @@ import io.swagger.client.model.PredicateResource;
         /* The human readable name of the rule */
         [XmlElement(name="name")]
         public var name: String = null;
+        /* How many times the rule has run */
+        [XmlElement(name="run_count")]
+        public var runCount: Number = 0;
         /* Used to sort rules to control the order they run in. Larger numbered sort values run first.  Default 500 */
         [XmlElement(name="sort")]
         public var sort: Number = 0;
@@ -53,9 +59,11 @@ import io.swagger.client.model.PredicateResource;
         str += " (description: " + description + ")";
         str += " (enabled: " + enabled + ")";
         str += " (endDate: " + endDate + ")";
+        str += " (evaluationCount: " + evaluationCount + ")";
         str += " (eventName: " + eventName + ")";
         str += " (id: " + id + ")";
         str += " (name: " + name + ")";
+        str += " (runCount: " + runCount + ")";
         str += " (sort: " + sort + ")";
         str += " (startDate: " + startDate + ")";
         str += " (systemRule: " + systemRule + ")";
