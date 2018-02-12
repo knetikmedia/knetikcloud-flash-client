@@ -101,7 +101,7 @@ public class LogsApi extends SwaggerApi {
     /*
      * Returns PageResourceBreEventLog 
      */
-    public function get_bre_event_logs (filterStartDate: String, filterEventName: String, filterEventId: String, size: Number, page: Number, order: String): String {
+    public function get_bre_event_logs (filterStartDate: String, filterEventName: String, filterEventId: String, size: Number, page: Number, order: String, filterRuleId: String): String {
         // create path and map variables
         var path: String = "/bre/logs/event-log".replace(/{format}/g,"xml");
 
@@ -115,7 +115,11 @@ public class LogsApi extends SwaggerApi {
         if(        // verify required params are set
         if(        // verify required params are set
         if(        // verify required params are set
+        if(        // verify required params are set
         if() {
+            throw new ApiError(400, "missing required params");
+        }
+) {
             throw new ApiError(400, "missing required params");
         }
 ) {
@@ -146,6 +150,8 @@ if("null" != String(page))
             queryParams["page"] = toPathValue(page);
 if("null" != String(order))
             queryParams["order"] = toPathValue(order);
+if("null" != String(filterRuleId))
+            queryParams["filter_rule_id"] = toPathValue(filterRuleId);
 
         
         var token:AsyncToken = getApiInvoker().invokeAPI(path, "GET", queryParams, null, headerParams);
@@ -193,7 +199,7 @@ if("null" != String(order))
     /*
      * Returns PageResourceForwardLog 
      */
-    public function get_bre_forward_logs (filterStartDate: String, filterEndDate: String, filterStatusCode: Number, size: Number, page: Number, order: String): String {
+    public function get_bre_forward_logs (filterStartDate: String, filterEndDate: String, filterStatusCode: Number, filterUrl: Number, size: Number, page: Number, order: String): String {
         // create path and map variables
         var path: String = "/bre/logs/forward-log".replace(/{format}/g,"xml");
 
@@ -207,7 +213,11 @@ if("null" != String(order))
         if(        // verify required params are set
         if(        // verify required params are set
         if(        // verify required params are set
+        if(        // verify required params are set
         if() {
+            throw new ApiError(400, "missing required params");
+        }
+) {
             throw new ApiError(400, "missing required params");
         }
 ) {
@@ -232,6 +242,8 @@ if("null" != String(filterEndDate))
             queryParams["filter_end_date"] = toPathValue(filterEndDate);
 if("null" != String(filterStatusCode))
             queryParams["filter_status_code"] = toPathValue(filterStatusCode);
+if("null" != String(filterUrl))
+            queryParams["filter_url"] = toPathValue(filterUrl);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))

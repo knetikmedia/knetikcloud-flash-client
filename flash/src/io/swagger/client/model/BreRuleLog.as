@@ -1,8 +1,15 @@
 package io.swagger.client.model {
 
+import io.swagger.client.model.BreActionLog;
 
     [XmlRootNode(name="BreRuleLog")]
     public class BreRuleLog {
+        /* The actions of the BRE rule */
+        // This declaration below of _actions_obj_class is to force flash compiler to include this class
+        private var _actions_obj_class: Array = null;
+        [XmlElementWrapper(name="actions")]
+        [XmlElements(name="actions", type="Array")]
+                public var actions: Array = new Array();
         /* Whether the rule ran */
         [XmlElement(name="ran")]
         public var ran: Boolean = false;
@@ -24,6 +31,7 @@ package io.swagger.client.model {
 
     public function toString(): String {
         var str: String = "BreRuleLog: ";
+        str += " (actions: " + actions + ")";
         str += " (ran: " + ran + ")";
         str += " (reason: " + reason + ")";
         str += " (ruleEndDate: " + ruleEndDate + ")";

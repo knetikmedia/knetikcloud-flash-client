@@ -7,16 +7,21 @@ import io.swagger.common.ApiUserCredentials;
 import io.swagger.event.Response;
 import io.swagger.common.SwaggerApi;
 import io.swagger.client.model.ActivityOccurrenceCreationFailure;
+import io.swagger.client.model.ActivityOccurrenceJoinResult;
 import io.swagger.client.model.ActivityOccurrenceResource;
 import io.swagger.client.model.ActivityOccurrenceResults;
 import io.swagger.client.model.ActivityOccurrenceResultsResource;
+import io.swagger.client.model.ActivityOccurrenceSettingsResource;
 import io.swagger.client.model.ActivityResource;
+import io.swagger.client.model.ActivityUserResource;
 import io.swagger.client.model.CreateActivityOccurrenceRequest;
+import io.swagger.client.model.IntWrapper;
 import io.swagger.client.model.PageResourceActivityOccurrenceResource;
 import io.swagger.client.model.PageResourceBareActivityResource;
 import io.swagger.client.model.PageResourceTemplateResource;
 import io.swagger.client.model.Result;
 import io.swagger.client.model.TemplateResource;
+import io.swagger.client.model.ValueWrapperstring;
 
 import mx.rpc.AsyncToken;
 import mx.utils.UIDUtil;
@@ -33,6 +38,7 @@ public class ActivitiesApi extends SwaggerApi {
         super(apiCredentials, eventDispatcher);
     }
 
+        public static const event_add_user: String = "add_user";
         public static const event_create_activity: String = "create_activity";
         public static const event_create_activity_occurrence: String = "create_activity_occurrence";
         public static const event_create_activity_template: String = "create_activity_template";
@@ -44,11 +50,60 @@ public class ActivitiesApi extends SwaggerApi {
         public static const event_get_activity_template: String = "get_activity_template";
         public static const event_get_activity_templates: String = "get_activity_templates";
         public static const event_list_activity_occurrences: String = "list_activity_occurrences";
+        public static const event_remove_user: String = "remove_user";
         public static const event_set_activity_occurrence_results: String = "set_activity_occurrence_results";
+        public static const event_set_activity_occurrence_settings: String = "set_activity_occurrence_settings";
+        public static const event_set_user_status: String = "set_user_status";
         public static const event_update_activity: String = "update_activity";
-        public static const event_update_activity_occurrence: String = "update_activity_occurrence";
+        public static const event_update_activity_occurrence_status: String = "update_activity_occurrence_status";
         public static const event_update_activity_template: String = "update_activity_template";
 
+
+    /*
+     * Returns ActivityOccurrenceResource 
+     */
+    public function add_user (activityOccurrenceId: Number, test: Boolean, bypassRestrictions: Boolean, userId: IntWrapper): String {
+        // create path and map variables
+        var path: String = "/activity-occurrences/{activity_occurrence_id}/users".replace(/{format}/g,"xml").replace("{" + "activity_occurrence_id" + "}", getApiInvoker().escapeString(activityOccurrenceId));
+
+        // query params
+        var queryParams: Dictionary = new Dictionary();
+        var headerParams: Dictionary = new Dictionary();
+
+        // verify required params are set
+        if(        // verify required params are set
+        if(        // verify required params are set
+        if(        // verify required params are set
+        if() {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+
+        if("null" != String(test))
+            queryParams["test"] = toPathValue(test);
+if("null" != String(bypassRestrictions))
+            queryParams["bypass_restrictions"] = toPathValue(bypassRestrictions);
+
+        
+        var token:AsyncToken = getApiInvoker().invokeAPI(path, "POST", queryParams, userId, headerParams);
+
+        var requestId: String = getUniqueId();
+
+        token.requestId = requestId;
+        token.completionEventType = "add_user";
+
+        token.returnType = ActivityOccurrenceResource;
+        return requestId;
+
+    }
 
     /*
      * Returns ActivityResource 
@@ -477,6 +532,52 @@ if("null" != String(order))
     }
 
     /*
+     * Returns void 
+     */
+    public function remove_user (activityOccurrenceId: Number, userId: String, ban: Boolean, bypassRestrictions: Boolean): String {
+        // create path and map variables
+        var path: String = "/activity-occurrences/{activity_occurrence_id}/users/{user_id}".replace(/{format}/g,"xml").replace("{" + "activity_occurrence_id" + "}", getApiInvoker().escapeString(activityOccurrenceId)).replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId));
+
+        // query params
+        var queryParams: Dictionary = new Dictionary();
+        var headerParams: Dictionary = new Dictionary();
+
+        // verify required params are set
+        if(        // verify required params are set
+        if(        // verify required params are set
+        if(        // verify required params are set
+        if() {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+
+        if("null" != String(ban))
+            queryParams["ban"] = toPathValue(ban);
+if("null" != String(bypassRestrictions))
+            queryParams["bypass_restrictions"] = toPathValue(bypassRestrictions);
+
+        
+        var token:AsyncToken = getApiInvoker().invokeAPI(path, "DELETE", queryParams, null, headerParams);
+
+        var requestId: String = getUniqueId();
+
+        token.requestId = requestId;
+        token.completionEventType = "remove_user";
+
+        token.returnType = null ;
+        return requestId;
+
+    }
+
+    /*
      * Returns ActivityOccurrenceResults 
      */
     public function set_activity_occurrence_results (activityOccurrenceId: Number, activityOccurrenceResults: ActivityOccurrenceResultsResource): String {
@@ -506,6 +607,78 @@ if("null" != String(order))
         token.completionEventType = "set_activity_occurrence_results";
 
         token.returnType = ActivityOccurrenceResults;
+        return requestId;
+
+    }
+
+    /*
+     * Returns ActivityOccurrenceResource 
+     */
+    public function set_activity_occurrence_settings (activityOccurrenceId: Number, settings: ActivityOccurrenceSettingsResource): String {
+        // create path and map variables
+        var path: String = "/activity-occurrences/{activity_occurrence_id}/settings".replace(/{format}/g,"xml").replace("{" + "activity_occurrence_id" + "}", getApiInvoker().escapeString(activityOccurrenceId));
+
+        // query params
+        var queryParams: Dictionary = new Dictionary();
+        var headerParams: Dictionary = new Dictionary();
+
+        // verify required params are set
+        if(        // verify required params are set
+        if() {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+
+        
+        
+        var token:AsyncToken = getApiInvoker().invokeAPI(path, "PUT", queryParams, settings, headerParams);
+
+        var requestId: String = getUniqueId();
+
+        token.requestId = requestId;
+        token.completionEventType = "set_activity_occurrence_settings";
+
+        token.returnType = ActivityOccurrenceResource;
+        return requestId;
+
+    }
+
+    /*
+     * Returns ActivityUserResource 
+     */
+    public function set_user_status (activityOccurrenceId: Number, userId: String, status: String): String {
+        // create path and map variables
+        var path: String = "/activity-occurrences/{activity_occurrence_id}/users/{user_id}/status".replace(/{format}/g,"xml").replace("{" + "activity_occurrence_id" + "}", getApiInvoker().escapeString(activityOccurrenceId)).replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId));
+
+        // query params
+        var queryParams: Dictionary = new Dictionary();
+        var headerParams: Dictionary = new Dictionary();
+
+        // verify required params are set
+        if(        // verify required params are set
+        if(        // verify required params are set
+        if() {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+
+        
+        
+        var token:AsyncToken = getApiInvoker().invokeAPI(path, "PUT", queryParams, status, headerParams);
+
+        var requestId: String = getUniqueId();
+
+        token.requestId = requestId;
+        token.completionEventType = "set_user_status";
+
+        token.returnType = ActivityUserResource;
         return requestId;
 
     }
@@ -547,7 +720,7 @@ if("null" != String(order))
     /*
      * Returns void 
      */
-    public function update_activity_occurrence (activityOccurrenceId: Number, activityOccurrenceStatus: String): String {
+    public function update_activity_occurrence_status (activityOccurrenceId: Number, activityOccurrenceStatus: ValueWrapperstring): String {
         // create path and map variables
         var path: String = "/activity-occurrences/{activity_occurrence_id}/status".replace(/{format}/g,"xml").replace("{" + "activity_occurrence_id" + "}", getApiInvoker().escapeString(activityOccurrenceId));
 
@@ -571,7 +744,7 @@ if("null" != String(order))
         var requestId: String = getUniqueId();
 
         token.requestId = requestId;
-        token.completionEventType = "update_activity_occurrence";
+        token.completionEventType = "update_activity_occurrence_status";
 
         token.returnType = null ;
         return requestId;

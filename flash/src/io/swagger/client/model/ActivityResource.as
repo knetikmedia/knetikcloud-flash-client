@@ -2,6 +2,7 @@ package io.swagger.client.model {
 
 import io.swagger.client.model.ActivityEntitlementResource;
 import io.swagger.client.model.AvailableSettingResource;
+import io.swagger.client.model.CoreActivitySettings;
 import io.swagger.client.model.Property;
 import io.swagger.client.model.RewardSetResource;
 
@@ -13,6 +14,9 @@ import io.swagger.client.model.RewardSetResource;
         [XmlElementWrapper(name="additional_properties")]
         [XmlElements(name="additionalProperties", type="Dictionary")]
                 public var additionalProperties: Dictionary = new Dictionary();
+        /* Defines core settings about the activity that affect how it can be created/played by users. */
+        [XmlElement(name="core_settings")]
+        public var coreSettings: CoreActivitySettings = NaN;
         /* The date/time this resource was created in seconds since unix epoch */
         [XmlElement(name="created_date")]
         public var createdDate: Number = 0;
@@ -68,6 +72,7 @@ import io.swagger.client.model.RewardSetResource;
     public function toString(): String {
         var str: String = "ActivityResource: ";
         str += " (additionalProperties: " + additionalProperties + ")";
+        str += " (coreSettings: " + coreSettings + ")";
         str += " (createdDate: " + createdDate + ")";
         str += " (entitlements: " + entitlements + ")";
         str += " (id: " + id + ")";

@@ -6,7 +6,10 @@ import io.swagger.exception.ApiError;
 import io.swagger.common.ApiUserCredentials;
 import io.swagger.event.Response;
 import io.swagger.common.SwaggerApi;
+import io.swagger.client.model.ChatMessageRequest;
+import io.swagger.client.model.ChatMessageResource;
 import io.swagger.client.model.NewPasswordRequest;
+import io.swagger.client.model.PageResourceChatMessageResource;
 import io.swagger.client.model.PageResourceTemplateResource;
 import io.swagger.client.model.PageResourceUserBaseResource;
 import io.swagger.client.model.PasswordResetRequest;
@@ -33,12 +36,14 @@ public class UsersApi extends SwaggerApi {
         public static const event_add_user_tag: String = "add_user_tag";
         public static const event_create_user_template: String = "create_user_template";
         public static const event_delete_user_template: String = "delete_user_template";
+        public static const event_get_direct_messages1: String = "get_direct_messages1";
         public static const event_get_user: String = "get_user";
         public static const event_get_user_tags: String = "get_user_tags";
         public static const event_get_user_template: String = "get_user_template";
         public static const event_get_user_templates: String = "get_user_templates";
         public static const event_get_users: String = "get_users";
         public static const event_password_reset: String = "password_reset";
+        public static const event_post_user_message: String = "post_user_message";
         public static const event_register_user: String = "register_user";
         public static const event_remove_user_tag: String = "remove_user_tag";
         public static const event_set_password: String = "set_password";
@@ -144,6 +149,48 @@ public class UsersApi extends SwaggerApi {
         token.completionEventType = "delete_user_template";
 
         token.returnType = null ;
+        return requestId;
+
+    }
+
+    /*
+     * Returns PageResourceChatMessageResource 
+     */
+    public function get_direct_messages1 (recipientId: Number, size: Number, page: Number): String {
+        // create path and map variables
+        var path: String = "/users/users/{recipient_id}/messages".replace(/{format}/g,"xml").replace("{" + "recipient_id" + "}", getApiInvoker().escapeString(recipientId));
+
+        // query params
+        var queryParams: Dictionary = new Dictionary();
+        var headerParams: Dictionary = new Dictionary();
+
+        // verify required params are set
+        if(        // verify required params are set
+        if(        // verify required params are set
+        if() {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+
+        if("null" != String(size))
+            queryParams["size"] = toPathValue(size);
+if("null" != String(page))
+            queryParams["page"] = toPathValue(page);
+
+        
+        var token:AsyncToken = getApiInvoker().invokeAPI(path, "GET", queryParams, null, headerParams);
+
+        var requestId: String = getUniqueId();
+
+        token.requestId = requestId;
+        token.completionEventType = "get_direct_messages1";
+
+        token.returnType = PageResourceChatMessageResource;
         return requestId;
 
     }
@@ -428,6 +475,40 @@ if("null" != String(order))
         token.completionEventType = "password_reset";
 
         token.returnType = null ;
+        return requestId;
+
+    }
+
+    /*
+     * Returns ChatMessageResource 
+     */
+    public function post_user_message (recipientId: Number, chatMessageRequest: ChatMessageRequest): String {
+        // create path and map variables
+        var path: String = "/users/{recipient_id}/messages".replace(/{format}/g,"xml").replace("{" + "recipient_id" + "}", getApiInvoker().escapeString(recipientId));
+
+        // query params
+        var queryParams: Dictionary = new Dictionary();
+        var headerParams: Dictionary = new Dictionary();
+
+        // verify required params are set
+        if(        // verify required params are set
+        if() {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+
+        
+        
+        var token:AsyncToken = getApiInvoker().invokeAPI(path, "POST", queryParams, chatMessageRequest, headerParams);
+
+        var requestId: String = getUniqueId();
+
+        token.requestId = requestId;
+        token.completionEventType = "post_user_message";
+
+        token.returnType = ChatMessageResource;
         return requestId;
 
     }

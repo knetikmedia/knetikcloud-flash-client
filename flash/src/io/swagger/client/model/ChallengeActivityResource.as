@@ -1,6 +1,7 @@
 package io.swagger.client.model {
 
 import io.swagger.client.model.ActivityEntitlementResource;
+import io.swagger.client.model.CoreChallengeActivitySettings;
 import io.swagger.client.model.Property;
 import io.swagger.client.model.RewardSetResource;
 import io.swagger.client.model.SelectedSettingResource;
@@ -19,6 +20,9 @@ import io.swagger.client.model.SelectedSettingResource;
         /* The id of the challenge */
         [XmlElement(name="challenge_id")]
         public var challengeId: Number = 0;
+        /* Defines core settings about the activity that affect how it can be created/played by users. Values may be left null to inherit from parent activity. */
+        [XmlElement(name="core_settings")]
+        public var coreSettings: CoreChallengeActivitySettings = NaN;
         /* The entitlement item needed to participate in the activity as part of this event. Null indicates free entry. When creating/updating only id is used. Item must be pre-existing */
         [XmlElement(name="entitlement")]
         public var entitlement: ActivityEntitlementResource = NaN;
@@ -43,6 +47,7 @@ import io.swagger.client.model.SelectedSettingResource;
         str += " (activityId: " + activityId + ")";
         str += " (additionalProperties: " + additionalProperties + ")";
         str += " (challengeId: " + challengeId + ")";
+        str += " (coreSettings: " + coreSettings + ")";
         str += " (entitlement: " + entitlement + ")";
         str += " (id: " + id + ")";
         str += " (rewardSet: " + rewardSet + ")";

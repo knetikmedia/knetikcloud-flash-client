@@ -18,10 +18,10 @@ import io.swagger.client.model.SimpleUserResource;
         /* The description of the device */
         [XmlElement(name="description")]
         public var description: String = null;
-        /* The type of device. Use mobile to specifically register mobile devices. This particular type will be used to send and receive notifications */
+        /* The type of device. Use mobile_device to specifically register mobile devices. This particular type will be used to send and receive notifications */
         [XmlElement(name="device_type")]
         public var deviceType: String = null;
-        /* The unique ID for this device */
+        /* The unique ID for this device. Cannot be changed after creation. Default: random */
         [XmlElement(name="id")]
         public var id: String = null;
         /* The physical location of the device, coordinates or named place (office, living room, etc) */

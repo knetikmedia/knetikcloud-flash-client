@@ -3,6 +3,7 @@ package io.swagger.client.model {
 import io.swagger.common.ListWrapper;
 import io.swagger.client.model.ActivityEntitlementResource;
 import io.swagger.client.model.AvailableSettingResource;
+import io.swagger.client.model.CoreActivitySettings;
 import io.swagger.client.model.Property;
 import io.swagger.client.model.RewardSetResource;
 

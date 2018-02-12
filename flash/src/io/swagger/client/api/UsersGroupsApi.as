@@ -6,15 +6,19 @@ import io.swagger.exception.ApiError;
 import io.swagger.common.ApiUserCredentials;
 import io.swagger.event.Response;
 import io.swagger.common.SwaggerApi;
+import io.swagger.client.model.ChatMessageRequest;
+import io.swagger.client.model.ChatMessageResource;
 import io.swagger.client.model.GroupMemberResource;
 import io.swagger.client.model.GroupResource;
 import io.swagger.client.model.Object;
+import io.swagger.client.model.PageResourceChatMessageResource;
 import io.swagger.client.model.PageResourceGroupMemberResource;
 import io.swagger.client.model.PageResourceGroupResource;
 import io.swagger.client.model.PageResourceTemplateResource;
 import io.swagger.client.model.Result;
 import io.swagger.client.model.StringWrapper;
 import io.swagger.client.model.TemplateResource;
+import io.swagger.client.model.ValueWrapperboolean;
 
 import mx.rpc.AsyncToken;
 import mx.utils.UIDUtil;
@@ -39,16 +43,19 @@ public class UsersGroupsApi extends SwaggerApi {
         public static const event_delete_group: String = "delete_group";
         public static const event_delete_group_member_template: String = "delete_group_member_template";
         public static const event_delete_group_template: String = "delete_group_template";
+        public static const event_disable_group_notification: String = "disable_group_notification";
         public static const event_get_group: String = "get_group";
         public static const event_get_group_ancestors: String = "get_group_ancestors";
         public static const event_get_group_member: String = "get_group_member";
         public static const event_get_group_member_template: String = "get_group_member_template";
         public static const event_get_group_member_templates: String = "get_group_member_templates";
         public static const event_get_group_members: String = "get_group_members";
+        public static const event_get_group_messages: String = "get_group_messages";
         public static const event_get_group_template: String = "get_group_template";
         public static const event_get_group_templates: String = "get_group_templates";
         public static const event_get_groups_for_user: String = "get_groups_for_user";
         public static const event_list_groups: String = "list_groups";
+        public static const event_post_group_message: String = "post_group_message";
         public static const event_remove_group_member: String = "remove_group_member";
         public static const event_update_group: String = "update_group";
         public static const event_update_group_member_properties: String = "update_group_member_properties";
@@ -319,6 +326,44 @@ public class UsersGroupsApi extends SwaggerApi {
     }
 
     /*
+     * Returns void 
+     */
+    public function disable_group_notification (uniqueName: String, userId: String, disabled: ValueWrapperboolean): String {
+        // create path and map variables
+        var path: String = "/users/groups/{unique_name}/members/{user_id}/messages/disabled".replace(/{format}/g,"xml").replace("{" + "unique_name" + "}", getApiInvoker().escapeString(uniqueName)).replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId));
+
+        // query params
+        var queryParams: Dictionary = new Dictionary();
+        var headerParams: Dictionary = new Dictionary();
+
+        // verify required params are set
+        if(        // verify required params are set
+        if(        // verify required params are set
+        if() {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+
+        
+        
+        var token:AsyncToken = getApiInvoker().invokeAPI(path, "PUT", queryParams, disabled, headerParams);
+
+        var requestId: String = getUniqueId();
+
+        token.requestId = requestId;
+        token.completionEventType = "disable_group_notification";
+
+        token.returnType = null ;
+        return requestId;
+
+    }
+
+    /*
      * Returns GroupResource 
      */
     public function get_group (uniqueName: String): String {
@@ -535,6 +580,48 @@ if("null" != String(order))
     }
 
     /*
+     * Returns PageResourceChatMessageResource 
+     */
+    public function get_group_messages (uniqueName: String, size: Number, page: Number): String {
+        // create path and map variables
+        var path: String = "/users/groups/{unique_name}/messages".replace(/{format}/g,"xml").replace("{" + "unique_name" + "}", getApiInvoker().escapeString(uniqueName));
+
+        // query params
+        var queryParams: Dictionary = new Dictionary();
+        var headerParams: Dictionary = new Dictionary();
+
+        // verify required params are set
+        if(        // verify required params are set
+        if(        // verify required params are set
+        if() {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+
+        if("null" != String(size))
+            queryParams["size"] = toPathValue(size);
+if("null" != String(page))
+            queryParams["page"] = toPathValue(page);
+
+        
+        var token:AsyncToken = getApiInvoker().invokeAPI(path, "GET", queryParams, null, headerParams);
+
+        var requestId: String = getUniqueId();
+
+        token.requestId = requestId;
+        token.completionEventType = "get_group_messages";
+
+        token.returnType = PageResourceChatMessageResource;
+        return requestId;
+
+    }
+
+    /*
      * Returns TemplateResource 
      */
     public function get_group_template (id: String): String {
@@ -720,6 +807,40 @@ if("null" != String(order))
         token.completionEventType = "list_groups";
 
         token.returnType = PageResourceGroupResource;
+        return requestId;
+
+    }
+
+    /*
+     * Returns ChatMessageResource 
+     */
+    public function post_group_message (uniqueName: String, chatMessageRequest: ChatMessageRequest): String {
+        // create path and map variables
+        var path: String = "/users/groups/{unique_name}/messages".replace(/{format}/g,"xml").replace("{" + "unique_name" + "}", getApiInvoker().escapeString(uniqueName));
+
+        // query params
+        var queryParams: Dictionary = new Dictionary();
+        var headerParams: Dictionary = new Dictionary();
+
+        // verify required params are set
+        if(        // verify required params are set
+        if() {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+
+        
+        
+        var token:AsyncToken = getApiInvoker().invokeAPI(path, "POST", queryParams, chatMessageRequest, headerParams);
+
+        var requestId: String = getUniqueId();
+
+        token.requestId = requestId;
+        token.completionEventType = "post_group_message";
+
+        token.returnType = ChatMessageResource;
         return requestId;
 
     }

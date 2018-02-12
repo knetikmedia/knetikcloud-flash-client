@@ -10,7 +10,7 @@ import io.swagger.client.model.Property;
         [XmlElementWrapper(name="additional_properties")]
         [XmlElements(name="additionalProperties", type="Dictionary")]
                 public var additionalProperties: Dictionary = new Dictionary();
-        /* A description of the group. Max 250 characters */
+        /* A description of the group */
         [XmlElement(name="description")]
         public var description: String = null;
         /* The number of users in the group */

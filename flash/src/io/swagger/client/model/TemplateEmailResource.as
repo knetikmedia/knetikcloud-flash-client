@@ -13,6 +13,9 @@ import io.swagger.client.model.KeyValuePairstringstring;
         [XmlElementWrapper(name="recipients")]
         [XmlElements(name="recipients", type="Array")]
                 public var recipients: Array = new Array();
+        /* The subject for email */
+        [XmlElement(name="subject")]
+        public var subject: String = null;
         /* The key for the template */
         [XmlElement(name="template_key")]
         public var templateKey: String = null;
@@ -27,6 +30,7 @@ import io.swagger.client.model.KeyValuePairstringstring;
         var str: String = "TemplateEmailResource: ";
         str += " (from: " + from + ")";
         str += " (recipients: " + recipients + ")";
+        str += " (subject: " + subject + ")";
         str += " (templateKey: " + templateKey + ")";
         str += " (templateVars: " + templateVars + ")";
         return str;

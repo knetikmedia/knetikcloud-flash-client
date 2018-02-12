@@ -2,16 +2,27 @@ package io.swagger.client.model {
 
 import io.swagger.client.model.ActivityEntitlementResource;
 import io.swagger.client.model.ActivityUserResource;
+import io.swagger.client.model.CoreActivityOccurrenceSettings;
 import io.swagger.client.model.SelectedSettingResource;
+import io.swagger.client.model.SimpleUserResource;
 
     [XmlRootNode(name="ActivityOccurrenceResource")]
     public class ActivityOccurrenceResource {
         /* The id of the activity */
         [XmlElement(name="activity_id")]
         public var activityId: Number = 0;
+        /* The ids of banned users that cannot join the occurrence. See occurrence-user delete endpoint */
+        // This declaration below of _bans_obj_class is to force flash compiler to include this class
+        private var _bans_obj_class: Array = null;
+        [XmlElementWrapper(name="bans")]
+        [XmlElements(name="bans", type="Array")]
+                public var bans: Array = new Array();
         /* The id of the challenge activity (as part of the event, required if eventId set) */
         [XmlElement(name="challenge_activity_id")]
         public var challengeActivityId: Number = 0;
+        /* Defines core settings about the activity occurrence that affect how it behaves in the system. Validated against core settings in activity/challenge-activity. */
+        [XmlElement(name="core_settings")]
+        public var coreSettings: CoreActivityOccurrenceSettings = NaN;
         /* The date this occurrence was created, unix timestamp in seconds */
         [XmlElement(name="created_date")]
         public var createdDate: Number = 0;
@@ -21,6 +32,9 @@ import io.swagger.client.model.SelectedSettingResource;
         /* The id of the event */
         [XmlElement(name="event_id")]
         public var eventId: Number = 0;
+        /* The host of the occurrence, if not a participant (will be left out of users array). Must be the caller that creates the occurrence unless admin. Requires activity/challenge to allow host_option of &#39;non_player&#39; if not admin as well */
+        [XmlElement(name="host")]
+        public var host: SimpleUserResource = NaN;
         /* The id of the activity occurrence */
         [XmlElement(name="id")]
         public var id: Number = 0;
@@ -55,10 +69,13 @@ import io.swagger.client.model.SelectedSettingResource;
     public function toString(): String {
         var str: String = "ActivityOccurrenceResource: ";
         str += " (activityId: " + activityId + ")";
+        str += " (bans: " + bans + ")";
         str += " (challengeActivityId: " + challengeActivityId + ")";
+        str += " (coreSettings: " + coreSettings + ")";
         str += " (createdDate: " + createdDate + ")";
         str += " (entitlement: " + entitlement + ")";
         str += " (eventId: " + eventId + ")";
+        str += " (host: " + host + ")";
         str += " (id: " + id + ")";
         str += " (rewardStatus: " + rewardStatus + ")";
         str += " (settings: " + settings + ")";

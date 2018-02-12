@@ -3,7 +3,7 @@ package io.swagger.client.model {
 
     [XmlRootNode(name="Config")]
     public class Config {
-        /* The description of the config.  Max 140 characters */
+        /* The description of the config.  Max 255 characters */
         [XmlElement(name="description")]
         public var description: String = null;
         /* The name of the config */

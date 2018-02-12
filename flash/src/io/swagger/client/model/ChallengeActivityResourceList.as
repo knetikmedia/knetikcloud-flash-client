@@ -2,6 +2,7 @@ package io.swagger.client.model {
 
 import io.swagger.common.ListWrapper;
 import io.swagger.client.model.ActivityEntitlementResource;
+import io.swagger.client.model.CoreChallengeActivitySettings;
 import io.swagger.client.model.Property;
 import io.swagger.client.model.RewardSetResource;
 import io.swagger.client.model.SelectedSettingResource;

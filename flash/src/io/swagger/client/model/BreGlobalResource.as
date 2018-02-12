@@ -25,7 +25,7 @@ import io.swagger.client.model.BreGlobalScopeDefinition;
         /* Where this global came from. System globals cannot be removed or updated */
         [XmlElement(name="system_global")]
         public var systemGlobal: Boolean = false;
-        /* The variable type the global stores. See the See Bre Variables enpoint for list */
+        /* The variable type the global stores. See the BRE variables endpoint for list */
         [XmlElement(name="type")]
         public var type: String = null;
 

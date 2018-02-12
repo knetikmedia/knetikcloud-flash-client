@@ -1,6 +1,7 @@
 package io.swagger.client.model {
 
 import io.swagger.common.ListWrapper;
+import io.swagger.client.model.BreActionLog;
 
     public class BreRuleLogList implements ListWrapper {
         // This declaration below of _BreRuleLog_obj_class is to force flash compiler to include this class

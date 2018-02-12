@@ -498,7 +498,7 @@ if("null" != String(filterDate))
     /*
      * Returns UserInventoryResource 
      */
-    public function get_user_inventory (userId: Number, id: Number): String {
+    public function get_user_inventory (userId: String, id: Number): String {
         // create path and map variables
         var path: String = "/users/{user_id}/inventory/{id}".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 

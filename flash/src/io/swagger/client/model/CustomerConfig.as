@@ -1,7 +1,6 @@
 package io.swagger.client.model {
 
 import io.swagger.client.model.DatabaseConfig;
-import io.swagger.client.model.IOConfig;
 import io.swagger.client.model.S3Config;
 
     [XmlRootNode(name="CustomerConfig")]
@@ -10,8 +9,6 @@ import io.swagger.client.model.S3Config;
         public var aliases: String = null;
                 [XmlElement(name="database")]
         public var database: DatabaseConfig = NaN;
-                [XmlElement(name="io")]
-        public var io: IOConfig = NaN;
                 [XmlElement(name="name")]
         public var name: String = null;
                 [XmlElement(name="s3_config")]
@@ -21,7 +18,6 @@ import io.swagger.client.model.S3Config;
         var str: String = "CustomerConfig: ";
         str += " (aliases: " + aliases + ")";
         str += " (database: " + database + ")";
-        str += " (io: " + io + ")";
         str += " (name: " + name + ")";
         str += " (s3Config: " + s3Config + ")";
         return str;

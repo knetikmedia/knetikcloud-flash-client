@@ -1,6 +1,7 @@
 package io.swagger.client.model {
 
 import io.swagger.common.ListWrapper;
+import io.swagger.client.model.CoreActivityOccurrenceSettings;
 import io.swagger.client.model.ItemIdRequest;
 import io.swagger.client.model.Participant;
 import io.swagger.client.model.SelectedSettingRequest;
