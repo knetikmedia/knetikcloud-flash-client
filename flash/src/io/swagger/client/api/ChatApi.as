@@ -38,7 +38,7 @@ public class ChatApi extends SwaggerApi {
         public static const event_get_thread_messages: String = "get_thread_messages";
         public static const event_get_topic_messages: String = "get_topic_messages";
         public static const event_remove_chat_blacklist: String = "remove_chat_blacklist";
-        public static const event_send_message: String = "send_message";
+        public static const event_send_chat_message: String = "send_chat_message";
 
 
     /*
@@ -458,7 +458,7 @@ if("null" != String(order))
     /*
      * Returns ChatMessageResource 
      */
-    public function send_message (chatMessageResource: ChatMessageResource): String {
+    public function send_chat_message (chatMessageResource: ChatMessageResource): String {
         // create path and map variables
         var path: String = "/chat/messages".replace(/{format}/g,"xml");
 
@@ -478,7 +478,7 @@ if("null" != String(order))
         var requestId: String = getUniqueId();
 
         token.requestId = requestId;
-        token.completionEventType = "send_message";
+        token.completionEventType = "send_chat_message";
 
         token.returnType = ChatMessageResource;
         return requestId;

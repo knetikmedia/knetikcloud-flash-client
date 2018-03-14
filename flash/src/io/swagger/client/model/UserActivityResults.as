@@ -24,7 +24,7 @@ import io.swagger.client.model.SimpleUserResource;
         /* The raw score in this leaderboard. Null means non-compete or disqualification */
         [XmlElement(name="score")]
         public var score: Number = 0;
-        /* Any tags for the metric. Each unique tag will translate into a unique leaderboard. Maximum 5 tags and 50 characters each */
+        /* Any tags for the metric. Each unique tag will translate into a unique leaderboard. Maximum 10 tags and 50 characters each */
         // This declaration below of _tags_obj_class is to force flash compiler to include this class
         private var _tags_obj_class: Array = null;
         [XmlElementWrapper(name="tags")]

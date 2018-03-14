@@ -7,7 +7,6 @@ import io.swagger.common.ApiUserCredentials;
 import io.swagger.event.Response;
 import io.swagger.common.SwaggerApi;
 import io.swagger.client.model.PageResourceTopicResource;
-import io.swagger.client.model.PageResourceTopicSubscriberResource;
 import io.swagger.client.model.Result;
 import io.swagger.client.model.TopicSubscriberResource;
 import io.swagger.client.model.ValueWrapperboolean;
@@ -29,7 +28,6 @@ public class MessagingTopicsApi extends SwaggerApi {
 
         public static const event_disable_topic_subscriber: String = "disable_topic_subscriber";
         public static const event_get_topic_subscriber: String = "get_topic_subscriber";
-        public static const event_get_topic_subscribers: String = "get_topic_subscribers";
         public static const event_get_user_topics: String = "get_user_topics";
 
 
@@ -101,36 +99,6 @@ public class MessagingTopicsApi extends SwaggerApi {
         token.completionEventType = "get_topic_subscriber";
 
         token.returnType = TopicSubscriberResource;
-        return requestId;
-
-    }
-
-    /*
-     * Returns PageResourceTopicSubscriberResource 
-     */
-    public function get_topic_subscribers (id: String): String {
-        // create path and map variables
-        var path: String = "/messaging/topics/{id}/subscribers".replace(/{format}/g,"xml").replace("{" + "id" + "}", getApiInvoker().escapeString(id));
-
-        // query params
-        var queryParams: Dictionary = new Dictionary();
-        var headerParams: Dictionary = new Dictionary();
-
-        // verify required params are set
-        if() {
-            throw new ApiError(400, "missing required params");
-        }
-
-        
-        
-        var token:AsyncToken = getApiInvoker().invokeAPI(path, "GET", queryParams, null, headerParams);
-
-        var requestId: String = getUniqueId();
-
-        token.requestId = requestId;
-        token.completionEventType = "get_topic_subscribers";
-
-        token.returnType = PageResourceTopicSubscriberResource;
         return requestId;
 
     }

@@ -13,8 +13,8 @@ import io.swagger.client.model.PageResourceNotificationTypeResource;
 import io.swagger.client.model.PageResourceNotificationUserTypeResource;
 import io.swagger.client.model.PageResourceUserNotificationResource;
 import io.swagger.client.model.Result;
+import io.swagger.client.model.UserNotificationStatusWrapper;
 import io.swagger.client.model.ValueWrapperboolean;
-import io.swagger.client.model.ValueWrapperstring;
 
 import mx.rpc.AsyncToken;
 import mx.utils.UIDUtil;
@@ -347,7 +347,7 @@ if("null" != String(order))
     /*
      * Returns void 
      */
-    public function set_user_notification_status (userId: String, notificationId: String, notification: ValueWrapperstring): String {
+    public function set_user_notification_status (userId: String, notificationId: String, notification: UserNotificationStatusWrapper): String {
         // create path and map variables
         var path: String = "/users/{user_id}/notifications/{notification_id}/status".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "notification_id" + "}", getApiInvoker().escapeString(notificationId));
 

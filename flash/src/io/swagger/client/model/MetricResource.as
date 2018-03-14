@@ -6,7 +6,7 @@ package io.swagger.client.model {
         /* The id of the activity occurence where this score/metric occurred */
         [XmlElement(name="activity_occurence_id")]
         public var activityOccurenceId: Number = 0;
-        /* Any tags for the metric. Each unique tag will translate into a unique leaderboard. Maximum 5 tags and 50 characters each */
+        /* Any tags for the metric. Each unique tag will translate into a unique leaderboard. Maximum 10 tags and 50 characters each */
         // This declaration below of _tags_obj_class is to force flash compiler to include this class
         private var _tags_obj_class: Array = null;
         [XmlElementWrapper(name="tags")]

@@ -17,13 +17,13 @@ import mx.utils.UIDUtil;
 import flash.utils.Dictionary;
 import flash.events.EventDispatcher;
 
-public class BRERuleEngineRulesApi extends SwaggerApi {
+public class RuleEngineRulesApi extends SwaggerApi {
     /**
-    * Constructor for the BRERuleEngineRulesApi api client
+    * Constructor for the RuleEngineRulesApi api client
     * @param apiCredentials Wrapper object for tokens and hostName required towards authentication
     * @param eventDispatcher Optional event dispatcher that when provided is used by the SDK to dispatch any Response
     */
-    public function BRERuleEngineRulesApi(apiCredentials: ApiUserCredentials, eventDispatcher: EventDispatcher = null) {
+    public function RuleEngineRulesApi(apiCredentials: ApiUserCredentials, eventDispatcher: EventDispatcher = null) {
         super(apiCredentials, eventDispatcher);
     }
 

@@ -807,7 +807,7 @@ if("null" != String(order))
     }
 
     /*
-     * Returns ChallengeActivityResource 
+     * Returns void 
      */
     public function update_challenge_activity (id: Number, challengeId: Number, challengeActivityResource: ChallengeActivityResource, validateSettings: Boolean): String {
         // create path and map variables
@@ -845,7 +845,7 @@ if("null" != String(order))
         token.requestId = requestId;
         token.completionEventType = "update_challenge_activity";
 
-        token.returnType = ChallengeActivityResource;
+        token.returnType = null ;
         return requestId;
 
     }

@@ -198,7 +198,7 @@ if("null" != String(page))
     /*
      * Returns PageResourceFlagReportResource 
      */
-    public function get_moderation_reports (excludeResolved: Boolean, filterContext: String, filterContextId: String, size: Number, page: Number): String {
+    public function get_moderation_reports (excludeResolved: Boolean, filterContext: String, filterContextId: String, size: Number, page: Number, order: String): String {
         // create path and map variables
         var path: String = "/moderation/reports".replace(/{format}/g,"xml");
 
@@ -211,7 +211,11 @@ if("null" != String(page))
         if(        // verify required params are set
         if(        // verify required params are set
         if(        // verify required params are set
+        if(        // verify required params are set
         if() {
+            throw new ApiError(400, "missing required params");
+        }
+) {
             throw new ApiError(400, "missing required params");
         }
 ) {
@@ -237,6 +241,8 @@ if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))
             queryParams["page"] = toPathValue(page);
+if("null" != String(order))
+            queryParams["order"] = toPathValue(order);
 
         
         var token:AsyncToken = getApiInvoker().invokeAPI(path, "GET", queryParams, null, headerParams);

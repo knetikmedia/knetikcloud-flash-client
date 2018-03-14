@@ -39,7 +39,7 @@ public class MessagingApi extends SwaggerApi {
         public static const event_delete_message_template: String = "delete_message_template";
         public static const event_get_message_template: String = "get_message_template";
         public static const event_get_message_templates: String = "get_message_templates";
-        public static const event_send_message1: String = "send_message1";
+        public static const event_send_message: String = "send_message";
         public static const event_send_raw_email: String = "send_raw_email";
         public static const event_send_raw_push: String = "send_raw_push";
         public static const event_send_raw_sms: String = "send_raw_sms";
@@ -235,7 +235,7 @@ if("null" != String(order))
     /*
      * Returns void 
      */
-    public function send_message1 (messageResource: MessageResource): String {
+    public function send_message (messageResource: MessageResource): String {
         // create path and map variables
         var path: String = "/messaging/message".replace(/{format}/g,"xml");
 
@@ -255,7 +255,7 @@ if("null" != String(order))
         var requestId: String = getUniqueId();
 
         token.requestId = requestId;
-        token.completionEventType = "send_message1";
+        token.completionEventType = "send_message";
 
         token.returnType = null ;
         return requestId;

@@ -12,8 +12,10 @@ import io.swagger.client.model.ActivityOccurrenceResource;
 import io.swagger.client.model.ActivityOccurrenceResults;
 import io.swagger.client.model.ActivityOccurrenceResultsResource;
 import io.swagger.client.model.ActivityOccurrenceSettingsResource;
+import io.swagger.client.model.ActivityOccurrenceStatusWrapper;
 import io.swagger.client.model.ActivityResource;
 import io.swagger.client.model.ActivityUserResource;
+import io.swagger.client.model.ActivityUserStatusWrapper;
 import io.swagger.client.model.CreateActivityOccurrenceRequest;
 import io.swagger.client.model.IntWrapper;
 import io.swagger.client.model.PageResourceActivityOccurrenceResource;
@@ -21,7 +23,6 @@ import io.swagger.client.model.PageResourceBareActivityResource;
 import io.swagger.client.model.PageResourceTemplateResource;
 import io.swagger.client.model.Result;
 import io.swagger.client.model.TemplateResource;
-import io.swagger.client.model.ValueWrapperstring;
 
 import mx.rpc.AsyncToken;
 import mx.utils.UIDUtil;
@@ -648,7 +649,7 @@ if("null" != String(bypassRestrictions))
     /*
      * Returns ActivityUserResource 
      */
-    public function set_user_status (activityOccurrenceId: Number, userId: String, status: String): String {
+    public function set_user_status (activityOccurrenceId: Number, userId: String, status: ActivityUserStatusWrapper): String {
         // create path and map variables
         var path: String = "/activity-occurrences/{activity_occurrence_id}/users/{user_id}/status".replace(/{format}/g,"xml").replace("{" + "activity_occurrence_id" + "}", getApiInvoker().escapeString(activityOccurrenceId)).replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId));
 
@@ -720,7 +721,7 @@ if("null" != String(bypassRestrictions))
     /*
      * Returns void 
      */
-    public function update_activity_occurrence_status (activityOccurrenceId: Number, activityOccurrenceStatus: ValueWrapperstring): String {
+    public function update_activity_occurrence_status (activityOccurrenceId: Number, activityOccurrenceStatus: ActivityOccurrenceStatusWrapper): String {
         // create path and map variables
         var path: String = "/activity-occurrences/{activity_occurrence_id}/status".replace(/{format}/g,"xml").replace("{" + "activity_occurrence_id" + "}", getApiInvoker().escapeString(activityOccurrenceId));
 

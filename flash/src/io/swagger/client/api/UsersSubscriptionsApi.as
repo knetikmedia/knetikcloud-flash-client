@@ -13,6 +13,7 @@ import io.swagger.client.model.ReactivateSubscriptionRequest;
 import io.swagger.client.model.Result;
 import io.swagger.client.model.StringWrapper;
 import io.swagger.client.model.SubscriptionPriceOverrideRequest;
+import io.swagger.client.model.SubscriptionStatusWrapper;
 
 import mx.rpc.AsyncToken;
 import mx.utils.UIDUtil;
@@ -220,7 +221,7 @@ public class UsersSubscriptionsApi extends SwaggerApi {
     /*
      * Returns void 
      */
-    public function set_subscription_status (userId: Number, inventoryId: Number, status: StringWrapper): String {
+    public function set_subscription_status (userId: Number, inventoryId: Number, status: SubscriptionStatusWrapper): String {
         // create path and map variables
         var path: String = "/users/{user_id}/subscriptions/{inventory_id}/status".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "inventory_id" + "}", getApiInvoker().escapeString(inventoryId));
 

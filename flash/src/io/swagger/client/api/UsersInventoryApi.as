@@ -8,6 +8,7 @@ import io.swagger.event.Response;
 import io.swagger.common.SwaggerApi;
 import io.swagger.client.model.EntitlementGrantRequest;
 import io.swagger.client.model.EntitlementItem;
+import io.swagger.client.model.InventoryStatusWrapper;
 import io.swagger.client.model.InvoiceResource;
 import io.swagger.client.model.ItemTemplateResource;
 import io.swagger.client.model.Object;
@@ -836,7 +837,7 @@ if("null" != String(filterDate))
     /*
      * Returns void 
      */
-    public function update_user_inventory_status (userId: Number, id: Number, inventoryStatus: String): String {
+    public function update_user_inventory_status (userId: Number, id: Number, inventoryStatus: InventoryStatusWrapper): String {
         // create path and map variables
         var path: String = "/users/{user_id}/inventory/{id}/status".replace(/{format}/g,"xml").replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId)).replace("{" + "id" + "}", getApiInvoker().escapeString(id));
 

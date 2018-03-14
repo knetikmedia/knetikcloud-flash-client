@@ -158,7 +158,7 @@ public class UsersApi extends SwaggerApi {
      */
     public function get_direct_messages1 (recipientId: Number, size: Number, page: Number): String {
         // create path and map variables
-        var path: String = "/users/users/{recipient_id}/messages".replace(/{format}/g,"xml").replace("{" + "recipient_id" + "}", getApiInvoker().escapeString(recipientId));
+        var path: String = "/users/{recipient_id}/messages".replace(/{format}/g,"xml").replace("{" + "recipient_id" + "}", getApiInvoker().escapeString(recipientId));
 
         // query params
         var queryParams: Dictionary = new Dictionary();

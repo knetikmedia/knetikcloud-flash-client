@@ -9,6 +9,7 @@ import io.swagger.common.SwaggerApi;
 import io.swagger.client.model.ChatMessageRequest;
 import io.swagger.client.model.ChatMessageResource;
 import io.swagger.client.model.GroupMemberResource;
+import io.swagger.client.model.GroupMemberStatusWrapper;
 import io.swagger.client.model.GroupResource;
 import io.swagger.client.model.Object;
 import io.swagger.client.model.PageResourceChatMessageResource;
@@ -992,7 +993,7 @@ if("null" != String(order))
     /*
      * Returns void 
      */
-    public function update_group_member_status (uniqueName: String, userId: Number, status: String): String {
+    public function update_group_member_status (uniqueName: String, userId: Number, status: GroupMemberStatusWrapper): String {
         // create path and map variables
         var path: String = "/users/groups/{unique_name}/members/{user_id}/status".replace(/{format}/g,"xml").replace("{" + "unique_name" + "}", getApiInvoker().escapeString(uniqueName)).replace("{" + "user_id" + "}", getApiInvoker().escapeString(userId));
 

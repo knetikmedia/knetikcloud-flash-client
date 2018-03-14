@@ -6,8 +6,8 @@ import io.swagger.exception.ApiError;
 import io.swagger.common.ApiUserCredentials;
 import io.swagger.event.Response;
 import io.swagger.common.SwaggerApi;
-import io.swagger.client.model.BreGlobalResource;
-import io.swagger.client.model.PageResourceBreGlobalResource;
+import io.swagger.client.model.BreTriggerResource;
+import io.swagger.client.model.PageResourceBreTriggerResource;
 import io.swagger.client.model.Result;
 
 import mx.rpc.AsyncToken;
@@ -15,29 +15,29 @@ import mx.utils.UIDUtil;
 import flash.utils.Dictionary;
 import flash.events.EventDispatcher;
 
-public class BRERuleEngineGlobalsApi extends SwaggerApi {
+public class RuleEngineTriggersApi extends SwaggerApi {
     /**
-    * Constructor for the BRERuleEngineGlobalsApi api client
+    * Constructor for the RuleEngineTriggersApi api client
     * @param apiCredentials Wrapper object for tokens and hostName required towards authentication
     * @param eventDispatcher Optional event dispatcher that when provided is used by the SDK to dispatch any Response
     */
-    public function BRERuleEngineGlobalsApi(apiCredentials: ApiUserCredentials, eventDispatcher: EventDispatcher = null) {
+    public function RuleEngineTriggersApi(apiCredentials: ApiUserCredentials, eventDispatcher: EventDispatcher = null) {
         super(apiCredentials, eventDispatcher);
     }
 
-        public static const event_create_bre_global: String = "create_bre_global";
-        public static const event_delete_bre_global: String = "delete_bre_global";
-        public static const event_get_bre_global: String = "get_bre_global";
-        public static const event_get_bre_globals: String = "get_bre_globals";
-        public static const event_update_bre_global: String = "update_bre_global";
+        public static const event_create_bre_trigger: String = "create_bre_trigger";
+        public static const event_delete_bre_trigger: String = "delete_bre_trigger";
+        public static const event_get_bre_trigger: String = "get_bre_trigger";
+        public static const event_get_bre_triggers: String = "get_bre_triggers";
+        public static const event_update_bre_trigger: String = "update_bre_trigger";
 
 
     /*
-     * Returns BreGlobalResource 
+     * Returns BreTriggerResource 
      */
-    public function create_bre_global (breGlobalResource: BreGlobalResource): String {
+    public function create_bre_trigger (breTriggerResource: BreTriggerResource): String {
         // create path and map variables
-        var path: String = "/bre/globals/definitions".replace(/{format}/g,"xml");
+        var path: String = "/bre/triggers".replace(/{format}/g,"xml");
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -50,14 +50,14 @@ public class BRERuleEngineGlobalsApi extends SwaggerApi {
 
         
         
-        var token:AsyncToken = getApiInvoker().invokeAPI(path, "POST", queryParams, breGlobalResource, headerParams);
+        var token:AsyncToken = getApiInvoker().invokeAPI(path, "POST", queryParams, breTriggerResource, headerParams);
 
         var requestId: String = getUniqueId();
 
         token.requestId = requestId;
-        token.completionEventType = "create_bre_global";
+        token.completionEventType = "create_bre_trigger";
 
-        token.returnType = BreGlobalResource;
+        token.returnType = BreTriggerResource;
         return requestId;
 
     }
@@ -65,9 +65,9 @@ public class BRERuleEngineGlobalsApi extends SwaggerApi {
     /*
      * Returns void 
      */
-    public function delete_bre_global (id: String): String {
+    public function delete_bre_trigger (eventName: String): String {
         // create path and map variables
-        var path: String = "/bre/globals/definitions/{id}".replace(/{format}/g,"xml").replace("{" + "id" + "}", getApiInvoker().escapeString(id));
+        var path: String = "/bre/triggers/{event_name}".replace(/{format}/g,"xml").replace("{" + "event_name" + "}", getApiInvoker().escapeString(eventName));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -85,7 +85,7 @@ public class BRERuleEngineGlobalsApi extends SwaggerApi {
         var requestId: String = getUniqueId();
 
         token.requestId = requestId;
-        token.completionEventType = "delete_bre_global";
+        token.completionEventType = "delete_bre_trigger";
 
         token.returnType = null ;
         return requestId;
@@ -93,11 +93,11 @@ public class BRERuleEngineGlobalsApi extends SwaggerApi {
     }
 
     /*
-     * Returns BreGlobalResource 
+     * Returns BreTriggerResource 
      */
-    public function get_bre_global (id: String): String {
+    public function get_bre_trigger (eventName: String): String {
         // create path and map variables
-        var path: String = "/bre/globals/definitions/{id}".replace(/{format}/g,"xml").replace("{" + "id" + "}", getApiInvoker().escapeString(id));
+        var path: String = "/bre/triggers/{event_name}".replace(/{format}/g,"xml").replace("{" + "event_name" + "}", getApiInvoker().escapeString(eventName));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -115,19 +115,19 @@ public class BRERuleEngineGlobalsApi extends SwaggerApi {
         var requestId: String = getUniqueId();
 
         token.requestId = requestId;
-        token.completionEventType = "get_bre_global";
+        token.completionEventType = "get_bre_trigger";
 
-        token.returnType = BreGlobalResource;
+        token.returnType = BreTriggerResource;
         return requestId;
 
     }
 
     /*
-     * Returns PageResourceBreGlobalResource 
+     * Returns PageResourceBreTriggerResource 
      */
-    public function get_bre_globals (filterSystem: Boolean, size: Number, page: Number): String {
+    public function get_bre_triggers (filterSystem: Boolean, filterCategory: String, filterTags: String, filterName: String, filterSearch: String, size: Number, page: Number): String {
         // create path and map variables
-        var path: String = "/bre/globals/definitions".replace(/{format}/g,"xml");
+        var path: String = "/bre/triggers".replace(/{format}/g,"xml");
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -136,7 +136,23 @@ public class BRERuleEngineGlobalsApi extends SwaggerApi {
         // verify required params are set
         if(        // verify required params are set
         if(        // verify required params are set
+        if(        // verify required params are set
+        if(        // verify required params are set
+        if(        // verify required params are set
+        if(        // verify required params are set
         if() {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+) {
+            throw new ApiError(400, "missing required params");
+        }
+) {
             throw new ApiError(400, "missing required params");
         }
 ) {
@@ -148,6 +164,14 @@ public class BRERuleEngineGlobalsApi extends SwaggerApi {
 
         if("null" != String(filterSystem))
             queryParams["filter_system"] = toPathValue(filterSystem);
+if("null" != String(filterCategory))
+            queryParams["filter_category"] = toPathValue(filterCategory);
+if("null" != String(filterTags))
+            queryParams["filter_tags"] = toPathValue(filterTags);
+if("null" != String(filterName))
+            queryParams["filter_name"] = toPathValue(filterName);
+if("null" != String(filterSearch))
+            queryParams["filter_search"] = toPathValue(filterSearch);
 if("null" != String(size))
             queryParams["size"] = toPathValue(size);
 if("null" != String(page))
@@ -159,19 +183,19 @@ if("null" != String(page))
         var requestId: String = getUniqueId();
 
         token.requestId = requestId;
-        token.completionEventType = "get_bre_globals";
+        token.completionEventType = "get_bre_triggers";
 
-        token.returnType = PageResourceBreGlobalResource;
+        token.returnType = PageResourceBreTriggerResource;
         return requestId;
 
     }
 
     /*
-     * Returns BreGlobalResource 
+     * Returns BreTriggerResource 
      */
-    public function update_bre_global (id: String, breGlobalResource: BreGlobalResource): String {
+    public function update_bre_trigger (eventName: String, breTriggerResource: BreTriggerResource): String {
         // create path and map variables
-        var path: String = "/bre/globals/definitions/{id}".replace(/{format}/g,"xml").replace("{" + "id" + "}", getApiInvoker().escapeString(id));
+        var path: String = "/bre/triggers/{event_name}".replace(/{format}/g,"xml").replace("{" + "event_name" + "}", getApiInvoker().escapeString(eventName));
 
         // query params
         var queryParams: Dictionary = new Dictionary();
@@ -188,14 +212,14 @@ if("null" != String(page))
 
         
         
-        var token:AsyncToken = getApiInvoker().invokeAPI(path, "PUT", queryParams, breGlobalResource, headerParams);
+        var token:AsyncToken = getApiInvoker().invokeAPI(path, "PUT", queryParams, breTriggerResource, headerParams);
 
         var requestId: String = getUniqueId();
 
         token.requestId = requestId;
-        token.completionEventType = "update_bre_global";
+        token.completionEventType = "update_bre_trigger";
 
-        token.returnType = BreGlobalResource;
+        token.returnType = BreTriggerResource;
         return requestId;
 
     }
